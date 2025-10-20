@@ -189,7 +189,23 @@ def run_experiment_3_simple_hybrid_hybrid_precision(batch_id: Optional[int] = No
     else:
         # 兼容模式：使用原始数据集
         script_dir = Path(__file__).parent
-        embeddings = load_or_generate_embeddings(script_dir / 'knowledge_base')
+        knowledge_base_dir = script_dir.parent / 'knowledge_base'
+        
+        # 检查知识库目录和文件是否存在
+        if not knowledge_base_dir.exists():
+            print(f"❌ 知识库目录不存在: {knowledge_base_dir}")
+            return None
+        
+        documents_file = knowledge_base_dir / 'documents.json'
+        if not documents_file.exists():
+            print(f"❌ 文档文件不存在: {documents_file}")
+            return None
+        
+        print(f"📁 知识库目录: {knowledge_base_dir}")
+        print(f"📄 文档文件: {documents_file}")
+        
+        # 加载嵌入
+        embeddings = load_or_generate_embeddings(str(knowledge_base_dir))
 
         dataset_file = script_dir / 'dataset' / 'hotpot_sample_200.json'
         with open(dataset_file, 'r', encoding='utf-8') as f:
@@ -218,11 +234,29 @@ def run_experiment_3_simple_hybrid_hybrid_precision(batch_id: Optional[int] = No
     # 加载数据
     script_dir = Path(__file__).parent
     knowledge_base_dir = script_dir.parent / 'knowledge_base'
-    embeddings = load_or_generate_embeddings(knowledge_base_dir)
-
+    
+    # 检查知识库目录和文件是否存在
+    if not knowledge_base_dir.exists():
+        print(f"❌ 知识库目录不存在: {knowledge_base_dir}")
+        return None
+    
     documents_file = knowledge_base_dir / 'documents.json'
+    if not documents_file.exists():
+        print(f"❌ 文档文件不存在: {documents_file}")
+        return None
+    
+    print(f"📁 知识库目录: {knowledge_base_dir}")
+    print(f"📄 文档文件: {documents_file}")
+    
+    # 加载文档
     with open(documents_file, 'r', encoding='utf-8') as f:
         documents = json.load(f)
+    
+    print(f"📚 加载文档数: {len(documents)}")
+    
+    # 加载嵌入（仅在兼容模式下需要）
+    if not use_batch_manager:
+        embeddings = load_or_generate_embeddings(str(knowledge_base_dir))
 
     # 实验结果存储
     hybrid_precision_results = []
