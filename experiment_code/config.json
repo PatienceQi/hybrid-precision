@@ -1,0 +1,47 @@
+{
+  "api": {
+    "model": "gpt-3.5-turbo",
+    "max_retries": 3,
+    "retry_delay": 2,
+    "timeout": 30,
+    "default_headers": {
+      "HTTP-Referer": "https://ragas-hybrid-evaluation.com",
+      "X-Title": "RAGAS Hybrid Evaluation"
+    }
+  },
+  "evaluation": {
+    "batch_size": 200,
+    "use_mock_api": false,
+    "metrics": [
+      "context_precision",
+      "faithfulness",
+      "answer_relevancy",
+      "context_recall"
+    ],
+    "hybrid_metrics": [
+      "hybrid_context_precision",
+      "avg_hybrid_score",
+      "information_entropy",
+      "mutual_information",
+      "statistical_significance"
+    ]
+  },
+  "retrieval": {
+    "embedding_model": "bge-m3",
+    "embedding_dim": 1024,
+    "top_k": 5,
+    "similarity_threshold": 0.7,
+    "cache_embeddings": true
+  },
+  "experiment": {
+    "experiment_types": [
+      "baseline",
+      "hybrid_standard",
+      "hybrid_precision"
+    ],
+    "num_batches": 5,
+    "save_interval": 10,
+    "log_level": "INFO",
+    "results_dir": "batch_results"
+  }
+}
