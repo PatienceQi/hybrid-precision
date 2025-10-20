@@ -1,0 +1,2037 @@
+{
+  "batch_info": {
+    "batch_id": 4,
+    "experiment_type": "baseline",
+    "batch_size": 200,
+    "start_time": "2025-10-14T18:41:49.524535",
+    "processed_samples": 200,
+    "error_count": 0,
+    "current_sample_idx": 199,
+    "estimated_completion_time": null,
+    "status": "completed",
+    "last_update": "2025-10-14T18:46:38.446264",
+    "elapsed_time": 288.92406702041626,
+    "completion_time": 288.9327621459961,
+    "completion_timestamp": "2025-10-14T18:46:38.454975"
+  },
+  "summary": {
+    "total_samples": 200,
+    "baseline_only": {
+      "avg_context_precision": 0.08180485095844377,
+      "avg_faithfulness": 0.34929193550012627,
+      "avg_answer_relevancy": 0.39133462436686983,
+      "avg_context_recall": 0.20276630660670406
+    }
+  },
+  "results": [
+    {
+      "context_precision": 0.09330196456938329,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.2066115702479339
+    },
+    {
+      "context_precision": 0.08663916217073946,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.24110671936758893
+    },
+    {
+      "context_precision": 0.05301130118648367,
+      "faithfulness": 0.7272727272727273,
+      "answer_relevancy": 0.875,
+      "context_recall": 0.16795366795366795
+    },
+    {
+      "context_precision": 0.09156924924474134,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.2236503856041131
+    },
+    {
+      "context_precision": 0.05727119595732735,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.13076923076923078
+    },
+    {
+      "context_precision": 0.07059733303155473,
+      "faithfulness": 0.5263157894736842,
+      "answer_relevancy": 0.875,
+      "context_recall": 0.1834625322997416
+    },
+    {
+      "context_precision": 0.07802511674298408,
+      "faithfulness": 0.3333333333333333,
+      "answer_relevancy": 0.045454545454545456,
+      "context_recall": 0.19254658385093168
+    },
+    {
+      "context_precision": 0.07178390441210657,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.16985138004246284
+    },
+    {
+      "context_precision": 0.05960777416234281,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.14698795180722893
+    },
+    {
+      "context_precision": 0.05969251231059107,
+      "faithfulness": 0.125,
+      "answer_relevancy": 0.5454545454545454,
+      "context_recall": 0.1822125813449024
+    },
+    {
+      "context_precision": 0.051780846011784364,
+      "faithfulness": 0.5714285714285714,
+      "answer_relevancy": 0.1,
+      "context_recall": 0.13012048192771083
+    },
+    {
+      "context_precision": 0.06570675049283392,
+      "faithfulness": 0.6206896551724138,
+      "answer_relevancy": 0.8846153846153846,
+      "context_recall": 0.1551094890510949
+    },
+    {
+      "context_precision": 0.06530824490110357,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.20844327176781002
+    },
+    {
+      "context_precision": 0.11699188646872363,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.29880478087649404
+    },
+    {
+      "context_precision": 0.11289672137758598,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.2513812154696133
+    },
+    {
+      "context_precision": 0.05086499224093338,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.16535433070866143
+    },
+    {
+      "context_precision": 0.04899940627946775,
+      "faithfulness": 0.3333333333333333,
+      "answer_relevancy": 0.05263157894736842,
+      "context_recall": 0.14114832535885166
+    },
+    {
+      "context_precision": 0.0914462666287484,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.19913419913419914
+    },
+    {
+      "context_precision": 0.09355549005669504,
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.4117647058823529,
+      "context_recall": 0.2755344418052256
+    },
+    {
+      "context_precision": 0.057877259484351996,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.20386266094420602
+    },
+    {
+      "context_precision": 0.047555433135931684,
+      "faithfulness": 0.35714285714285715,
+      "answer_relevancy": 0.8095238095238095,
+      "context_recall": 0.11509433962264151
+    },
+    {
+      "context_precision": 0.07564996309357828,
+      "faithfulness": 0.7058823529411765,
+      "answer_relevancy": 0.5,
+      "context_recall": 0.18651685393258427
+    },
+    {
+      "context_precision": 0.0681110232925752,
+      "faithfulness": 0.8421052631578947,
+      "answer_relevancy": 0.43478260869565216,
+      "context_recall": 0.14861995753715498
+    },
+    {
+      "context_precision": 0.0841915808419158,
+      "faithfulness": 0.7142857142857143,
+      "answer_relevancy": 0.9,
+      "context_recall": 0.20205479452054795
+    },
+    {
+      "context_precision": 0.09877645328992281,
+      "faithfulness": 0.7142857142857143,
+      "answer_relevancy": 0.9,
+      "context_recall": 0.25539568345323743
+    },
+    {
+      "context_precision": 0.08176184669862532,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.65,
+      "context_recall": 0.2334096109839817
+    },
+    {
+      "context_precision": 0.08705055420383888,
+      "faithfulness": 0.375,
+      "answer_relevancy": 0.45454545454545453,
+      "context_recall": 0.23391812865497075
+    },
+    {
+      "context_precision": 0.06814598540145987,
+      "faithfulness": 0.5714285714285714,
+      "answer_relevancy": 0.5,
+      "context_recall": 0.16533333333333333
+    },
+    {
+      "context_precision": 0.5478294275835575,
+      "faithfulness": 0.4,
+      "answer_relevancy": 0.6,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.06848889579127193,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.18882978723404256
+    },
+    {
+      "context_precision": 0.05440310807628915,
+      "faithfulness": 0.875,
+      "answer_relevancy": 0.75,
+      "context_recall": 0.17096774193548386
+    },
+    {
+      "context_precision": 0.05750840646272451,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.13707865168539327
+    },
+    {
+      "context_precision": 0.0564710632284661,
+      "faithfulness": 0.5555555555555556,
+      "answer_relevancy": 0.4666666666666667,
+      "context_recall": 0.16011644832605532
+    },
+    {
+      "context_precision": 0.0718604039873021,
+      "faithfulness": 0.5217391304347826,
+      "answer_relevancy": 0.8333333333333334,
+      "context_recall": 0.15789473684210525
+    },
+    {
+      "context_precision": 0.040644569422839144,
+      "faithfulness": 0.6,
+      "answer_relevancy": 0.9166666666666666,
+      "context_recall": 0.11293260473588343
+    },
+    {
+      "context_precision": 0.0441960506143743,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.8181818181818182,
+      "context_recall": 0.10501567398119123
+    },
+    {
+      "context_precision": 0.17002085505735143,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.37142857142857144
+    },
+    {
+      "context_precision": 0.06587626401136379,
+      "faithfulness": 0.7777777777777778,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.1926782273603083
+    },
+    {
+      "context_precision": 0.12857752025484737,
+      "faithfulness": 0.6111111111111112,
+      "answer_relevancy": 0.7857142857142857,
+      "context_recall": 0.3024054982817869
+    },
+    {
+      "context_precision": 0.04142989609833806,
+      "faithfulness": 0.9230769230769231,
+      "answer_relevancy": 0.7,
+      "context_recall": 0.11726384364820847
+    },
+    {
+      "context_precision": 0.08040513778079557,
+      "faithfulness": 0.5833333333333334,
+      "answer_relevancy": 0.6923076923076923,
+      "context_recall": 0.24289405684754523
+    },
+    {
+      "context_precision": 0.10509656998901881,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.23303834808259588
+    },
+    {
+      "context_precision": 0.06853150835761677,
+      "faithfulness": 0.72,
+      "answer_relevancy": 0.8571428571428571,
+      "context_recall": 0.18725617685305593
+    },
+    {
+      "context_precision": 0.08550573514077163,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.1,
+      "context_recall": 0.2204968944099379
+    },
+    {
+      "context_precision": 0.0915245263038463,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.21502590673575128
+    },
+    {
+      "context_precision": 0.05541936372400495,
+      "faithfulness": 0.23076923076923078,
+      "answer_relevancy": 0.7142857142857143,
+      "context_recall": 0.1471698113207547
+    },
+    {
+      "context_precision": 0.07563670877494294,
+      "faithfulness": 0.42857142857142855,
+      "answer_relevancy": 0.7692307692307693,
+      "context_recall": 0.17027863777089783
+    },
+    {
+      "context_precision": 0.06971148311036404,
+      "faithfulness": 0.7857142857142857,
+      "answer_relevancy": 0.8823529411764706,
+      "context_recall": 0.1861198738170347
+    },
+    {
+      "context_precision": 0.06602521566025216,
+      "faithfulness": 0.7692307692307693,
+      "answer_relevancy": 0.6,
+      "context_recall": 0.17992424242424243
+    },
+    {
+      "context_precision": 0.05241385512372788,
+      "faithfulness": 0.4166666666666667,
+      "answer_relevancy": 0.75,
+      "context_recall": 0.14168377823408623
+    },
+    {
+      "context_precision": 0.10714541290968943,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.8181818181818182,
+      "context_recall": 0.23284313725490197
+    },
+    {
+      "context_precision": 0.04295247042952471,
+      "faithfulness": 0.2857142857142857,
+      "answer_relevancy": 0.46153846153846156,
+      "context_recall": 0.1254125412541254
+    },
+    {
+      "context_precision": 0.05093223268202428,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.1392757660167131
+    },
+    {
+      "context_precision": 0.06161873772462112,
+      "faithfulness": 0.4444444444444444,
+      "answer_relevancy": 0.8333333333333334,
+      "context_recall": 0.1566265060240964
+    },
+    {
+      "context_precision": 0.0906479749137,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.034482758620689655,
+      "context_recall": 0.2490974729241877
+    },
+    {
+      "context_precision": 0.04437539952725705,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.07142857142857142,
+      "context_recall": 0.14663951120162932
+    },
+    {
+      "context_precision": 0.1255138853930699,
+      "faithfulness": 0.7777777777777778,
+      "answer_relevancy": 0.7058823529411765,
+      "context_recall": 0.3103448275862069
+    },
+    {
+      "context_precision": 0.06943141812448178,
+      "faithfulness": 0.6818181818181818,
+      "answer_relevancy": 0.9166666666666666,
+      "context_recall": 0.1527001862197393
+    },
+    {
+      "context_precision": 0.08140852581408527,
+      "faithfulness": 0.7454545454545455,
+      "answer_relevancy": 1.0,
+      "context_recall": 0.15753424657534246
+    },
+    {
+      "context_precision": 0.0684202650349999,
+      "faithfulness": 0.375,
+      "answer_relevancy": 0.2631578947368421,
+      "context_recall": 0.19817767653758542
+    },
+    {
+      "context_precision": 0.12286119566181035,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.6666666666666666,
+      "context_recall": 0.46558704453441296
+    },
+    {
+      "context_precision": 0.102442505240311,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.23421588594704684
+    },
+    {
+      "context_precision": 0.1018231510182315,
+      "faithfulness": 0.75,
+      "answer_relevancy": 0.95,
+      "context_recall": 0.2191780821917808
+    },
+    {
+      "context_precision": 0.051837818762653,
+      "faithfulness": 0.6363636363636364,
+      "answer_relevancy": 0.4666666666666667,
+      "context_recall": 0.15521628498727735
+    },
+    {
+      "context_precision": 0.07630903576309035,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.2100456621004566
+    },
+    {
+      "context_precision": 0.058783647326966906,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.5555555555555556,
+      "context_recall": 0.17786561264822134
+    },
+    {
+      "context_precision": 0.07678602218518306,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.36363636363636365,
+      "context_recall": 0.18635170603674542
+    },
+    {
+      "context_precision": 0.043600601771883886,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.13358778625954199
+    },
+    {
+      "context_precision": 0.08181071489454027,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.08333333333333333,
+      "context_recall": 0.1932059447983015
+    },
+    {
+      "context_precision": 0.051843065693430654,
+      "faithfulness": 0.375,
+      "answer_relevancy": 0.7777777777777778,
+      "context_recall": 0.1575
+    },
+    {
+      "context_precision": 0.14086038204690168,
+      "faithfulness": 0.7368421052631579,
+      "answer_relevancy": 0.7222222222222222,
+      "context_recall": 0.324468085106383
+    },
+    {
+      "context_precision": 0.08196904598380425,
+      "faithfulness": 0.6153846153846154,
+      "answer_relevancy": 0.5333333333333333,
+      "context_recall": 0.23851203501094093
+    },
+    {
+      "context_precision": 0.07030226464533033,
+      "faithfulness": 0.25,
+      "answer_relevancy": 0.125,
+      "context_recall": 0.1987179487179487
+    },
+    {
+      "context_precision": 0.06298330562983306,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.14603960396039603
+    },
+    {
+      "context_precision": 0.05102101125919797,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.07692307692307693,
+      "context_recall": 0.13562753036437247
+    },
+    {
+      "context_precision": 0.07545492955694451,
+      "faithfulness": 0.4,
+      "answer_relevancy": 0.6363636363636364,
+      "context_recall": 0.17964071856287425
+    },
+    {
+      "context_precision": 0.08964103589641036,
+      "faithfulness": 0.25,
+      "answer_relevancy": 0.2,
+      "context_recall": 0.2191780821917808
+    },
+    {
+      "context_precision": 0.1065483379719582,
+      "faithfulness": 0.2,
+      "answer_relevancy": 0.3333333333333333,
+      "context_recall": 0.23741007194244604
+    },
+    {
+      "context_precision": 0.05811945687151715,
+      "faithfulness": 0.375,
+      "answer_relevancy": 0.3684210526315789,
+      "context_recall": 0.1532258064516129
+    },
+    {
+      "context_precision": 0.06423032529709169,
+      "faithfulness": 0.4117647058823529,
+      "answer_relevancy": 0.8333333333333334,
+      "context_recall": 0.21380846325167038
+    },
+    {
+      "context_precision": 0.05029916295582182,
+      "faithfulness": 0.7142857142857143,
+      "answer_relevancy": 0.5333333333333333,
+      "context_recall": 0.1320754716981132
+    },
+    {
+      "context_precision": 0.049946351120581524,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.07692307692307693,
+      "context_recall": 0.13250517598343686
+    },
+    {
+      "context_precision": 0.07435070446443728,
+      "faithfulness": 0.5454545454545454,
+      "answer_relevancy": 0.4166666666666667,
+      "context_recall": 0.15348837209302327
+    },
+    {
+      "context_precision": 0.08866129093896893,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.193717277486911
+    },
+    {
+      "context_precision": 0.04491101451652588,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.1101123595505618
+    },
+    {
+      "context_precision": 0.04853394104175364,
+      "faithfulness": 0.6111111111111112,
+      "answer_relevancy": 0.9259259259259259,
+      "context_recall": 0.16228748068006182
+    },
+    {
+      "context_precision": 0.07390951726083432,
+      "faithfulness": 0.5789473684210527,
+      "answer_relevancy": 0.8947368421052632,
+      "context_recall": 0.17632850241545894
+    },
+    {
+      "context_precision": 0.06907763769077638,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.8666666666666667,
+      "context_recall": 0.1781818181818182
+    },
+    {
+      "context_precision": 0.0766083856730606,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.2069767441860465
+    },
+    {
+      "context_precision": 0.06913125651720543,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.07692307692307693,
+      "context_recall": 0.15625
+    },
+    {
+      "context_precision": 0.08659866230950126,
+      "faithfulness": 0.6071428571428571,
+      "answer_relevancy": 0.9130434782608695,
+      "context_recall": 0.21338912133891214
+    },
+    {
+      "context_precision": 0.0698152212750753,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.18006993006993008
+    },
+    {
+      "context_precision": 0.07165724530303863,
+      "faithfulness": 0.6923076923076923,
+      "answer_relevancy": 0.35714285714285715,
+      "context_recall": 0.18796992481203006
+    },
+    {
+      "context_precision": 0.06690191907961522,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.16556291390728478
+    },
+    {
+      "context_precision": 0.061431083169055364,
+      "faithfulness": 0.6875,
+      "answer_relevancy": 0.6875,
+      "context_recall": 0.17518248175182483
+    },
+    {
+      "context_precision": 0.08935313365215203,
+      "faithfulness": 0.3333333333333333,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.20689655172413793
+    },
+    {
+      "context_precision": 0.13261269292918038,
+      "faithfulness": 0.2,
+      "answer_relevancy": 0.041666666666666664,
+      "context_recall": 0.3256997455470738
+    },
+    {
+      "context_precision": 0.08407917523103565,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.1973392461197339
+    },
+    {
+      "context_precision": 0.0644209186829501,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.14769975786924938
+    },
+    {
+      "context_precision": 0.0797621850718154,
+      "faithfulness": 0.375,
+      "answer_relevancy": 0.7272727272727273,
+      "context_recall": 0.18548387096774194
+    },
+    {
+      "context_precision": 0.12605104992580823,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.18181818181818182,
+      "context_recall": 0.3162217659137577
+    },
+    {
+      "context_precision": 0.05809253785365265,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.14545454545454545
+    },
+    {
+      "context_precision": 0.07703117538713418,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.15384615384615385,
+      "context_recall": 0.18878504672897195
+    },
+    {
+      "context_precision": 0.09622500353842732,
+      "faithfulness": 0.6153846153846154,
+      "answer_relevancy": 0.5384615384615384,
+      "context_recall": 0.2188365650969529
+    },
+    {
+      "context_precision": 0.10220537775282301,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.23717948717948717
+    },
+    {
+      "context_precision": 0.06929440389294404,
+      "faithfulness": 0.7058823529411765,
+      "answer_relevancy": 0.8125,
+      "context_recall": 0.1980952380952381
+    },
+    {
+      "context_precision": 0.05912960341245472,
+      "faithfulness": 0.2857142857142857,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.15869017632241814
+    },
+    {
+      "context_precision": 0.08646827624929816,
+      "faithfulness": 0.25,
+      "answer_relevancy": 0.375,
+      "context_recall": 0.18386491557223264
+    },
+    {
+      "context_precision": 0.07124087591240877,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.45454545454545453,
+      "context_recall": 0.1811764705882353
+    },
+    {
+      "context_precision": 0.5086927670869277,
+      "faithfulness": 0.5833333333333334,
+      "answer_relevancy": 0.42857142857142855,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.08675648392607548,
+      "faithfulness": 0.75,
+      "answer_relevancy": 0.8,
+      "context_recall": 0.19680851063829788
+    },
+    {
+      "context_precision": 0.04641052378278656,
+      "faithfulness": 0.16666666666666666,
+      "answer_relevancy": 0.10344827586206896,
+      "context_recall": 0.14065934065934066
+    },
+    {
+      "context_precision": 0.08888183645403576,
+      "faithfulness": 0.6190476190476191,
+      "answer_relevancy": 0.9444444444444444,
+      "context_recall": 0.2
+    },
+    {
+      "context_precision": 0.06735739799880194,
+      "faithfulness": 0.625,
+      "answer_relevancy": 0.7777777777777778,
+      "context_recall": 0.1702127659574468
+    },
+    {
+      "context_precision": 0.07716371220020855,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.1913265306122449
+    },
+    {
+      "context_precision": 0.12423757624237575,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.058823529411764705,
+      "context_recall": 0.2945205479452055
+    },
+    {
+      "context_precision": 0.033265311461685376,
+      "faithfulness": 0.5833333333333334,
+      "answer_relevancy": 0.8333333333333334,
+      "context_recall": 0.1039426523297491
+    },
+    {
+      "context_precision": 0.10903284671532848,
+      "faithfulness": 0.25,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.253125
+    },
+    {
+      "context_precision": 0.09750309122093255,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.25136612021857924
+    },
+    {
+      "context_precision": 0.049222675135083896,
+      "faithfulness": 0.5555555555555556,
+      "answer_relevancy": 0.7692307692307693,
+      "context_recall": 0.13474025974025974
+    },
+    {
+      "context_precision": 0.09643325888231366,
+      "faithfulness": 0.8333333333333334,
+      "answer_relevancy": 0.8,
+      "context_recall": 0.24290220820189273
+    },
+    {
+      "context_precision": 0.08491985852961097,
+      "faithfulness": 0.5925925925925926,
+      "answer_relevancy": 0.9130434782608695,
+      "context_recall": 0.1958762886597938
+    },
+    {
+      "context_precision": 0.06062537851018392,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.8461538461538461,
+      "context_recall": 0.1615720524017467
+    },
+    {
+      "context_precision": 0.03989954702278969,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.07142857142857142,
+      "context_recall": 0.12540192926045016
+    },
+    {
+      "context_precision": 0.0470483868457504,
+      "faithfulness": 0.5238095238095238,
+      "answer_relevancy": 0.9444444444444444,
+      "context_recall": 0.14925373134328357
+    },
+    {
+      "context_precision": 0.06567476244702897,
+      "faithfulness": 0.5882352941176471,
+      "answer_relevancy": 0.6923076923076923,
+      "context_recall": 0.15601023017902813
+    },
+    {
+      "context_precision": 0.08444649606185628,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.08333333333333333,
+      "context_recall": 0.2134387351778656
+    },
+    {
+      "context_precision": 0.08576642335766424,
+      "faithfulness": 0.5454545454545454,
+      "answer_relevancy": 0.8947368421052632,
+      "context_recall": 0.2159090909090909
+    },
+    {
+      "context_precision": 0.08254512169361843,
+      "faithfulness": 0.7894736842105263,
+      "answer_relevancy": 0.5454545454545454,
+      "context_recall": 0.2057877813504823
+    },
+    {
+      "context_precision": 0.054135247632261574,
+      "faithfulness": 0.36363636363636365,
+      "answer_relevancy": 0.8181818181818182,
+      "context_recall": 0.1371900826446281
+    },
+    {
+      "context_precision": 0.054527977014165445,
+      "faithfulness": 0.6363636363636364,
+      "answer_relevancy": 0.42857142857142855,
+      "context_recall": 0.1548480463096961
+    },
+    {
+      "context_precision": 0.09115397984011124,
+      "faithfulness": 0.9583333333333334,
+      "answer_relevancy": 0.6153846153846154,
+      "context_recall": 0.23511904761904762
+    },
+    {
+      "context_precision": 0.07121185471814266,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.08333333333333333,
+      "context_recall": 0.18674698795180722
+    },
+    {
+      "context_precision": 0.06514045565140456,
+      "faithfulness": 0.5714285714285714,
+      "answer_relevancy": 0.4166666666666667,
+      "context_recall": 0.1691919191919192
+    },
+    {
+      "context_precision": 0.06090379726072336,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.15955056179775282
+    },
+    {
+      "context_precision": 0.08504755585047553,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.19393939393939394
+    },
+    {
+      "context_precision": 0.09921486842912348,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.04,
+      "context_recall": 0.23319327731092437
+    },
+    {
+      "context_precision": 0.08688485990110666,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.21658986175115208
+    },
+    {
+      "context_precision": 0.06922004428770606,
+      "faithfulness": 0.3333333333333333,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.16853932584269662
+    },
+    {
+      "context_precision": 0.06579480940794809,
+      "faithfulness": 0.4,
+      "answer_relevancy": 0.5,
+      "context_recall": 0.16468253968253968
+    },
+    {
+      "context_precision": 0.09390144996340474,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.21138211382113822
+    },
+    {
+      "context_precision": 0.06949513381995134,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.1712962962962963
+    },
+    {
+      "context_precision": 0.08216631364003474,
+      "faithfulness": 0.391304347826087,
+      "answer_relevancy": 0.8461538461538461,
+      "context_recall": 0.21085594989561587
+    },
+    {
+      "context_precision": 0.06773890749120866,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.16506717850287908
+    },
+    {
+      "context_precision": 0.10522866080738864,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.2530612244897959
+    },
+    {
+      "context_precision": 0.06302406949387707,
+      "faithfulness": 0.7058823529411765,
+      "answer_relevancy": 0.7272727272727273,
+      "context_recall": 0.1590909090909091
+    },
+    {
+      "context_precision": 0.07000663570006635,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.20095693779904306
+    },
+    {
+      "context_precision": 0.08442724275959501,
+      "faithfulness": 0.8181818181818182,
+      "answer_relevancy": 0.8,
+      "context_recall": 0.21169354838709678
+    },
+    {
+      "context_precision": 0.05003344287085235,
+      "faithfulness": 0.38095238095238093,
+      "answer_relevancy": 0.8235294117647058,
+      "context_recall": 0.1254980079681275
+    },
+    {
+      "context_precision": 0.08071260670543116,
+      "faithfulness": 0.7058823529411765,
+      "answer_relevancy": 0.8,
+      "context_recall": 0.21807909604519773
+    },
+    {
+      "context_precision": 0.08600341264574843,
+      "faithfulness": 0.6,
+      "answer_relevancy": 0.7,
+      "context_recall": 0.20454545454545456
+    },
+    {
+      "context_precision": 0.07220010322200104,
+      "faithfulness": 0.75,
+      "answer_relevancy": 0.8666666666666667,
+      "context_recall": 0.1994949494949495
+    },
+    {
+      "context_precision": 0.04808445709101407,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.128060263653484
+    },
+    {
+      "context_precision": 0.08860805461742384,
+      "faithfulness": 0.625,
+      "answer_relevancy": 0.7692307692307693,
+      "context_recall": 0.2064676616915423
+    },
+    {
+      "context_precision": 0.057973327915717375,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.147117296222664
+    },
+    {
+      "context_precision": 0.08515234395414875,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.2386634844868735
+    },
+    {
+      "context_precision": 0.06944126215181173,
+      "faithfulness": 0.6923076923076923,
+      "answer_relevancy": 0.9166666666666666,
+      "context_recall": 0.19955156950672645
+    },
+    {
+      "context_precision": 0.11824817518248176,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.3125,
+      "context_recall": 0.2846153846153846
+    },
+    {
+      "context_precision": 0.06692510145077854,
+      "faithfulness": 0.3333333333333333,
+      "answer_relevancy": 0.0625,
+      "context_recall": 0.152753108348135
+    },
+    {
+      "context_precision": 0.09115076146706318,
+      "faithfulness": 0.6428571428571429,
+      "answer_relevancy": 0.8461538461538461,
+      "context_recall": 0.25308641975308643
+    },
+    {
+      "context_precision": 0.07186517120645658,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.18699186991869918
+    },
+    {
+      "context_precision": 0.06687345122300704,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.15935334872979215
+    },
+    {
+      "context_precision": 0.08687397156238134,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.19653179190751446
+    },
+    {
+      "context_precision": 0.05807094567296039,
+      "faithfulness": 0.7142857142857143,
+      "answer_relevancy": 0.8,
+      "context_recall": 0.14760147601476015
+    },
+    {
+      "context_precision": 0.08018867924528303,
+      "faithfulness": 0.5714285714285714,
+      "answer_relevancy": 0.5384615384615384,
+      "context_recall": 0.23820754716981132
+    },
+    {
+      "context_precision": 0.07537351733576643,
+      "faithfulness": 0.6086956521739131,
+      "answer_relevancy": 0.8823529411764706,
+      "context_recall": 0.171875
+    },
+    {
+      "context_precision": 0.14481817584007364,
+      "faithfulness": 0.6111111111111112,
+      "answer_relevancy": 0.8888888888888888,
+      "context_recall": 0.3490990990990991
+    },
+    {
+      "context_precision": 0.08326798174177073,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.18732782369146006
+    },
+    {
+      "context_precision": 0.07883211678832118,
+      "faithfulness": 0.6,
+      "answer_relevancy": 0.875,
+      "context_recall": 0.19310344827586207
+    },
+    {
+      "context_precision": 0.06313284246538957,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.8461538461538461,
+      "context_recall": 0.17467248908296942
+    },
+    {
+      "context_precision": 0.09775245497033032,
+      "faithfulness": 0.375,
+      "answer_relevancy": 0.8461538461538461,
+      "context_recall": 0.20503597122302158
+    },
+    {
+      "context_precision": 0.07416058394160585,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.2,
+      "context_recall": 0.15384615384615385
+    },
+    {
+      "context_precision": 0.24171813587871985,
+      "faithfulness": 0.8235294117647058,
+      "answer_relevancy": 0.8461538461538461,
+      "context_recall": 0.49230769230769234
+    },
+    {
+      "context_precision": 0.09131793154657662,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.23224568138195778
+    },
+    {
+      "context_precision": 0.11092203663069276,
+      "faithfulness": 0.42857142857142855,
+      "answer_relevancy": 0.6153846153846154,
+      "context_recall": 0.2085889570552147
+    },
+    {
+      "context_precision": 0.08043067427224024,
+      "faithfulness": 0.8181818181818182,
+      "answer_relevancy": 0.7727272727272727,
+      "context_recall": 0.18527315914489312
+    },
+    {
+      "context_precision": 0.0746990236041331,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.16233766233766234
+    },
+    {
+      "context_precision": 0.15262434636731928,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.35207823960880197
+    },
+    {
+      "context_precision": 0.08745146761919552,
+      "faithfulness": 0.375,
+      "answer_relevancy": 0.42857142857142855,
+      "context_recall": 0.21914893617021278
+    },
+    {
+      "context_precision": 0.10797885728668513,
+      "faithfulness": 0.7619047619047619,
+      "answer_relevancy": 0.8823529411764706,
+      "context_recall": 0.27586206896551724
+    },
+    {
+      "context_precision": 0.05766423357664235,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.06666666666666667,
+      "context_recall": 0.17027027027027028
+    },
+    {
+      "context_precision": 0.09096738904920879,
+      "faithfulness": 0.3333333333333333,
+      "answer_relevancy": 0.06666666666666667,
+      "context_recall": 0.18863049095607234
+    },
+    {
+      "context_precision": 0.06271770904444329,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.18225419664268586
+    },
+    {
+      "context_precision": 0.04770474787383648,
+      "faithfulness": 0.7647058823529411,
+      "answer_relevancy": 0.75,
+      "context_recall": 0.1353211009174312
+    },
+    {
+      "context_precision": 0.09544826248272183,
+      "faithfulness": 0.7083333333333334,
+      "answer_relevancy": 0.9047619047619048,
+      "context_recall": 0.23588039867109634
+    },
+    {
+      "context_precision": 0.06841105865547097,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.1909307875894988
+    },
+    {
+      "context_precision": 0.08913903790343858,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.20722891566265061
+    },
+    {
+      "context_precision": 0.043194032245127134,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.1346153846153846
+    },
+    {
+      "context_precision": 0.059856354108178925,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0625,
+      "context_recall": 0.1842948717948718
+    },
+    {
+      "context_precision": 0.06422225994454818,
+      "faithfulness": 0.7333333333333333,
+      "answer_relevancy": 0.4166666666666667,
+      "context_recall": 0.17571059431524547
+    },
+    {
+      "context_precision": 0.0933613342576357,
+      "faithfulness": 0.8333333333333334,
+      "answer_relevancy": 0.75,
+      "context_recall": 0.2122905027932961
+    },
+    {
+      "context_precision": 0.06006734570095999,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.041666666666666664,
+      "context_recall": 0.17765042979942694
+    },
+    {
+      "context_precision": 0.052474280131042016,
+      "faithfulness": 0.35,
+      "answer_relevancy": 0.42857142857142855,
+      "context_recall": 0.13188976377952755
+    },
+    {
+      "context_precision": 0.055765878636016994,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.15298507462686567
+    },
+    {
+      "context_precision": 0.08499495578897394,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.1111111111111111,
+      "context_recall": 0.1910569105691057
+    },
+    {
+      "context_precision": 0.10097908478382932,
+      "faithfulness": 0.3333333333333333,
+      "answer_relevancy": 0.07142857142857142,
+      "context_recall": 0.23317307692307693
+    },
+    {
+      "context_precision": 0.08987856974671198,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.18663594470046083
+    },
+    {
+      "context_precision": 0.08355551670381864,
+      "faithfulness": 0.9090909090909091,
+      "answer_relevancy": 0.7894736842105263,
+      "context_recall": 0.2055888223552894
+    },
+    {
+      "context_precision": 0.09330196456938329,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.2231404958677686
+    },
+    {
+      "context_precision": 0.05405268168835291,
+      "faithfulness": 0.42857142857142855,
+      "answer_relevancy": 0.5,
+      "context_recall": 0.16
+    }
+  ],
+  "detailed_logs": [
+    {
+      "sample_id": 1,
+      "question": "In what New York county is a building in the shape of a duck, built by farmer Martin Maurer, located..."
+    },
+    {
+      "sample_id": 2,
+      "question": "William Lyon served at this air force base in Houston County, Georgia."
+    },
+    {
+      "sample_id": 3,
+      "question": "Which actor who appeared in Cooter also provides a voice in the animated series \"Wander Over Yonder?..."
+    },
+    {
+      "sample_id": 4,
+      "question": "Who was the host of the Australian television quiz show for which Taylor Auerbach was the youngest w..."
+    },
+    {
+      "sample_id": 5,
+      "question": "What award winning game designer and New York Times best selling author, designed \"En Garde!\"?"
+    },
+    {
+      "sample_id": 6,
+      "question": "Lou Ferrigno appeared in what 2009 American romantic comedy film that was directed by John Hamburg?"
+    },
+    {
+      "sample_id": 7,
+      "question": "Celebrity Cooking Showdown was hosted by a Canadian actor who was best known for his role as Jason S..."
+    },
+    {
+      "sample_id": 8,
+      "question": "How ling is the bridge to the main airport in Hong Kong?"
+    },
+    {
+      "sample_id": 9,
+      "question": "Stefano Nava was a backup for which former right-back who now is the assistant coach for the Ukraini..."
+    },
+    {
+      "sample_id": 10,
+      "question": "Which movie came out first Snow Dogs or Sacred Planet ?"
+    },
+    {
+      "sample_id": 11,
+      "question": "Which tennis player is older, Billy Martin or Pavel Složil?"
+    },
+    {
+      "sample_id": 12,
+      "question": "Which actress is married to John Travolta and starred in a 1994 film about a pregnant woman who is s..."
+    },
+    {
+      "sample_id": 13,
+      "question": "Air Vice Marshal Christopher James \"Chris\" Luckwas Commandant of a college that was established as t..."
+    },
+    {
+      "sample_id": 14,
+      "question": "What town did the 2013 Maine Black Bears football team play their home games in?"
+    },
+    {
+      "sample_id": 15,
+      "question": "Rocky Roe officiated in the World Series played by which American League team?"
+    },
+    {
+      "sample_id": 16,
+      "question": "What American composer born in 1895 was married to his frequent collaborator Verna Arvey?"
+    },
+    {
+      "sample_id": 17,
+      "question": "Who wrote the book Power in Earth detailing the connections between the Gambino crime family, the Va..."
+    },
+    {
+      "sample_id": 18,
+      "question": "What Miami Vice actor starred in Revenge of the Stepford Wives?"
+    },
+    {
+      "sample_id": 19,
+      "question": "Which BAFTA, BIFA and Golden Globe Award winning actress starred in the 2011 British drama film, Tyr..."
+    },
+    {
+      "sample_id": 20,
+      "question": "What is the height of the tower that resembles the Business Central Towers in Dubai?"
+    },
+    {
+      "sample_id": 21,
+      "question": "What was the second book written by the Daily Show host, after Naked Pictures of Famous People: Anot..."
+    },
+    {
+      "sample_id": 22,
+      "question": "One what date was the battle fought, that Simon Grundel-Helmfelt is most notable for?"
+    },
+    {
+      "sample_id": 23,
+      "question": "The professor of bioengineering Valerie Daggett worked with which American-British-Israeli biophysic..."
+    },
+    {
+      "sample_id": 24,
+      "question": "Grégory Levasseur produced the 2003 horror film directed by whom?"
+    },
+    {
+      "sample_id": 25,
+      "question": "This 2004 NCAA Division I-A team played its home games at a sports stadium that opened as a replacem..."
+    },
+    {
+      "sample_id": 26,
+      "question": "Which Lower Manhattan skyscraper, One Liberty Plaza or 1717 Broadway, is considered to be the talles..."
+    },
+    {
+      "sample_id": 27,
+      "question": "Which rock band was formed earlier, Hinder or The Fatima Mansions?"
+    },
+    {
+      "sample_id": 28,
+      "question": "Which Writer started his own film studio, Gary King or Ivan Tors?"
+    },
+    {
+      "sample_id": 29,
+      "question": "Which writer, Jorge Amado or Sarah Caudwell, remains the best known of modern Brazilian writers?"
+    },
+    {
+      "sample_id": 30,
+      "question": "Which company produced the 1968 crime drama film in which the wife of Buck Owens played a role?"
+    },
+    {
+      "sample_id": 31,
+      "question": "For what genre of writing is the author of Saintspeak best known ?"
+    },
+    {
+      "sample_id": 32,
+      "question": "Who established the advisory board that developed the first ironclad warship? "
+    },
+    {
+      "sample_id": 33,
+      "question": "Which was released first, The Plow That Broke the Plains or The Man Who Skied Down Everest?"
+    },
+    {
+      "sample_id": 34,
+      "question": "What peer-reviewed scientific journal published approximately monthly by Springer Science+Business M..."
+    },
+    {
+      "sample_id": 35,
+      "question": "Who was this British archaeologist and officer in the British Army contributed to the excavation of ..."
+    },
+    {
+      "sample_id": 36,
+      "question": "Where is the headquarters of the company who launched the Fridge advertising campaign?"
+    },
+    {
+      "sample_id": 37,
+      "question": "Which football team that was relegated to Tercera División in the 1962–63 Segunda División season wa..."
+    },
+    {
+      "sample_id": 38,
+      "question": "What is the birthdate of this American actress, television producer and director, singer/songwriter ..."
+    },
+    {
+      "sample_id": 39,
+      "question": "Which film nominated at the 39th Annual César Awards was directed by Alain Guiraudie?"
+    },
+    {
+      "sample_id": 40,
+      "question": "Which The 'Burbs actor was also a writer and a comedian?"
+    },
+    {
+      "sample_id": 41,
+      "question": "Who has been a member of more bands, Tom Petty or Bobby Gillespie?"
+    },
+    {
+      "sample_id": 42,
+      "question": "The New englands quarterback that has won 2 super bowls and is on what installment of of the Madden ..."
+    },
+    {
+      "sample_id": 43,
+      "question": "Who is the forward who was part of the Run TMC threesome currently the head coach for?"
+    },
+    {
+      "sample_id": 44,
+      "question": "What is name of the company founded by George Weston in 1882 whose subsidiary company Weston Bakerie..."
+    },
+    {
+      "sample_id": 45,
+      "question": "Who was the director of the 1988 Indian Hindi-language romantic drama film in which Imran Khan appea..."
+    },
+    {
+      "sample_id": 46,
+      "question": "Who has served in more film related job positions, Kay Pollak or Chester Erskine?"
+    },
+    {
+      "sample_id": 47,
+      "question": "Who makes the liqueur that Atholl Brose tastes like when made with cream?"
+    },
+    {
+      "sample_id": 48,
+      "question": "Which record label released the tenth studio album by the rock artist who performed \"The Lady in Red..."
+    },
+    {
+      "sample_id": 49,
+      "question": "Where did Beatrice Helen Beckett's husband serve as prime minister?"
+    },
+    {
+      "sample_id": 50,
+      "question": "What person wrote the song that inspired Marvel Comics' character Rocket Raccoon?"
+    },
+    {
+      "sample_id": 51,
+      "question": "James Bridges co-wrote the script for what movie starring John Travolta? "
+    },
+    {
+      "sample_id": 52,
+      "question": "Which movie came out first, \"The Book of Masters\" or \"A Tiger Walks\"?"
+    },
+    {
+      "sample_id": 53,
+      "question": "What position did Dante primarily play during the 2012-13 FC Bayern Munich season?"
+    },
+    {
+      "sample_id": 54,
+      "question": "South Tyrone Empowerment Programme was founded by which Irish civil rights leader?"
+    },
+    {
+      "sample_id": 55,
+      "question": "Evil Con Carne is an American animated series/spin-off of \"Grim & Evil\" and sister show of which Ame..."
+    },
+    {
+      "sample_id": 56,
+      "question": "Tiendesitas is a part of an interim business district with an area of more than what?"
+    },
+    {
+      "sample_id": 57,
+      "question": "Basil LeFlore was governor of the Choctaw nation after it moved to what U.S. temporary land area?"
+    },
+    {
+      "sample_id": 58,
+      "question": "Who was born in 1978 and starred in Star Wars: The Last Jedi? "
+    },
+    {
+      "sample_id": 59,
+      "question": "The Wars of the Roses was a 1963 production starring an actor who won a Tony for a part in what musi..."
+    },
+    {
+      "sample_id": 60,
+      "question": "Riann Stelle appeared in what Royal Shakespeare Company production that portrays the events surround..."
+    },
+    {
+      "sample_id": 61,
+      "question": "Which band has more studio albums, Boy Hits Car and The Invisible?"
+    },
+    {
+      "sample_id": 62,
+      "question": "What is the birth date of this American professional basketball player, who entered the league out o..."
+    },
+    {
+      "sample_id": 63,
+      "question": "Which vehicle that won the Auto Trader RAC British Touring Car Championship was marketed and produce..."
+    },
+    {
+      "sample_id": 64,
+      "question": "What person born in 1982 did Sören Opti lose to at the 2016 Summer Olympics?"
+    },
+    {
+      "sample_id": 65,
+      "question": "Has Matt Willis or Bayside had more top 20 singles?"
+    },
+    {
+      "sample_id": 66,
+      "question": "What English actor appeared in the horror film The Ward?"
+    },
+    {
+      "sample_id": 67,
+      "question": "Vanessa Kirby played Joanna Richard Curtis' movie released on what date?"
+    },
+    {
+      "sample_id": 68,
+      "question": "What is the name of the world's largest people group whose customs and etiquette are the traditioanl..."
+    },
+    {
+      "sample_id": 69,
+      "question": "Where was the creator of the duck who was impersonated in Little Quacker born?"
+    },
+    {
+      "sample_id": 70,
+      "question": "What multi-purpose arena located within the MGM Grand Las Vegas on the Las Vegas Strip was the 2012 ..."
+    },
+    {
+      "sample_id": 71,
+      "question": "What FIFA World Cup did the referee of the 28 May 2011 football match at Wembley Stadium participate..."
+    },
+    {
+      "sample_id": 72,
+      "question": "For what range of years did the Disney era that Tarzan was released during last?"
+    },
+    {
+      "sample_id": 73,
+      "question": "City Centre and Melbourne City Centre is near what market?"
+    },
+    {
+      "sample_id": 74,
+      "question": "Tim Lake is a news anchor currently at the ABC affiliate licensed to what city?"
+    },
+    {
+      "sample_id": 75,
+      "question": "What animation studio founded in 2002 produced the television series El Chavo Animado?"
+    },
+    {
+      "sample_id": 76,
+      "question": "Which takes place farther east, The Mosuo Sisters or The Silent Historian?"
+    },
+    {
+      "sample_id": 77,
+      "question": "What Garry Marshall movie contains a scene with flying escargot?"
+    },
+    {
+      "sample_id": 78,
+      "question": "Which American film, Dragonslayer or Swiss Family Robinson, was shot outside London?"
+    },
+    {
+      "sample_id": 79,
+      "question": "Which of the two European Space Agency astronauts, Jean-François Clervoy and Thomas Reiter, has part..."
+    },
+    {
+      "sample_id": 80,
+      "question": "Which entirely Canadian-born team scored 4 points in the 1975 Stanley Cup?"
+    },
+    {
+      "sample_id": 81,
+      "question": "Which film director also appeared on screen as an actor, Dziga Vertov or Frederic Zelnik?"
+    },
+    {
+      "sample_id": 82,
+      "question": "The Doll Squad features what actress that had a birthday on August 26?"
+    },
+    {
+      "sample_id": 83,
+      "question": "What Irish actress starred in War Games: At the End of the Day?"
+    },
+    {
+      "sample_id": 84,
+      "question": "What producer who died in 1978 developed American television detective show Mannix?"
+    },
+    {
+      "sample_id": 85,
+      "question": "An American statistician and writer who analyzes baseball cited Leip's Atlas as what?"
+    },
+    {
+      "sample_id": 86,
+      "question": "Who co-created the American live-action/animated TV series, co-produced by The Collective and the st..."
+    },
+    {
+      "sample_id": 87,
+      "question": "Lucky Yates is known for his voice-over roles as Dr. Krieger on a spy sitcom created by who ?"
+    },
+    {
+      "sample_id": 88,
+      "question": "Johannes Megapolensis served for several years at the first permanent Dutch settlement in what town?"
+    },
+    {
+      "sample_id": 89,
+      "question": "Who wrote a letter to Orville Browning where he recognized the importance of one of the four slave s..."
+    },
+    {
+      "sample_id": 90,
+      "question": "Which host of American Top 40 referred to Jon Peter Lewis as JPL?"
+    },
+    {
+      "sample_id": 91,
+      "question": "What is the English title for a song written and recorded by an Argentine duo with more than 25 mill..."
+    },
+    {
+      "sample_id": 92,
+      "question": "Who is known for her research on Haitian voodoo and was a leading prose writer of the Harlem Renaiss..."
+    },
+    {
+      "sample_id": 93,
+      "question": "Which of the stars in  \"Iron Jawed Angels\" was born on 4 January 1965?"
+    },
+    {
+      "sample_id": 94,
+      "question": "Georges Favre, the French composer, was a student of which composer of \"The Sorcerer's Apprentice\"?"
+    },
+    {
+      "sample_id": 95,
+      "question": "Which university graduates more number of students in a year, California Institute of Technology or ..."
+    },
+    {
+      "sample_id": 96,
+      "question": "The second largest convention center on its opening in 1990 is owned by what company?"
+    },
+    {
+      "sample_id": 97,
+      "question": "Which football team who plays home games at Gaylord Family Oklahoma Memorial Stadium was defeated by..."
+    },
+    {
+      "sample_id": 98,
+      "question": "Who is an Indian film actor and producer that co-hosted the 57th Filmfare Awards ceremony in 2012?"
+    },
+    {
+      "sample_id": 99,
+      "question": "When is the American professional poker player who won the 1989 World Series of Poker born "
+    },
+    {
+      "sample_id": 100,
+      "question": "Who was a non-fiction writer, Isaac Bashevis Singer or Alvin Toffler"
+    },
+    {
+      "sample_id": 101,
+      "question": "In Old Trafford, Manchester, the Ball of the Century included a cricketer by what name who is also k..."
+    },
+    {
+      "sample_id": 102,
+      "question": "The 2015 American gothic romance film, Crimson Peak was co-produced by which director who also direc..."
+    },
+    {
+      "sample_id": 103,
+      "question": "What is the name of the Spanish tenor who rereleased De Mi Alma Latina?"
+    },
+    {
+      "sample_id": 104,
+      "question": "What team did Luis Lopez play for that is based in Montreal, Quebec? "
+    },
+    {
+      "sample_id": 105,
+      "question": "Maureen Starky married Ringo Starr in 1965 and would later have an affair with which Beatle band mem..."
+    },
+    {
+      "sample_id": 106,
+      "question": "The ballad with Sheryl Crowe that the album Cocky is known for was rerecorded with which country sin..."
+    },
+    {
+      "sample_id": 107,
+      "question": "Which movie starring Verna Bloom is produced by Ivan Reitman and Matty Simmons and is an American Co..."
+    },
+    {
+      "sample_id": 108,
+      "question": "Which Walt Disney film premiered first, Secretariat or The One and Only, Genuine, Original Family Ba..."
+    },
+    {
+      "sample_id": 109,
+      "question": "Which breed was developed in the 1990s, Chippiparai or King Shepherd?"
+    },
+    {
+      "sample_id": 110,
+      "question": "Which professional football club known as \"the Red Devils\" did Ernie Hine play for?"
+    },
+    {
+      "sample_id": 111,
+      "question": "Where is the company that bought the Claud Butler brand based?"
+    },
+    {
+      "sample_id": 112,
+      "question": "This \"New York Herald Tribune\" and the \"Chicago Daily News\" figure had a Pulitzer Prize in the 1960s..."
+    },
+    {
+      "sample_id": 113,
+      "question": "My big iron skillet was recorded and released by this american artist known as the \"Queen of Rockabi..."
+    },
+    {
+      "sample_id": 114,
+      "question": "Where is the headquarters of the designer of Apple Bandai Pippin?"
+    },
+    {
+      "sample_id": 115,
+      "question": "The 2015 San Diego Padres season had a general manager of which former Texas Rangers assistant GM?"
+    },
+    {
+      "sample_id": 116,
+      "question": "What is the is the fourth studio album by Mexican pop-singer married to Governor of Chiapas, Manuel ..."
+    },
+    {
+      "sample_id": 117,
+      "question": "Vanessa Mesquita made the cover of a magazine established by who ?"
+    },
+    {
+      "sample_id": 118,
+      "question": "This \"Gearing\"-class destroyer was named after the first naval recipient of the Medal of Honor in wh..."
+    },
+    {
+      "sample_id": 119,
+      "question": "What was the name of the keyboardist and songwriter who formed the electronic music group whose fift..."
+    },
+    {
+      "sample_id": 120,
+      "question": "Martin Manley served as the Executive Director to a school name after whom?"
+    },
+    {
+      "sample_id": 121,
+      "question": "Who directed the 2013 comedy that the song \"Problem\" was in?"
+    },
+    {
+      "sample_id": 122,
+      "question": "Fireball is a song by an American rapper whose first recorded mainstream performance was on a solo t..."
+    },
+    {
+      "sample_id": 123,
+      "question": "The Orford Express operates seasonally on a former line headquartered in what city?"
+    },
+    {
+      "sample_id": 124,
+      "question": "Which  equestrian weekly magazine of the United Kingdom is Mark Phillips a columnist in "
+    },
+    {
+      "sample_id": 125,
+      "question": "Howard Knob rises nearly 1000 ft above the town of Boone and a campus also referred to as?"
+    },
+    {
+      "sample_id": 126,
+      "question": "Which award did Jorge Calvo Dorado receive for the psychological thriller film, Mindscape?"
+    },
+    {
+      "sample_id": 127,
+      "question": "Who was born first out of Rupert Julian and Robert Z. Leonard?"
+    },
+    {
+      "sample_id": 128,
+      "question": "Which heavy metal band released As Ugly as They Wanna Be which is a parody of 2 Live Crew's 1989 alb..."
+    },
+    {
+      "sample_id": 129,
+      "question": "What is the NEASC accredited high school that Mike DeVito attended?"
+    },
+    {
+      "sample_id": 130,
+      "question": "A Place to Live and The Panama Deception are both what?"
+    },
+    {
+      "sample_id": 131,
+      "question": "Gloria Gaynor's cover of \"I Am What I Am\" is from a musical that it's title translates to what in En..."
+    },
+    {
+      "sample_id": 132,
+      "question": "Non-Stop starred the English actress best known for what role in Downton Abbey?"
+    },
+    {
+      "sample_id": 133,
+      "question": "Harrods Creek, Louisville merged with what most populous county in Kentucky in 2003?"
+    },
+    {
+      "sample_id": 134,
+      "question": "Which catherdral is located in London, Norwich Cathedral or St Paul's Cathedral?"
+    },
+    {
+      "sample_id": 135,
+      "question": "Pat Gorman was in the 1980 American historical drama film about whom?"
+    },
+    {
+      "sample_id": 136,
+      "question": "What is the name of the series starring Park Bo-gum that has music created by Second Moon?"
+    },
+    {
+      "sample_id": 137,
+      "question": "What is the name of the songwriter who created \"Time Takes Time\" and occasionally sang lead vocals o..."
+    },
+    {
+      "sample_id": 138,
+      "question": "An official ambassador of the United Dance Organisation, this actor made his film debut in Street Da..."
+    },
+    {
+      "sample_id": 139,
+      "question": "What term was coined during World War II for knives in the Victorinox collection?"
+    },
+    {
+      "sample_id": 140,
+      "question": "Which decision occurred first, \"Everson v. Board of Education\" or \"Rasul v. Bush\"?"
+    },
+    {
+      "sample_id": 141,
+      "question": "Who commissioned the 1919 ballet written by the creator of the role of the Can-Can Dancer in \"La Bou..."
+    },
+    {
+      "sample_id": 142,
+      "question": "What 2002 Walt Disney film starring Dennis Quaid features the single \"Slow Turning\"?"
+    },
+    {
+      "sample_id": 143,
+      "question": "Who tracked down and arrested the longest-serving commandant of Auschwitz concentration and extermin..."
+    },
+    {
+      "sample_id": 144,
+      "question": "Bogjurgan Hill is part of a region that includes which 14th-century towerhouse?"
+    },
+    {
+      "sample_id": 145,
+      "question": "Which country held the Olympics games where Robert Seguso won a gold medal with Ken Flach in the men..."
+    },
+    {
+      "sample_id": 146,
+      "question": "Barbara Linares is a model for what parent company of Aerie?"
+    },
+    {
+      "sample_id": 147,
+      "question": "Which Israeli folk song is featured on Scottish bagpipes for the soundtrack album from Monty Python'..."
+    },
+    {
+      "sample_id": 148,
+      "question": "Who directed the film that stars Jake Pratt as \"Alfie\"?"
+    },
+    {
+      "sample_id": 149,
+      "question": "Masakatsu Ueda is a MMA fighter who is a blue belt under the martial artist who teaches which two di..."
+    },
+    {
+      "sample_id": 150,
+      "question": "Was the date that the album on which \"There's No Home for You Here\" appeared was released?"
+    },
+    {
+      "sample_id": 151,
+      "question": "The Swan of Catania was taught by what Italian composer?"
+    },
+    {
+      "sample_id": 152,
+      "question": "Who was the first illustrator for a comic book character later assigned to Carlo Pagulayan?"
+    },
+    {
+      "sample_id": 153,
+      "question": "Which star from the European version of Jersey Shore was on Ex on the Beach?"
+    },
+    {
+      "sample_id": 154,
+      "question": "What institute in Washington D.C. is Bryan Douglas Caplan an adjunct scholar for?"
+    },
+    {
+      "sample_id": 155,
+      "question": "Oleanna is a 1994 drama film starring an American actor who has appeared in summer what?"
+    },
+    {
+      "sample_id": 156,
+      "question": "The company where Pablo Hidalgo currently works has been purchased by The Walt Disney Company for wh..."
+    },
+    {
+      "sample_id": 157,
+      "question": "Ricardo Delgado has worked on the 2004 superhero film directed by whom?"
+    },
+    {
+      "sample_id": 158,
+      "question": "Where did the holiday that falls on the day of the 2013 Sydney to Hobart Yacht Race originate?"
+    },
+    {
+      "sample_id": 159,
+      "question": "Which monarch was king of England during the era that the novel Tod of Fens takes place during?"
+    },
+    {
+      "sample_id": 160,
+      "question": "Mia Hansen-Løve won the Silver Bear for Best Director for a film staring whom?"
+    },
+    {
+      "sample_id": 161,
+      "question": "What English actor born in 1972 was part of the ensemble cast of Contagion? "
+    },
+    {
+      "sample_id": 162,
+      "question": "The comedian who starred in \"The Librarian: Return to King Solomon's Mines\" made his debut during wh..."
+    },
+    {
+      "sample_id": 163,
+      "question": "Alexis Sánchez specialized in the event that is included in the athletics program at what premier ev..."
+    },
+    {
+      "sample_id": 164,
+      "question": "When was the person who wrote The Sovereignty of Good born?"
+    },
+    {
+      "sample_id": 165,
+      "question": "Which Infantry Division from world war 2, had a twenty year old lieutenant?"
+    },
+    {
+      "sample_id": 166,
+      "question": "Which state is the university, in which Paul Hostetter was the director of the John J. Cali School o..."
+    },
+    {
+      "sample_id": 167,
+      "question": "\"Begin Again\" was co-produced by Taylor Swift and another record producer working in which field of ..."
+    },
+    {
+      "sample_id": 168,
+      "question": "Who is the director of 1999 American heist film in which J. Paul Boehmer appeared and stars Pierce B..."
+    },
+    {
+      "sample_id": 169,
+      "question": "Gerry Bertier was known as being on the team that was portrayed in which 2000 sports film?"
+    },
+    {
+      "sample_id": 170,
+      "question": "What university did the members of the duo who recorded A Moment Apart attend?"
+    },
+    {
+      "sample_id": 171,
+      "question": "Which DAF brand truck is produced by Leyland Trucks at their Farington plant?"
+    },
+    {
+      "sample_id": 172,
+      "question": "Which gulf touches both Anna Maria Island and Anna Maria the city?"
+    },
+    {
+      "sample_id": 173,
+      "question": "Mark Huffam was a producer on a spy comedy film parodying what secret agent?"
+    },
+    {
+      "sample_id": 174,
+      "question": "The 2012 St. Louis Rams season was the second and final season for the quarterback who now captains ..."
+    },
+    {
+      "sample_id": 175,
+      "question": " What home stadium that Caio Henrique Oliveira Silva plays as an attacking midfielder?"
+    },
+    {
+      "sample_id": 176,
+      "question": "which title that has been created twice, once in the Peerage of England and once in the Peerage of t..."
+    },
+    {
+      "sample_id": 177,
+      "question": "Where was Proof born and where did he end up dying?"
+    },
+    {
+      "sample_id": 178,
+      "question": "Style was the single that Taylor Swift released after which other song from her album 1989?"
+    },
+    {
+      "sample_id": 179,
+      "question": "Which court case, Gonzales v. Carhart or Lawrence v. Texas, struck down the sodomy law?"
+    },
+    {
+      "sample_id": 180,
+      "question": "The Port Noarlunga Reef Aquatic Reserve and the Onkaparinga River are both located in which state of..."
+    },
+    {
+      "sample_id": 181,
+      "question": "The 2000 French crime thriller film starred what writer and director besides Coralie Trinh Thi?"
+    },
+    {
+      "sample_id": 182,
+      "question": "Who is the director of the movie \"The Magic Christian\" in which Peter Sellers was acted?"
+    },
+    {
+      "sample_id": 183,
+      "question": "The actress that played Rose Buck in \"Upstairs, Downstairs\" also played what chacter in the tv serie..."
+    },
+    {
+      "sample_id": 184,
+      "question": " What is the area of the place which is famous for the home of Frank A. Vanderlip and his family?"
+    },
+    {
+      "sample_id": 185,
+      "question": "In what fictional comic universe is the American web television series Iron Fist, with Alex Wise pla..."
+    },
+    {
+      "sample_id": 186,
+      "question": "Who featured in a Tamil romance film in 2001 that was born on March 28 1954?"
+    },
+    {
+      "sample_id": 187,
+      "question": "What is the name of the musical written by this English comedian, author, playwright, actor, directo..."
+    },
+    {
+      "sample_id": 188,
+      "question": "What is the title of the book written by the host of \"Family Feud\"?"
+    },
+    {
+      "sample_id": 189,
+      "question": "New England Patriots, who lost to the Baltimore Ravens in 2009 playoffs also lost to what team in 20..."
+    },
+    {
+      "sample_id": 190,
+      "question": "The actress that rose to prominence after appearing in Robin Thicke's \"Blurred Lines\" video co-stars..."
+    },
+    {
+      "sample_id": 191,
+      "question": "Which director/actor was in a British comedy film directed  by Duncan Wood?"
+    },
+    {
+      "sample_id": 192,
+      "question": "What is the name of this South Korean musician, singer-songwriter, record producer and actor in the ..."
+    },
+    {
+      "sample_id": 193,
+      "question": "What is the birthdate of this Indian nationalist whose defiant patriotism made him a hero in India a..."
+    },
+    {
+      "sample_id": 194,
+      "question": "What Scottish novelist created a character whose name is the title of a film starred in by Ozzie Dev..."
+    },
+    {
+      "sample_id": 195,
+      "question": "What band consists of rapper/vocalist MC Ride (Stefan Burnett) who's second album is entitled No Lov..."
+    },
+    {
+      "sample_id": 196,
+      "question": "When was the second promotional single from the album that contained \"State of Grace\" released?"
+    },
+    {
+      "sample_id": 197,
+      "question": "The Special Division was upheld in a case that decided which act was Constitutional?"
+    },
+    {
+      "sample_id": 198,
+      "question": "What book was the first foreign language film to be nominated for an Academy Award for Best Picture ..."
+    },
+    {
+      "sample_id": 199,
+      "question": "What is name of the bureau in the United States Department of Treasury that sets revenue rulings?"
+    },
+    {
+      "sample_id": 200,
+      "question": "Which nature reserve was established in 1969, Monfragüe or Doñana National Park?"
+    }
+  ],
+  "experiment_config": {
+    "batch_id": 4,
+    "experiment_type": "baseline",
+    "batch_size": 200,
+    "processed_samples": 200,
+    "error_count": 0
+  }
+}

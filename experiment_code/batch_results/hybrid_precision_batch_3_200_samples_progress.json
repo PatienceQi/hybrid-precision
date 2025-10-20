@@ -1,0 +1,18 @@
+{
+  "batch_stats": {
+    "batch_id": 3,
+    "experiment_type": "hybrid_precision",
+    "batch_size": 200,
+    "start_time": "2025-10-14T21:14:23.556205",
+    "processed_samples": 200,
+    "error_count": 0,
+    "current_sample_idx": 199,
+    "estimated_completion_time": null,
+    "status": "completed",
+    "last_update": "2025-10-14T21:15:22.449029",
+    "elapsed_time": 58.89289999008179,
+    "completion_time": 58.88304090499878,
+    "completion_timestamp": "2025-10-14T21:15:22.439179"
+  },
+  "status": "completed"
+}
