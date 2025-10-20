@@ -207,7 +207,7 @@ def run_experiment_3_simple_hybrid_hybrid_precision(batch_id: Optional[int] = No
         # 加载嵌入
         embeddings = load_or_generate_embeddings(str(knowledge_base_dir))
 
-        dataset_file = script_dir / 'dataset' / 'hotpot_sample_200.json'
+        dataset_file = script_dir.parent / 'dataset' / 'hotpot_sample_200.json'
         with open(dataset_file, 'r', encoding='utf-8') as f:
             full_dataset = json.load(f)
 
