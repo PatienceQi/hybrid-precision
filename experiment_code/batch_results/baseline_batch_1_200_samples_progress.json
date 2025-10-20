@@ -1,0 +1,18 @@
+{
+  "batch_stats": {
+    "batch_id": 1,
+    "experiment_type": "baseline",
+    "batch_size": 200,
+    "start_time": "2025-10-20T14:44:47.167097",
+    "processed_samples": 30,
+    "error_count": 0,
+    "current_sample_idx": 29,
+    "estimated_completion_time": null,
+    "status": "running",
+    "last_update": "2025-10-20T14:45:28.336038",
+    "elapsed_time": 41.16946601867676,
+    "completion_time": null,
+    "completion_timestamp": null
+  },
+  "status": "running"
+}

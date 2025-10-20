@@ -19,6 +19,7 @@ from experiment import ExperimentRunner, BatchExperimentManager
 from evaluators import create_evaluator
 from retrievers import create_retriever
 from generators import ResponseGenerator, LLMClient
+from knowledge_base import SimpleKnowledgeBuilder, run_simple_setup
 
 def test_basic_functionality():
     """测试基础功能"""
@@ -157,11 +158,65 @@ def run_full_integration_test():
 
     return passed == total
 
+def check_and_build_knowledge_base():
+    """检查并构建知识库"""
+    print("🔍 检查知识库状态...")
+
+    builder = SimpleKnowledgeBuilder()
+    kb_info = builder.get_knowledge_info()
+
+    if kb_info['status'] == 'ready':
+        print(f"✅ 知识库已就绪，文档数量: {kb_info['total_documents']}")
+        return True
+
+    print("⚠️  知识库为空，需要构建")
+    print("\n💡 您可以选择：")
+    print("   1. 运行知识库设置向导")
+    print("   2. 使用默认的HotPotQA数据快速构建")
+    print("   3. 跳过知识库构建（使用提供的上下文）")
+
+    while True:
+        choice = input("\n请选择（1-3）[默认:2]：").strip()
+        if not choice:
+            choice = "2"
+
+        if choice == "1":
+            return run_simple_setup()
+        elif choice == "2":
+            print("\n⚡ 快速构建知识库...")
+            # 查找默认数据文件
+            possible_paths = [
+                "dataset/hotpot_medium_batch_1.json",
+                "../dataset/hotpot_medium_batch_1.json",
+                "../../dataset/hotpot_medium_batch_1.json"
+            ]
+
+            dataset_file = None
+            for path in possible_paths:
+                if Path(path).exists():
+                    dataset_file = path
+                    break
+
+            if dataset_file:
+                return builder.build_from_hotpotqa(dataset_file)
+            else:
+                print("❌ 未找到默认数据文件")
+                return False
+        elif choice == "3":
+            print("⏭️  跳过知识库构建")
+            return True
+        else:
+            print("❌ 请输入有效的选项（1-3）")
+
 def run_batch_experiment_cli(batch_id: int, experiment_type: str):
     """运行批次实验（命令行接口）"""
     print(f"🚀 运行批次实验 - 批次{batch_id} ({experiment_type})")
 
     try:
+        # 检查并构建知识库
+        if not check_and_build_knowledge_base():
+            print("⚠️  知识库构建失败，但仍可继续实验（使用提供的上下文）")
+
         # 创建批次管理器
         manager = BatchExperimentManager(batch_id, experiment_type)
 
@@ -185,12 +240,32 @@ def run_batch_experiment_cli(batch_id: int, experiment_type: str):
 
         for i, sample in enumerate(samples[manager.current_sample_idx:], manager.current_sample_idx):
             try:
+                # 适配HotPotQA数据格式
                 question = sample.get('question', '')
-                contexts = sample.get('contexts', [])
-                reference = sample.get('reference', '')
+
+                # 使用answer作为reference
+                reference = sample.get('answer', '')
+
+                # 处理HotPotQA的context格式 - 转换为字符串列表
+                hotpot_context = sample.get('context', [])
+                contexts = []
+
+                if isinstance(hotpot_context, list):
+                    for ctx_item in hotpot_context:
+                        if isinstance(ctx_item, list) and len(ctx_item) >= 2:
+                            # ctx_item格式: [标题, 文本列表]
+                            title, text_list = ctx_item[0], ctx_item[1]
+                            if isinstance(text_list, list):
+                                # 将文本段落合并
+                                full_text = ' '.join(text_list)
+                                contexts.append(full_text)
+                            else:
+                                contexts.append(str(text_list))
+                        else:
+                            contexts.append(str(ctx_item))
 
                 if not all([question, contexts, reference]):
-                    manager.add_error_result(i, "缺少必要数据字段")
+                    manager.add_error_result(i, f"缺少必要数据字段 - question: {bool(question)}, contexts: {bool(contexts)}, reference: {bool(reference)}")
                     continue
 
                 # 运行实验

@@ -13,7 +13,7 @@ import re
 from .base_retriever import BaseRetriever, RetrievalResult
 from .embedding_retriever import EmbeddingRetriever
 from core.config import get_config
-from core.utils import normalize_text, extract_keywords, calculate_similarity
+from core.utils import normalize_text, extract_keywords, calculate_similarity, load_json_file
 
 logger = logging.getLogger(__name__)
 
@@ -51,7 +51,46 @@ class HybridRetriever(BaseRetriever):
         if build_keyword_index:
             self._build_keyword_index()
 
-        logger.info(f"混合知识库设置完成 - 文档数量: {len(self.documents)}")
+    def load_knowledge_base_from_file(self, knowledge_file: str = "knowledge_data/knowledge_base.json") -> bool:
+        """
+        从文件加载知识库
+
+        Args:
+            knowledge_file: 知识库文件路径
+
+        Returns:
+            是否成功加载
+        """
+        try:
+            logger.info(f"正在加载知识库: {knowledge_file}")
+
+            # 加载知识库数据
+            kb_data = load_json_file(knowledge_file)
+            if not kb_data:
+                logger.warning("知识库文件不存在或为空")
+                return False
+
+            # 提取文档
+            documents = kb_data.get('documents', [])
+            if not documents:
+                logger.warning("知识库中没有文档")
+                return False
+
+            logger.info(f"加载了 {len(documents)} 个文档")
+
+            # 设置知识库
+            self.setup_knowledge_base(documents)
+
+            logger.info("✅ 知识库加载成功")
+            return True
+
+        except Exception as e:
+            logger.error(f"加载知识库失败: {e}")
+            return False
+
+    def has_knowledge_base(self) -> bool:
+        """检查是否有知识库"""
+        return len(self.documents) > 0
 
     def _build_keyword_index(self) -> None:
         """构建关键词索引"""

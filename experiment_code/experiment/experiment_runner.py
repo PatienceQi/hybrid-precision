@@ -17,6 +17,7 @@ from evaluators import create_evaluator, BaseEvaluator
 from retrievers import create_retriever, BaseRetriever
 from generators import ResponseGenerator
 from .batch_manager import BatchExperimentManager
+from knowledge_base import SimpleKnowledgeBuilder
 
 logger = logging.getLogger(__name__)
 
@@ -55,6 +56,9 @@ class ExperimentRunner:
 
             # 创建检索器
             self.retriever = create_retriever("hybrid")
+
+            # 尝试加载知识库
+            self._load_knowledge_base()
 
             # 创建响应生成器
             fusion_method = self._get_fusion_method()
@@ -239,12 +243,34 @@ class ExperimentRunner:
 
             for i, sample in enumerate(samples[manager.current_sample_idx:], manager.current_sample_idx):
                 try:
+                    # 适配HotPotQA数据格式
                     question = sample.get('question', '')
-                    contexts = sample.get('contexts', [])
-                    reference = sample.get('reference', '')
 
-                    if not all([question, contexts, reference]):
-                        manager.add_error_result(i, "缺少必要数据字段")
+                    # 使用answer作为reference
+                    reference = sample.get('answer', '')
+
+                    # 处理HotPotQA的context格式 - 转换为字符串列表
+                    hotpot_context = sample.get('context', [])
+                    contexts = []
+
+                    if isinstance(hotpot_context, list):
+                        for ctx_item in hotpot_context:
+                            if isinstance(ctx_item, list) and len(ctx_item) >= 2:
+                                # ctx_item格式: [标题, 文本列表]
+                                title, text_list = ctx_item[0], ctx_item[1]
+                                if isinstance(text_list, list):
+                                    # 将文本段落合并
+                                    full_text = ' '.join(text_list)
+                                    contexts.append(full_text)
+                                else:
+                                    contexts.append(str(text_list))
+                            else:
+                                contexts.append(str(ctx_item))
+
+                    # 验证数据完整性
+                    if not question or not contexts or not reference:
+                        self.logger.error(f"样本 {i} 验证失败: question={bool(question)}, contexts={bool(contexts)}, reference={bool(reference)}")
+                        manager.add_error_result(i, f"缺少必要数据字段 - question: {bool(question)}, contexts: {bool(contexts)}, reference: {bool(reference)}")
                         continue
 
                     # 运行实验
@@ -261,7 +287,10 @@ class ExperimentRunner:
                         'contexts_count': len(contexts),
                         'metrics': metrics,
                         'error': result.get('error'),
-                        'timestamp': result.get('timestamp')
+                        'timestamp': result.get('timestamp'),
+                        'original_answer': reference,  # 保存原始答案
+                        'supporting_facts': sample.get('supporting_facts', []),  # 保存支持事实
+                        'question_type': sample.get('type', 'unknown')  # 保存问题类型
                     })
 
                     # 显示进度
@@ -322,6 +351,28 @@ class ExperimentRunner:
         })
 
         return summary_stats
+
+    def _load_knowledge_base(self) -> None:
+        """加载知识库到检索器中"""
+        try:
+            # 检查知识库文件是否存在
+            knowledge_file = Path("knowledge_data/knowledge_base.json")
+            if not knowledge_file.exists():
+                self.logger.info("知识库文件不存在，跳过加载")
+                return
+
+            # 尝试加载知识库
+            if hasattr(self.retriever, 'load_knowledge_base_from_file'):
+                success = self.retriever.load_knowledge_base_from_file(str(knowledge_file))
+                if success:
+                    self.logger.info("✅ 知识库加载成功")
+                else:
+                    self.logger.warning("⚠️ 知识库加载失败")
+            else:
+                self.logger.warning("检索器不支持知识库加载功能")
+
+        except Exception as e:
+            self.logger.warning(f"加载知识库时出错: {e}")
 
     def _get_default_error_metrics(self) -> Dict[str, float]:
         """获取默认错误指标"""

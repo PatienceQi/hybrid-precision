@@ -1,0 +1,610 @@
+{
+  "batch_id": 1,
+  "experiment_type": "baseline",
+  "processed_samples": 30,
+  "results": [
+    {
+      "context_precision": 0.07824143070044709,
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.4444444444444444,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.05690285869123425,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.17070857607370277,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.26666666666666666,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.08535428803685138,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.16666666666666666,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.5341417152147405,
+      "faithfulness": 0.8125,
+      "answer_relevancy": 0.75,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.14234746872600823,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.3586234927516597,
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.5,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.8544912613467011,
+      "faithfulness": 0.8571428571428571,
+      "answer_relevancy": 0.7647058823529411,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.0455222869529874,
+      "faithfulness": 0.3333333333333333,
+      "answer_relevancy": 0.08333333333333333,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.34959129295940033,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.6666666666666666
+    },
+    {
+      "context_precision": 0.13087657498983876,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.3353542880368514,
+      "faithfulness": 0.9090909090909091,
+      "answer_relevancy": 0.23076923076923078,
+      "context_recall": 0.75
+    },
+    {
+      "context_precision": 0.0,
+      "faithfulness": 0.9166666666666666,
+      "answer_relevancy": 0.8421052631578947,
+      "context_recall": 0.0
+    },
+    {
+      "context_precision": 0.17070857607370277,
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.5,
+      "context_recall": 0.5
+    },
+    {
+      "context_precision": 0.21623086302669015,
+      "faithfulness": 0.9473684210526315,
+      "answer_relevancy": 0.7894736842105263,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.34141715214740553,
+      "faithfulness": 0.3333333333333333,
+      "answer_relevancy": 0.14285714285714285,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.3242785530415933,
+      "faithfulness": 0.7142857142857143,
+      "answer_relevancy": 0.3333333333333333,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.07681885923316624,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.05690285869123425,
+      "faithfulness": 0.7142857142857143,
+      "answer_relevancy": 0.8181818181818182,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.38409429616583124,
+      "faithfulness": 0.9166666666666666,
+      "answer_relevancy": 0.8421052631578947,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.12139276520796641,
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.8823529411764706,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.5243869394391004,
+      "faithfulness": 0.9411764705882353,
+      "answer_relevancy": 0.5,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.1310797994851646,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.08535428803685138,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.12518628912071536,
+      "faithfulness": 0.7857142857142857,
+      "answer_relevancy": 0.8,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.17070857607370277,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.5
+    },
+    {
+      "context_precision": 0.21623086302669015,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.4580680124644357,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.5865397642595855,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.6666666666666666,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.0455222869529874,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    }
+  ],
+  "detailed_logs": [
+    {
+      "sample_id": 1,
+      "question": "Which magazine was started first Arthur's Magazine or First for Women?",
+      "answer": "Arthur's Magazine was started first.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.07824143070044709,
+        "faithfulness": 0.8,
+        "answer_relevancy": 0.4444444444444444,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:44:51.776727"
+    },
+    {
+      "sample_id": 2,
+      "question": "Which tennis player won more Grand Slam titles, Henri Leconte or Jonathan Stark?",
+      "answer": "文档中没有提到Henri Leconte和Jonathan Stark两位网球选手中哪位赢得了更多的大满贯冠军。因此，无法确定哪位选手赢得了更多的大满贯冠军。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.05690285869123425,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:44:53.447786"
+    },
+    {
+      "sample_id": 3,
+      "question": "Fast Cars, Danger, Fire and Knives includes guest appearances from which hip hop record executive?",
+      "answer": "文档中没有提到《Fast Cars, Danger, Fire and Knives》这首歌曲中有哪位嘻哈唱片公司高管的客串。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.17070857607370277,
+        "faithfulness": 0.6666666666666666,
+        "answer_relevancy": 0.26666666666666666,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:44:54.956057"
+    },
+    {
+      "sample_id": 4,
+      "question": "Where did the form of music played by Die Rhöner Säuwäntzt originate?",
+      "answer": "Die Rhöner Säuwäntzt演奏的音乐形式起源于德国的巴伐利亚地区。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.08535428803685138,
+        "faithfulness": 0.6666666666666666,
+        "answer_relevancy": 0.16666666666666666,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:44:56.243219"
+    },
+    {
+      "sample_id": 5,
+      "question": "Which band was founded first, Hole, the rock band that Courtney Love was a frontwoman of, or The Wolfhounds?",
+      "answer": "Hole, the rock band that Courtney Love was a frontwoman of, was founded before The Wolfhounds.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.5341417152147405,
+        "faithfulness": 0.8125,
+        "answer_relevancy": 0.75,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:44:57.403137"
+    },
+    {
+      "sample_id": 6,
+      "question": "Chang Ucchin was born in korea during a time that ended with the conclusion of what? ",
+      "answer": "抱歉，根据提供的文档内容无法回答这个问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.14234746872600823,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:44:58.545910"
+    },
+    {
+      "sample_id": 7,
+      "question": "Which documentary is about Finnish rock groups, Adam Clayton Powell or The Saimaa Gesture?",
+      "answer": "The documentary about Finnish rock groups is \"The Saimaa Gesture.\"",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.3586234927516597,
+        "faithfulness": 0.8,
+        "answer_relevancy": 0.5,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:44:59.564688"
+    },
+    {
+      "sample_id": 8,
+      "question": "Who was inducted into the Rock and Roll Hall of Fame, David Lee Roth or Cia Berg?",
+      "answer": "David Lee Roth was inducted into the Rock and Roll Hall of Fame. Cia Berg was not mentioned in the document.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.8544912613467011,
+        "faithfulness": 0.8571428571428571,
+        "answer_relevancy": 0.7647058823529411,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:45:00.746684"
+    },
+    {
+      "sample_id": 9,
+      "question": "Zimbabwe's Guwe Secondary School has a sister school in what New York cunty?",
+      "answer": "文档中没有提到Zimbabwe的Guwe Secondary School有一个姐妹学校在纽约的哪个县。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.0455222869529874,
+        "faithfulness": 0.3333333333333333,
+        "answer_relevancy": 0.08333333333333333,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:45:02.091240"
+    },
+    {
+      "sample_id": 10,
+      "question": "Pauline Henry was known as the vocalist of a very popular cover song. Which album was this song from?",
+      "answer": "很抱歉，根据提供的文档内容无法确定Pauline Henry被称为哪首非常流行的翻唱歌曲的主唱，因此无法回答这个问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.34959129295940033,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 0.6666666666666666
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:45:03.518300"
+    },
+    {
+      "sample_id": 11,
+      "question": "What American country music singer-songwriter, born in May of 1942, sang a duet with her ex-husband the same year that he released the song \"The Battle?\"",
+      "answer": "Tammy Wynette",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.13087657498983876,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:45:04.404826"
+    },
+    {
+      "sample_id": 12,
+      "question": "A Head Full of Dreams Tour is the seventh tour by Coldplay, and which had it's first show at a stadium that is known as Estadio Unico and is owned by who?",
+      "answer": "Estadio Único is owned by the government of La Plata, Argentina.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.3353542880368514,
+        "faithfulness": 0.9090909090909091,
+        "answer_relevancy": 0.23076923076923078,
+        "context_recall": 0.75
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:45:05.552872"
+    },
+    {
+      "sample_id": 13,
+      "question": "Which Oscar-nominated film was written by the screenwriter who wrote a 1991 romantic drama based upon a screenplay by Sooni Taraporevala?",
+      "answer": "The Oscar-nominated film written by the screenwriter who wrote a 1991 romantic drama based upon a screenplay by Sooni Taraporevala is \"The White Tiger.\"",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.0,
+        "faithfulness": 0.9166666666666666,
+        "answer_relevancy": 0.8421052631578947,
+        "context_recall": 0.0
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:45:06.796258"
+    },
+    {
+      "sample_id": 14,
+      "question": "The Golden Globe Award winner for best actor from \"Roseanne\" starred along what actress in Gigantic?",
+      "answer": "文档中没有提供关于\"The Golden Globe Award winner for best actor from 'Roseanne'\"和\"Gigantic\"电影中女演员的信息，无法回答这个问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.17070857607370277,
+        "faithfulness": 0.8,
+        "answer_relevancy": 0.5,
+        "context_recall": 0.5
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:45:08.323452"
+    },
+    {
+      "sample_id": 15,
+      "question": "El Nuevo Cojo and Golf Magazine are both special interest publications but which one is owned by Time Inc?",
+      "answer": "El Nuevo Cojo and Golf Magazine are both special interest publications, but Golf Magazine is owned by Time Inc.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.21623086302669015,
+        "faithfulness": 0.9473684210526315,
+        "answer_relevancy": 0.7894736842105263,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:45:09.466107"
+    },
+    {
+      "sample_id": 16,
+      "question": "Who funds the bowling team that includes the school bus driver for Springfield Elementary School?",
+      "answer": "Springfield Elementary School的保龄球队的资助者是Springfield Nuclear Power Plant。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.34141715214740553,
+        "faithfulness": 0.3333333333333333,
+        "answer_relevancy": 0.14285714285714285,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:45:10.605914"
+    },
+    {
+      "sample_id": 17,
+      "question": "What city are George Washington University Hospital and MedStar Washington Hospital Center located in?",
+      "answer": "George Washington University Hospital和MedStar Washington Hospital Center位于华盛顿特区。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.3242785530415933,
+        "faithfulness": 0.7142857142857143,
+        "answer_relevancy": 0.3333333333333333,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:45:11.949437"
+    },
+    {
+      "sample_id": 18,
+      "question": "What author has contributed to such works as \"New Statesmen\", \"The Nation\", and \"The Atlantic\", among others, while also being being associated with Dysteleology?",
+      "answer": "根据提供的文档内容，无法确定哪位作者既为《New Statesmen》、《The Nation》和《The Atlantic》等作品做出了贡献，同时又与Dysteleology有关。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.07681885923316624,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:45:13.896181"
+    },
+    {
+      "sample_id": 19,
+      "question": "Who developed the prototype pacemaker used by the 34th President of the USA?",
+      "answer": "Wilson Greatbatch developed the prototype pacemaker used by the 34th President of the USA.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.05690285869123425,
+        "faithfulness": 0.7142857142857143,
+        "answer_relevancy": 0.8181818181818182,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:45:15.037381"
+    },
+    {
+      "sample_id": 20,
+      "question": "Which publishing company has published Bizarre and a sister publication devoted to the anomalous phenomena popularised by Charles Fort?",
+      "answer": "The publishing company that has published Bizarre and a sister publication devoted to the anomalous phenomena popularized by Charles Fort is John Brown Publishing.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.38409429616583124,
+        "faithfulness": 0.9166666666666666,
+        "answer_relevancy": 0.8421052631578947,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:45:16.302342"
+    },
+    {
+      "sample_id": 21,
+      "question": "Who performed the lead single on the album Friends in Low Places, No Fences, that reached #1 on Billboard?",
+      "answer": "Garth Brooks performed the lead single on the album Friends in Low Places, No Fences, that reached #1 on Billboard.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.12139276520796641,
+        "faithfulness": 0.8,
+        "answer_relevancy": 0.8823529411764706,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:45:17.545232"
+    },
+    {
+      "sample_id": 22,
+      "question": "The lead singer and guitarist in the Portland, Oregon rock band consisting of John Gourley, Zach Carothers, Kyle O'Quin, Jason Sechrist and Eric Howk, goes by what alias?",
+      "answer": "The lead singer and guitarist in the Portland, Oregon rock band goes by the alias John Gourley.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.5243869394391004,
+        "faithfulness": 0.9411764705882353,
+        "answer_relevancy": 0.5,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:45:18.709241"
+    },
+    {
+      "sample_id": 23,
+      "question": "What actor in the film D.C. Cab also had a role in the TV series Barney Miller?",
+      "answer": "Mr. T.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.1310797994851646,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:45:19.666666"
+    },
+    {
+      "sample_id": 24,
+      "question": "In which stadium do the teams owned by Myra Kraft's husband play?",
+      "answer": "New England Patriots play at Gillette Stadium.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.08535428803685138,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:45:20.623721"
+    },
+    {
+      "sample_id": 25,
+      "question": "What southern California based band covered Blue Öyster Cult's Godzilla?",
+      "answer": "The southern California based band that covered Blue Öyster Cult's Godzilla is Fu Manchu.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.12518628912071536,
+        "faithfulness": 0.7857142857142857,
+        "answer_relevancy": 0.8,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:45:21.652800"
+    },
+    {
+      "sample_id": 26,
+      "question": "What is the current name of the Atlanta Mansion built for the daughter of the 41st Mayor of Atlanta, Georgia?",
+      "answer": "文档中没有提供关于亚特兰大市第41任市长的女儿所建豪宅的当前名称的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.17070857607370277,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 0.5
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:45:23.115554"
+    },
+    {
+      "sample_id": 27,
+      "question": "The Boren-McCurdy proposals were partially brought about by which Oklahoma politician in 1992?",
+      "answer": "文档中没有提到1992年哪位俄克拉荷马州政治家部分促成了博伦-麦卡迪提案。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.21623086302669015,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:45:24.547754"
+    },
+    {
+      "sample_id": 28,
+      "question": "The Thoen Stone is on display at a museum in what county?",
+      "answer": "抱歉，根据提供的文档内容无法准确回答这个问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.4580680124644357,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:45:26.059888"
+    },
+    {
+      "sample_id": 29,
+      "question": "Is Children's National Medical Center or MedStar Washington Hospital Center the largest private hospital in Washington, D.C.?",
+      "answer": "MedStar Washington Hospital Center is the largest private hospital in Washington, D.C.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.5865397642595855,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.6666666666666666,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:45:27.077030"
+    },
+    {
+      "sample_id": 30,
+      "question": "What is the birth date of the coach of the 2014-15 Michigan Wolverines men's basketball team?",
+      "answer": "文档中没有提供2014-15密歇根狼队男篮教练的出生日期。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.0455222869529874,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-20T14:45:28.336020"
+    }
+  ],
+  "last_save_time": "2025-10-20T14:45:28.337488"
+}

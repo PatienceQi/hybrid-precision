@@ -98,11 +98,23 @@ class BatchExperimentManager:
     def load_batch_dataset(self) -> Optional[List[Dict]]:
         """加载指定批次的数据集"""
         try:
-            # 构造批次文件路径
-            batch_file = self.script_dir / 'dataset' / f'hotpot_medium_batch_{self.batch_id}.json'
+            # 构造批次文件路径 - 支持多种可能的位置
+            possible_paths = [
+                self.script_dir / 'dataset' / f'hotpot_medium_batch_{self.batch_id}.json',  # 当前目录下的dataset
+                self.script_dir.parent / 'dataset' / f'hotpot_medium_batch_{self.batch_id}.json',  # 父目录下的dataset
+                Path(f'/Users/qipatience/Desktop/混合检索指标集成在 RAGAS 中的评估/dataset/hotpot_medium_batch_{self.batch_id}.json'),  # 绝对路径
+            ]
 
-            if not batch_file.exists():
-                self.log_message(f"❌ 批次文件不存在: {batch_file}", "ERROR")
+            batch_file = None
+            for path in possible_paths:
+                if path.exists():
+                    batch_file = path
+                    break
+
+            if not batch_file:
+                self.log_message(f"❌ 批次文件不存在，已尝试以下路径:", "ERROR")
+                for path in possible_paths:
+                    self.log_message(f"   - {path}", "ERROR")
                 return None
 
             self.log_message(f"📁 加载批次数据集: {batch_file}")

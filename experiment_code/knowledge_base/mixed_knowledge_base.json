@@ -1,0 +1,154 @@
+[
+  {
+    "id": "technology_simple_0",
+    "title": "Technology Topic 1",
+    "content": "人工智能是计算机科学的一个分支，致力于创建能够执行通常需要人类智能的任务的系统。",
+    "domain": "technology",
+    "type": "simple",
+    "length": 40
+  },
+  {
+    "id": "technology_simple_1",
+    "title": "Technology Topic 2",
+    "content": "计算机视觉让机器能够从图像和视频中提取信息和洞察。",
+    "domain": "technology",
+    "type": "simple",
+    "length": 25
+  },
+  {
+    "id": "technology_simple_2",
+    "title": "Technology Topic 3",
+    "content": "自然语言处理使计算机能够理解、解释和生成人类语言。",
+    "domain": "technology",
+    "type": "simple",
+    "length": 25
+  },
+  {
+    "id": "science_simple_0",
+    "title": "Science Topic 1",
+    "content": "DNA是携带遗传信息的分子，决定了生物的特征。",
+    "domain": "science",
+    "type": "simple",
+    "length": 23
+  },
+  {
+    "id": "science_simple_1",
+    "title": "Science Topic 2",
+    "content": "光合作用使植物能够将阳光转化为化学能。",
+    "domain": "science",
+    "type": "simple",
+    "length": 19
+  },
+  {
+    "id": "science_simple_2",
+    "title": "Science Topic 3",
+    "content": "相对论由爱因斯坦提出，改变了我们对时空和引力的理解。",
+    "domain": "science",
+    "type": "simple",
+    "length": 26
+  },
+  {
+    "id": "history_simple_0",
+    "title": "History Topic 1",
+    "content": "文艺复兴是欧洲文化和艺术的复兴时期，始于14世纪意大利。",
+    "domain": "history",
+    "type": "simple",
+    "length": 28
+  },
+  {
+    "id": "history_simple_1",
+    "title": "History Topic 2",
+    "content": "第二次世界大战从1939年持续到1945年，改变了世界政治格局。",
+    "domain": "history",
+    "type": "simple",
+    "length": 32
+  },
+  {
+    "id": "history_simple_2",
+    "title": "History Topic 3",
+    "content": "丝绸之路连接了东西方文明，促进了贸易和文化交流。",
+    "domain": "history",
+    "type": "simple",
+    "length": 24
+  },
+  {
+    "id": "geography_simple_0",
+    "title": "Geography Topic 1",
+    "content": "喜马拉雅山脉包含世界最高峰珠穆朗玛峰，海拔8848米。",
+    "domain": "geography",
+    "type": "simple",
+    "length": 27
+  },
+  {
+    "id": "geography_simple_1",
+    "title": "Geography Topic 2",
+    "content": "亚马逊雨林是地球上最大的热带雨林，被称为'地球之肺'。",
+    "domain": "geography",
+    "type": "simple",
+    "length": 27
+  },
+  {
+    "id": "geography_simple_2",
+    "title": "Geography Topic 3",
+    "content": "太平洋是地球上最大的海洋，面积约1.65亿平方公里。",
+    "domain": "geography",
+    "type": "simple",
+    "length": 26
+  },
+  {
+    "id": "literature_simple_0",
+    "title": "Literature Topic 1",
+    "content": "《1984》是乔治·奥威尔的反乌托邦小说，预言了极权主义社会。",
+    "domain": "literature",
+    "type": "simple",
+    "length": 31
+  },
+  {
+    "id": "literature_simple_1",
+    "title": "Literature Topic 2",
+    "content": "《傲慢与偏见》是简·奥斯汀的代表作，描绘了19世纪英国社会。",
+    "domain": "literature",
+    "type": "simple",
+    "length": 30
+  },
+  {
+    "id": "literature_simple_2",
+    "title": "Literature Topic 3",
+    "content": "《红楼梦》是中国古典小说的巅峰之作，作者是曹雪芹。",
+    "domain": "literature",
+    "type": "simple",
+    "length": 25
+  },
+  {
+    "id": "ai_introduction_extended",
+    "title": "Ai Introduction",
+    "content": "人工智能（AI）是计算机科学的一个分支，它试图理解和构建具有智能行为的实体。\n            人工智能的研究包括多个子领域，如机器学习、自然语言处理、计算机视觉、机器人学等。\n            机器学习是人工智能的核心，它使计算机能够从数据中学习，而不需要明确编程。\n            深度学习是机器学习的一个子集，使用多层神经网络来模拟人脑的学习过程。\n            人工智能的应用范围非常广泛，包括医疗诊断、金融分析、自动驾驶汽车、智能家居等。",
+    "domain": "mixed",
+    "type": "extended",
+    "length": 265
+  },
+  {
+    "id": "quantum_physics_extended",
+    "title": "Quantum Physics",
+    "content": "量子力学是描述微观粒子运动规律的理论物理学分支。\n            它与经典力学的主要区别在于，量子力学中的粒子可以存在于叠加态中，\n            即同时处于多个状态，直到被观测时才坍缩到某个确定状态。\n            著名的薛定谔猫思想实验就形象地说明了这种量子叠加原理。\n            量子纠缠是另一个重要概念，指两个或多个粒子之间存在神秘的关联，\n            即使相隔很远，测量其中一个粒子会瞬间影响其他粒子的状态。",
+    "domain": "mixed",
+    "type": "extended",
+    "length": 260
+  },
+  {
+    "id": "world_war_ii_extended",
+    "title": "World War Ii",
+    "content": "第二次世界大战是人类历史上规模最大、破坏最严重的战争。\n            战争从1939年9月1日德国入侵波兰开始，到1945年9月2日日本正式投降结束。\n            这场战争涉及全球大部分国家，形成了同盟国和轴心国两大军事阵营。\n            战争期间发生了许多重大事件，包括珍珠港事件、诺曼底登陆、原子弹轰炸广岛和长崎等。\n            二战造成了超过7000万人的死亡，彻底改变了世界政治格局，\n            促成了联合国的成立和冷战的开始。",
+    "domain": "mixed",
+    "type": "extended",
+    "length": 274
+  },
+  {
+    "id": "climate_change_extended",
+    "title": "Climate Change",
+    "content": "气候变化是当今世界面临的最严峻挑战之一。\n            全球变暖主要由人类活动产生的温室气体排放引起，特别是二氧化碳和甲烷。\n            气候变化的影响包括海平面上升、极端天气事件增加、生态系统破坏等。\n            国际社会通过《巴黎协定》等协议试图限制全球升温幅度，\n            但实现这些目标需要各国共同努力，减少化石燃料使用，发展可再生能源。\n            应对气候变化不仅是环境问题，也是经济、社会和政治问题。",
+    "domain": "mixed",
+    "type": "extended",
+    "length": 263
+  }
+]
