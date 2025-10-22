@@ -31,7 +31,11 @@ experiment_code/
 ├── experiment/             # 实验管理
 │   ├── batch_manager.py    # 批次管理
 │   └── experiment_runner.py # 实验运行器
-├── main.py                 # 主入口文件
+├── cli/                    # 命令行辅助模块
+│   ├── batch.py            # 批次实验 CLI
+│   ├── comparison.py       # 对比实验 CLI
+│   └── integration.py      # 集成测试 CLI
+├── main.py                 # 精简命令行入口
 └── config.json            # 配置文件
 ```
 
@@ -41,30 +45,30 @@ experiment_code/
 
 ```bash
 # 运行基础功能测试
-python main.py --mode test
+python -m experiment_code.main --mode test
 
 # 运行完整集成测试
-python main.py --mode integration
+python -m experiment_code.main --mode integration
 ```
 
 ### 2. 运行实验
 
 ```bash
 # 运行单个批次实验
-python main.py --mode batch --batch-id 1 --experiment-type baseline
+python -m experiment_code.main --mode batch --batch-id 1 --experiment-type baseline
 
 # 运行对比实验
-python main.py --mode compare
+python -m experiment_code.main --mode compare
 ```
 
 ### 3. 使用配置文件
 
 ```bash
 # 使用自定义配置文件
-python main.py --mode test --config my_config.json
+python -m experiment_code.main --mode test --config my_config.json
 
 # 设置日志级别
-python main.py --mode test --log-level DEBUG
+python -m experiment_code.main --mode test --log-level DEBUG
 ```
 
 ## 📋 核心功能
@@ -97,6 +101,13 @@ python main.py --mode test --log-level DEBUG
 export OPENAI_API_KEY="your-api-key"
 export OPENAI_API_BASE="https://openrouter.ai/api/v1"
 export LLM_MODEL="gpt-3.5-turbo"
+export API_CLIENT_TYPE="auto"              # 可选: 强制使用 openai/openrouter/mock
+export SKIP_API_CONNECTION_TEST="false"    # 可选: 离线环境下跳过连接检测
+export FORCE_REAL_API="false"              # 可选: 禁止连接失败时回退到模拟API
+export ALLOW_MOCK_FALLBACK="true"          # 可选: 允许自动切换至模拟API
+export EMBEDDING_SERVICE_URL="http://localhost:11434/api/embeddings"
+export FORCE_EMBEDDING_SERVICE="false"     # 可选: 嵌入服务失败时立即报错
+export EMBEDDING_FALLBACK_LOCAL="true"     # 可选: 允许使用本地模拟嵌入
 
 # 实验配置
 export BATCH_SIZE="200"
@@ -145,7 +156,7 @@ export LOG_LEVEL="INFO"
 
 ### 基础使用
 ```python
-from experiment import ExperimentRunner
+from experiment_code import ExperimentRunner
 
 # 创建实验运行器
 runner = ExperimentRunner("hybrid_standard")
@@ -172,7 +183,7 @@ results = runner.run_batch_experiment(
 
 ### 使用批次管理器
 ```python
-from experiment import BatchExperimentManager
+from experiment_code import BatchExperimentManager
 
 # 创建批次管理器
 manager = BatchExperimentManager(batch_id=1, experiment_type="baseline")
@@ -192,7 +203,10 @@ final_results = manager.finalize_batch(summary_stats)
 
 ### 自定义评估器
 ```python
-from core.evaluator import BaseEvaluator
+from experiment_code.core.evaluator import (
+    BaseEvaluator,
+    EvaluationResult,
+)
 
 class MyEvaluator(BaseEvaluator):
     def evaluate_single_sample(self, question, answer, contexts, reference):
@@ -210,7 +224,7 @@ class MyEvaluator(BaseEvaluator):
 
 ### 自定义检索器
 ```python
-from retrievers.base_retriever import BaseRetriever
+from experiment_code.retrievers.base_retriever import BaseRetriever
 
 class MyRetriever(BaseRetriever):
     def retrieve(self, query, top_k=5):
@@ -257,7 +271,7 @@ python -m pytest tests/test_evaluators.py
 ### 集成测试
 ```bash
 # 运行集成测试
-python main.py --mode integration
+python -m experiment_code.main --mode integration
 
 # 运行性能测试
 python tests/performance_test.py
@@ -272,8 +286,8 @@ python tests/performance_test.py
 
 ```python
 # 向后兼容的使用方式
-from evaluators.ragas_evaluator import test_fixed_ragas
-from evaluators.hybrid_evaluator import test_hybrid_precision
+from experiment_code.evaluators.ragas_evaluator import test_fixed_ragas
+from experiment_code.evaluators.hybrid_evaluator import test_hybrid_precision
 
 # 运行原有测试
 test_fixed_ragas()
@@ -302,7 +316,7 @@ test_hybrid_precision()
 ### 调试模式
 ```bash
 # 启用调试模式
-python main.py --mode test --log-level DEBUG
+python -m experiment_code.main --mode test --log-level DEBUG
 
 # 查看详细日志
 tail -f batch_results/*.log

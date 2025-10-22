@@ -4,8 +4,8 @@ LLM客户端 - 统一的LLM服务接口
 
 import logging
 from typing import Dict, List, Any, Optional
-from core.api_client import BaseAPIClient, APIClientFactory
-from core.config import get_config
+from ..core.api_client import BaseAPIClient, APIClientFactory
+from ..core.config import get_config
 
 logger = logging.getLogger(__name__)
 

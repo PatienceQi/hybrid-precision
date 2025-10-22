@@ -16,8 +16,8 @@ try:
 except ImportError:
     WIKIPEDIA_AVAILABLE = False
 
-from core.utils import load_json_file, save_json_file, setup_logging
-from retrievers import HybridRetriever
+from ..core.utils import load_json_file, save_json_file, setup_logging
+from ..retrievers import HybridRetriever
 
 logger = logging.getLogger(__name__)
 

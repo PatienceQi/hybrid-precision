@@ -9,11 +9,14 @@ import os
 import argparse
 from pathlib import Path
 
-# 添加模块路径
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-
-from knowledge_base import run_simple_setup, test_knowledge_base_building
-from core.utils import setup_logging
+# 适配脚本/模块两种运行方式
+if __package__ is None or __package__ == "":
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from knowledge_base import run_simple_setup, test_knowledge_base_building  # type: ignore
+    from core.utils import setup_logging  # type: ignore
+else:
+    from .knowledge_base import run_simple_setup, test_knowledge_base_building
+    from .core.utils import setup_logging
 
 def print_welcome_message():
     """打印欢迎信息"""
@@ -34,7 +37,7 @@ def print_completion_message(success: bool):
     if success:
         print("🎉 知识库设置完成！")
         print("\n💡 现在您可以运行实验了：")
-        print("   python main.py --mode batch --batch-id 1")
+        print("   python -m experiment_code.main --mode batch --batch-id 1")
         print("\n📚 知识库已就绪，系统将自动使用它进行检索增强！")
     else:
         print("❌ 知识库设置未完成")

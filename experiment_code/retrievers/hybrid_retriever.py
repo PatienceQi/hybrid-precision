@@ -10,10 +10,15 @@ from typing import Dict, List, Any, Optional
 from collections import Counter
 import re
 
+from ..core.config import get_config
+from ..core.utils import (
+    normalize_text,
+    extract_keywords,
+    calculate_similarity,
+    load_json_file,
+)
 from .base_retriever import BaseRetriever, RetrievalResult
 from .embedding_retriever import EmbeddingRetriever
-from core.config import get_config
-from core.utils import normalize_text, extract_keywords, calculate_similarity, load_json_file
 
 logger = logging.getLogger(__name__)
 
@@ -30,6 +35,7 @@ class HybridRetriever(BaseRetriever):
         self.fusion_method = fusion_method
         self.documents = []
         self.keyword_index = {}  # 关键词索引
+        self._empty_warning_emitted = False
 
         # 融合权重配置
         self.fusion_weights = {
@@ -43,6 +49,7 @@ class HybridRetriever(BaseRetriever):
                            build_keyword_index: bool = True) -> None:
         """设置知识库"""
         self.documents = documents
+        self._empty_warning_emitted = not bool(documents)
 
         # 设置嵌入检索器
         self.embedding_retriever.setup_knowledge_base(documents, embeddings)
@@ -386,7 +393,9 @@ class HybridRetriever(BaseRetriever):
             self._validate_query(query)
 
             if not self.documents:
-                logger.warning("知识库为空")
+                if not self._empty_warning_emitted:
+                    logger.warning("知识库为空")
+                    self._empty_warning_emitted = True
                 return self._create_empty_result(query)
 
             # 1. 向量检索

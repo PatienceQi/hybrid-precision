@@ -6,9 +6,9 @@
 import logging
 from typing import Dict, List, Any, Optional
 
-from core.evaluator import BaseEvaluator, EvaluationResult, EvaluationMetrics
-from core.api_client import BaseAPIClient, APIClientFactory
-from core.config import get_config
+from ..core.api_client import BaseAPIClient, APIClientFactory
+from ..core.config import get_config
+from ..core.evaluator import BaseEvaluator, EvaluationResult, EvaluationMetrics
 
 logger = logging.getLogger(__name__)
 

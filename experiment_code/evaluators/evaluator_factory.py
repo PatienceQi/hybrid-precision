@@ -6,7 +6,7 @@
 import logging
 from typing import Dict, Type, Optional
 
-from core.evaluator import BaseEvaluator
+from ..core.evaluator import BaseEvaluator
 from .ragas_evaluator import RagasEvaluator
 from .hybrid_evaluator import HybridEvaluator
 from .manual_evaluator import ManualEvaluator

@@ -8,10 +8,10 @@ import numpy as np
 from typing import Dict, List, Any, Optional
 from scipy import stats
 
-from core.evaluator import BaseEvaluator, EvaluationResult, EvaluationMetrics
-from core.api_client import BaseAPIClient, APIClientFactory
-from core.config import get_config
-from core.utils import safe_divide, calculate_similarity
+from ..core.api_client import BaseAPIClient, APIClientFactory
+from ..core.config import get_config
+from ..core.evaluator import BaseEvaluator, EvaluationResult, EvaluationMetrics
+from ..core.utils import safe_divide, calculate_similarity
 
 logger = logging.getLogger(__name__)
 
@@ -32,6 +32,7 @@ class HybridEvaluator(BaseEvaluator):
             "statistical_significance",
             "avg_hybrid_score"
         ]
+        self._precision_warning_emitted = False
 
     def evaluate_single_sample(self,
                              question: str,
@@ -49,6 +50,10 @@ class HybridEvaluator(BaseEvaluator):
 
             # 计算信息论指标
             information_metrics = self._calculate_information_metrics(contexts, reference, fusion_method)
+            fusion_metadata = {
+                "fusion_method": information_metrics.pop("fusion_method", fusion_method),
+                "fusion_weight": information_metrics.pop("fusion_weight", 1.0),
+            }
 
             # 计算统计显著性
             significance_metrics = self._calculate_statistical_significance(contexts, reference)
@@ -59,7 +64,7 @@ class HybridEvaluator(BaseEvaluator):
             # 计算平均混合分数
             all_metrics["avg_hybrid_score"] = self._calculate_avg_hybrid_score(all_metrics)
 
-            return EvaluationResult(
+            evaluation_result = EvaluationResult(
                 question=question,
                 answer=answer,
                 contexts=contexts,
@@ -67,6 +72,8 @@ class HybridEvaluator(BaseEvaluator):
                 metrics=all_metrics,
                 evaluator_type=self.evaluator_type
             )
+            evaluation_result.metadata.update(fusion_metadata)
+            return evaluation_result
 
         except Exception as e:
             logger.error(f"混合检索评估失败: {e}")
@@ -318,7 +325,12 @@ class HybridEvaluator(BaseEvaluator):
             return avg_metrics
 
         except Exception as e:
-            logger.error(f"混合精确度评估失败: {e}")
+            message = f"混合精确度评估失败: {e}，已回退到默认统计结果"
+            if not self._precision_warning_emitted:
+                logger.warning(message)
+                self._precision_warning_emitted = True
+            else:
+                logger.debug(message)
             return self._error_result(f"评估失败: {str(e)}")
 
     def _error_result(self, error_msg: str) -> Dict[str, float]:

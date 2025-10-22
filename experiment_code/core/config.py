@@ -19,9 +19,13 @@ class APIConfig:
     api_key: Optional[str] = None
     base_url: str = "https://openrouter.ai/api/v1"
     model: str = "gpt-3.5-turbo"
+    client_type: str = "auto"
     max_retries: int = 3
     retry_delay: int = 2
     timeout: int = 30
+    skip_connection_test: bool = False
+    force_real_api: bool = False
+    allow_mock_fallback: bool = True
     default_headers: Dict[str, str] = field(default_factory=lambda: {
         "HTTP-Referer": "https://ragas-hybrid-evaluation.com",
         "X-Title": "RAGAS Hybrid Evaluation"
@@ -47,6 +51,9 @@ class RetrievalConfig:
     top_k: int = 5
     similarity_threshold: float = 0.7
     cache_embeddings: bool = True
+    embedding_service_url: str = "http://localhost:11434/api/embeddings"
+    force_embedding_service: bool = False
+    fallback_to_local_embeddings: bool = True
 
 @dataclass
 class ExperimentConfig:
@@ -110,9 +117,13 @@ class Config:
             api_key=api_key,
             base_url=base_url,
             model=model,
+            client_type=os.getenv("API_CLIENT_TYPE", "auto"),
             max_retries=int(os.getenv("MAX_RETRIES", "3")),
             retry_delay=int(os.getenv("RETRY_DELAY", "2")),
-            timeout=int(os.getenv("API_TIMEOUT", "30"))
+            timeout=int(os.getenv("API_TIMEOUT", "30")),
+            skip_connection_test=os.getenv("SKIP_API_CONNECTION_TEST", "false").lower() == "true",
+            force_real_api=os.getenv("FORCE_REAL_API", "false").lower() == "true",
+            allow_mock_fallback=os.getenv("ALLOW_MOCK_FALLBACK", "true").lower() == "true"
         )
 
     def _init_evaluation_config(self) -> EvaluationConfig:
@@ -126,12 +137,21 @@ class Config:
 
     def _init_retrieval_config(self) -> RetrievalConfig:
         """初始化检索配置"""
+        service_url_env = os.getenv("EMBEDDING_SERVICE_URL")
+        if service_url_env:
+            service_url = service_url_env.strip()
+        else:
+            service_url = "http://localhost:11434/api/embeddings"
+
         return RetrievalConfig(
             embedding_model=os.getenv("EMBEDDING_MODEL", "bge-m3"),
             embedding_dim=int(os.getenv("EMBEDDING_DIM", "1024")),
             top_k=int(os.getenv("TOP_K", "5")),
             similarity_threshold=float(os.getenv("SIMILARITY_THRESHOLD", "0.7")),
-            cache_embeddings=os.getenv("CACHE_EMBEDDINGS", "true").lower() == "true"
+            cache_embeddings=os.getenv("CACHE_EMBEDDINGS", "true").lower() == "true",
+            embedding_service_url=service_url,
+            force_embedding_service=os.getenv("FORCE_EMBEDDING_SERVICE", "false").lower() == "true",
+            fallback_to_local_embeddings=os.getenv("EMBEDDING_FALLBACK_LOCAL", "true").lower() == "true"
         )
 
     def _init_experiment_config(self) -> ExperimentConfig:

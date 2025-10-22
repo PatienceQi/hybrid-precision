@@ -4,9 +4,9 @@
 
 import logging
 from typing import Dict, List, Any, Optional
-from core.api_client import BaseAPIClient, APIClientFactory
-from core.config import get_config
-from retrievers import BaseRetriever, RetrievalResult, create_retriever
+from ..core.api_client import BaseAPIClient, APIClientFactory
+from ..core.config import get_config
+from ..retrievers import BaseRetriever, RetrievalResult, create_retriever
 
 logger = logging.getLogger(__name__)
 
@@ -97,7 +97,9 @@ class ResponseGenerator:
             # 增强上下文（添加混合检索提示）
             enhanced_contexts = []
             for doc in retrieval_result.documents:
-                text = doc.get('text', '')
+                text = doc.get('text') or doc.get('content') or ""
+                if isinstance(text, list):
+                    text = " ".join(str(item) for item in text if isinstance(item, str))
                 # 添加混合检索提示到每个上下文的开头
                 if self.fusion_method == 'cascading':
                     enhanced_text = f"[Cascading Hybrid Retrieval] {text}"

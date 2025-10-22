@@ -11,13 +11,19 @@ from typing import Dict, List, Any, Optional, Callable
 from pathlib import Path
 from datetime import datetime
 
-from core.config import get_config
-from core.utils import setup_logging, save_json_file, load_json_file, format_time, create_progress_bar
-from evaluators import create_evaluator, BaseEvaluator
-from retrievers import create_retriever, BaseRetriever
-from generators import ResponseGenerator
+from ..core.config import get_config
+from ..core.utils import (
+    setup_logging,
+    save_json_file,
+    load_json_file,
+    format_time,
+    create_progress_bar,
+)
+from ..evaluators import create_evaluator, BaseEvaluator
+from ..retrievers import create_retriever, BaseRetriever
+from ..generators import ResponseGenerator
+from ..knowledge_base import SimpleKnowledgeBuilder
 from .batch_manager import BatchExperimentManager
-from knowledge_base import SimpleKnowledgeBuilder
 
 logger = logging.getLogger(__name__)
 

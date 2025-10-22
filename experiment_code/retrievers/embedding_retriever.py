@@ -10,11 +10,12 @@ from typing import Dict, List, Any, Optional
 import requests
 import json
 import os
+import re
 from pathlib import Path
 
+from ..core.config import get_config
+from ..core.utils import calculate_similarity, load_json_file, save_json_file
 from .base_retriever import BaseRetriever, RetrievalResult
-from core.config import get_config
-from core.utils import calculate_similarity, load_json_file, save_json_file
 
 logger = logging.getLogger(__name__)
 
@@ -30,6 +31,14 @@ class EmbeddingRetriever(BaseRetriever):
         self.documents = []
         self.embeddings = []
         self.document_embeddings_cache = {}
+        self.embedding_service_url = (self.config.retrieval.embedding_service_url or "").strip()
+        if not self.embedding_service_url:
+            self.embedding_service_url = "http://localhost:11434/api/embeddings"
+        self._force_service = self.config.retrieval.force_embedding_service
+        self._allow_fallback = self.config.retrieval.fallback_to_local_embeddings
+        self._embedding_service_available = True
+        self._service_warning_emitted = False
+        self._missing_text_warning_emitted = False
 
     def setup_knowledge_base(self, documents: List[Dict[str, Any]],
                            embeddings: Optional[List[List[float]]] = None,
@@ -63,11 +72,15 @@ class EmbeddingRetriever(BaseRetriever):
         embeddings = []
         for i, doc in enumerate(self.documents):
             try:
-                text = doc.get('text', '')
+                text = self._extract_text(doc)
                 if not text:
-                    logger.warning(f"文档 {i} 没有文本内容，使用零向量")
+                    if not self._missing_text_warning_emitted:
+                        logger.warning("文档缺少文本内容，后续将使用零向量占位")
+                        self._missing_text_warning_emitted = True
                     embeddings.append([0.0] * self.config.retrieval.embedding_dim)
                     continue
+                if isinstance(doc, dict):
+                    doc.setdefault('text', text)
 
                 embedding = self._get_embedding(text)
                 embeddings.append(embedding)
@@ -82,20 +95,50 @@ class EmbeddingRetriever(BaseRetriever):
         logger.info(f"嵌入向量生成完成 - 维度: {len(embeddings[0]) if embeddings else 0}")
         return embeddings
 
+    def _extract_text(self, document: Dict[str, Any]) -> str:
+        """从文档中提取文本内容"""
+        if not document:
+            return ""
+
+        candidate_keys = ["text", "content", "body", "summary", "passage", "document"]
+        for key in candidate_keys:
+            value = document.get(key)
+            if isinstance(value, str) and value.strip():
+                return value.strip()
+            if isinstance(value, list):
+                combined = " ".join(str(item) for item in value if isinstance(item, str))
+                if combined.strip():
+                    return combined.strip()
+
+        # 尝试从嵌套结构提取
+        for key in ["paragraphs", "sentences"]:
+            value = document.get(key)
+            if isinstance(value, list):
+                combined = " ".join(str(item) for item in value if isinstance(item, str))
+                if combined.strip():
+                    return combined.strip()
+
+        return ""
+
     def _get_embedding(self, text: str) -> List[float]:
         """获取文本的嵌入向量"""
         # 检查缓存
         if text in self.document_embeddings_cache:
             return self.document_embeddings_cache[text]
 
+        if not self._embedding_service_available and self._allow_fallback:
+            embedding = self._generate_local_embedding(text)
+            self.document_embeddings_cache[text] = embedding
+            return embedding
+
         try:
             # 调用本地ollama服务
-            model_url = 'http://localhost:11434/api/embeddings'
+            model_url = self.embedding_service_url
             headers = {'Content-Type': 'application/json'}
 
             data = {
                 'model': self.embedding_model,
-                'prompt': text
+                'input': [text]
             }
 
             max_retries = 3
@@ -103,7 +146,43 @@ class EmbeddingRetriever(BaseRetriever):
                 try:
                     response = requests.post(model_url, json=data, headers=headers, timeout=30)
                     response.raise_for_status()
-                    embedding = response.json()['embedding']
+                    response_data = response.json()
+
+                    embedding = None
+
+                    if isinstance(response_data, dict):
+                        if 'embedding' in response_data:
+                            embedding = response_data['embedding']
+                        elif 'embeddings' in response_data:
+                            embeddings_field = response_data['embeddings']
+                            if isinstance(embeddings_field, list) and embeddings_field:
+                                embedding = embeddings_field[0]
+                        elif 'data' in response_data and isinstance(response_data['data'], list) and response_data['data']:
+                            first_item = response_data['data'][0]
+                            if isinstance(first_item, dict) and 'embedding' in first_item:
+                                embedding = first_item['embedding']
+                            else:
+                                embedding = first_item
+                        else:
+                            raise ValueError(f"嵌入响应缺少预期字段: {response_data}")
+                    elif isinstance(response_data, list) and response_data:
+                        embedding = response_data[0]
+                    else:
+                        raise ValueError(f"未知的嵌入响应格式: {response_data}")
+
+                    if isinstance(embedding, dict):
+                        raise ValueError(f"无法解析嵌入向量: {embedding}")
+
+                    if isinstance(embedding, tuple):
+                        embedding = list(embedding)
+
+                    if not isinstance(embedding, list):
+                        raise ValueError(f"嵌入向量不是列表: {type(embedding)}")
+
+                    try:
+                        embedding = [float(value) for value in embedding]
+                    except (TypeError, ValueError) as conversion_error:
+                        raise ValueError(f"嵌入向量包含非数值元素: {embedding}") from conversion_error
 
                     # 缓存结果
                     self.document_embeddings_cache[text] = embedding
@@ -117,9 +196,70 @@ class EmbeddingRetriever(BaseRetriever):
                     time.sleep(wait_time)
 
         except Exception as e:
-            logger.error(f"获取嵌入向量失败: {e}")
-            # 返回零向量作为回退
-            return [0.0] * self.config.retrieval.embedding_dim
+            if self._force_service:
+                if isinstance(e, requests.exceptions.HTTPError) and e.response is not None:
+                    status = e.response.status_code
+                    if status == 405:
+                        raise RuntimeError(
+                            "嵌入服务返回 405 Method Not Allowed，请确认端点是否正确。"
+                        ) from e
+                    if status == 404:
+                        raise RuntimeError(
+                            "嵌入服务返回 404 Not Found，可能是路径错误或服务未启动。"
+                        ) from e
+                    body = e.response.text
+                    raise RuntimeError(
+                        f"嵌入服务HTTP错误 {status}: {body}"
+                    ) from e
+                raise RuntimeError(
+                    f"嵌入服务调用失败且已启用FORCE_EMBEDDING_SERVICE: {e}. "
+                    f"请确认服务正在 {self.embedding_service_url} 运行。"
+                ) from e
+
+            if not self._allow_fallback:
+                raise RuntimeError(
+                    f"嵌入服务调用失败且未允许本地回退: {e}. "
+                    "可设置 EMBEDDING_FALLBACK_LOCAL=true 允许本地模拟嵌入。"
+                ) from e
+
+            if not self._service_warning_emitted:
+                logger.warning(f"嵌入服务不可用，使用本地模拟嵌入: {e}")
+                self._service_warning_emitted = True
+            self._embedding_service_available = False
+
+        # 服务不可用时的回退
+        embedding = self._generate_local_embedding(text)
+        self.document_embeddings_cache[text] = embedding
+        return embedding
+
+    def _ensure_text_field(self, document: Dict[str, Any]) -> None:
+        """确保文档包含text字段"""
+        if not isinstance(document, dict):
+            return
+        text = document.get("text")
+        if isinstance(text, str) and text.strip():
+            return
+        extracted = self._extract_text(document)
+        if extracted:
+            document["text"] = extracted
+
+    def _generate_local_embedding(self, text: str) -> List[float]:
+        """使用简单的哈希技巧生成本地模拟嵌入"""
+        tokens = [token for token in re.split(r"\W+", text.lower()) if token]
+        dim = self.config.retrieval.embedding_dim
+        if not tokens or dim <= 0:
+            return [0.0] * dim
+
+        vector = np.zeros(dim, dtype=float)
+        for token in tokens:
+            index = hash(token) % dim
+            vector[index] += 1.0
+
+        norm = np.linalg.norm(vector)
+        if norm > 0:
+            vector /= norm
+
+        return vector.tolist()
 
     def retrieve(self, query: str, top_k: int = 5, **kwargs) -> RetrievalResult:
         """检索文档"""
@@ -149,6 +289,9 @@ class EmbeddingRetriever(BaseRetriever):
 
             retrieved_docs = [self.documents[i] for i in top_indices]
             retrieved_scores = [similarities[i] for i in top_indices]
+
+            for doc in retrieved_docs:
+                self._ensure_text_field(doc)
 
             # 过滤低相似度文档
             threshold = kwargs.get('similarity_threshold', self.config.retrieval.similarity_threshold)

@@ -69,6 +69,8 @@ class BaseAPIClient(ABC):
 class OpenAICompatibleClient(BaseAPIClient):
     """OpenAI兼容的API客户端"""
 
+    _connection_warning_emitted = False
+
     def _setup_client(self):
         """设置OpenAI兼容客户端"""
         if not self.config.api.api_key:
@@ -125,7 +127,11 @@ class OpenAICompatibleClient(BaseAPIClient):
             logger.info("✅ API连接测试成功")
             return True
         except Exception as e:
-            logger.error(f"API连接测试失败: {e}")
+            if not self.__class__._connection_warning_emitted:
+                logger.error(f"API连接测试失败: {e}")
+                self.__class__._connection_warning_emitted = True
+            else:
+                logger.debug(f"API连接仍不可用: {e}")
             return False
 
 class MockAPIClient(BaseAPIClient):
@@ -181,37 +187,65 @@ class APIClientFactory:
         'openrouter': OpenAICompatibleClient,
         'mock': MockAPIClient
     }
+    _mock_fallback_warning_emitted = False
 
     @classmethod
     def create_client(cls, client_type: str = 'auto', model: str = "gpt-3.5-turbo") -> BaseAPIClient:
         """创建API客户端"""
         config = get_config()
 
-        if client_type == 'auto':
+        resolved_client_type = client_type
+
+        if resolved_client_type == 'auto':
+            preferred_type = (config.api.client_type or '').lower()
+            if preferred_type and preferred_type != 'auto':
+                resolved_client_type = preferred_type
+            elif config.evaluation.use_mock_api or not config.api.api_key:
+                resolved_client_type = 'mock'
+            else:
+                resolved_client_type = 'openai'
+
+        if config.api.force_real_api and resolved_client_type == 'mock' and config.api.api_key:
+            resolved_client_type = 'openai'
+
+        if resolved_client_type == 'auto':
             # 自动选择客户端类型
             if config.evaluation.use_mock_api or not config.api.api_key:
-                client_type = 'mock'
+                resolved_client_type = 'mock'
             else:
-                client_type = 'openai'
+                resolved_client_type = 'openai'
 
-        if client_type not in cls._clients:
-            raise ValueError(f"不支持的客户端类型: {client_type}")
+        if resolved_client_type not in cls._clients:
+            raise ValueError(f"不支持的客户端类型: {resolved_client_type}")
 
-        client_class = cls._clients[client_type]
-        logger.info(f"创建API客户端: {client_type}")
+        client_class = cls._clients[resolved_client_type]
+        logger.info(f"创建API客户端: {resolved_client_type}")
 
         try:
             client = client_class(model=model)
+
+            if config.api.skip_connection_test or resolved_client_type == 'mock':
+                return client
+
             # 测试连接
             if not client.test_connection():
-                if client_type != 'mock':
-                    logger.warning("API连接测试失败，回退到模拟模式")
+                if config.api.force_real_api:
+                    raise RuntimeError("API连接测试失败，已启用FORCE_REAL_API，停止回退。")
+                if resolved_client_type != 'mock' and config.api.allow_mock_fallback:
+                    if not cls._mock_fallback_warning_emitted:
+                        logger.warning("API连接测试失败，回退到模拟模式")
+                        cls._mock_fallback_warning_emitted = True
                     return cls.create_client('mock', model)
+                if not config.api.allow_mock_fallback:
+                    raise RuntimeError("API连接测试失败，未启用回退至模拟模式。")
+                return client
             return client
         except Exception as e:
             logger.error(f"创建API客户端失败: {e}")
-            if client_type != 'mock':
-                logger.info("回退到模拟模式")
+            if resolved_client_type != 'mock' and config.api.allow_mock_fallback and not config.api.force_real_api:
+                if not cls._mock_fallback_warning_emitted:
+                    logger.info("回退到模拟模式")
+                    cls._mock_fallback_warning_emitted = True
                 return cls.create_client('mock', model)
             raise
 

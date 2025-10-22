@@ -13,8 +13,14 @@ from pathlib import Path
 from datetime import datetime
 from dataclasses import dataclass, asdict
 
-from core.config import get_config
-from core.utils import setup_logging, save_json_file, load_json_file, format_time, create_progress_bar
+from ..core.config import get_config
+from ..core.utils import (
+    setup_logging,
+    save_json_file,
+    load_json_file,
+    format_time,
+    create_progress_bar,
+)
 
 logger = logging.getLogger(__name__)
 

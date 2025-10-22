@@ -6,6 +6,7 @@
 import logging
 from abc import ABC, abstractmethod
 from typing import Dict, List, Any, Optional, Union
+from numbers import Real
 from dataclasses import dataclass, field
 from datetime import datetime
 import numpy as np
@@ -24,6 +25,7 @@ class EvaluationResult:
 
     # 评估指标
     metrics: Dict[str, float] = field(default_factory=dict)
+    metadata: Dict[str, Any] = field(default_factory=dict)
 
     # 元数据
     timestamp: str = field(default_factory=lambda: datetime.now().isoformat())
@@ -54,6 +56,7 @@ class EvaluationResult:
             'contexts': self.contexts,
             'reference': self.reference,
             'metrics': self.metrics,
+            'metadata': self.metadata,
             'timestamp': self.timestamp,
             'evaluator_type': self.evaluator_type,
             'sample_id': self.sample_id,
@@ -64,7 +67,19 @@ class EvaluationResult:
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> 'EvaluationResult':
         """从字典创建评估结果"""
-        return cls(**data)
+        return cls(
+            question=data['question'],
+            answer=data['answer'],
+            contexts=data['contexts'],
+            reference=data['reference'],
+            metrics=data.get('metrics', {}),
+            metadata=data.get('metadata', {}),
+            timestamp=data.get('timestamp', datetime.now().isoformat()),
+            evaluator_type=data.get('evaluator_type', ''),
+            sample_id=data.get('sample_id'),
+            error=data.get('error'),
+            error_context=data.get('error_context'),
+        )
 
 class BaseEvaluator(ABC):
     """评估器基类"""
@@ -139,7 +154,13 @@ class BaseEvaluator(ABC):
         # 计算平均值
         avg_metrics = {}
         for metric in all_metrics:
-            values = [result.get_metric(metric) for result in results if not result.has_error()]
+            values: List[float] = []
+            for result in results:
+                if result.has_error():
+                    continue
+                value = result.get_metric(metric)
+                if isinstance(value, Real):
+                    values.append(float(value))
             if values:
                 avg_metrics[metric] = float(np.mean(values))
             else:

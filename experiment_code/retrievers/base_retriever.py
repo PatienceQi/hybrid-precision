@@ -49,7 +49,25 @@ class RetrievalResult:
     def get_document_texts(self, top_k: Optional[int] = None) -> List[str]:
         """获取文档文本内容"""
         documents = self.get_top_documents(top_k) if top_k else self.documents
-        return [doc.get('text', '') for doc in documents]
+        texts: List[str] = []
+        for doc in documents:
+            if not isinstance(doc, dict):
+                texts.append(str(doc))
+                continue
+            text = doc.get('text')
+            if isinstance(text, str) and text.strip():
+                texts.append(text.strip())
+                continue
+            content = doc.get('content')
+            if isinstance(content, str) and content.strip():
+                texts.append(content.strip())
+                continue
+            if isinstance(content, list):
+                combined = " ".join(str(item) for item in content if isinstance(item, str))
+                texts.append(combined.strip())
+                continue
+            texts.append("")
+        return texts
 
     def to_dict(self) -> Dict[str, Any]:
         """转换为字典格式"""
