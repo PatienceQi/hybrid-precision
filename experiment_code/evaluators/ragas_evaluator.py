@@ -8,6 +8,7 @@ import json
 import logging
 from typing import Dict, List, Any, Optional
 import numpy as np
+from datasets import Dataset
 
 # 尝试导入RAGAS
 try:
@@ -19,7 +20,6 @@ try:
         context_recall
     )
     from ragas.dataset_schema import SingleTurnSample, EvaluationDataset
-    from ragas.evaluation import EvaluationResult
     from ragas.llms import BaseRagasLLM
     from ragas.embeddings import BaseRagasEmbeddings
     from ragas.evaluation import EvaluationResult
@@ -118,38 +118,120 @@ if RAGAS_AVAILABLE:
 
         def __init__(self, service_url: str, model_name: str):
             super().__init__()
-            self.service_url = service_url
+            self.service_url = service_url.rstrip("/")
             self.model_name = model_name
             self.session = requests.Session()
 
-        def _embed(self, text: str) -> List[float]:
-            payload = {"model": self.model_name, "input": [text]}
+            lowered_url = self.service_url.lower()
+            self._prefer_prompt_payload = "ollama" in lowered_url or "11434" in lowered_url
+
+        def _normalize_embedding(self, candidate: Any) -> Optional[List[float]]:
+            """将不同格式的向量统一转换为浮点列表"""
+            if candidate is None:
+                return None
+            if isinstance(candidate, np.ndarray):
+                if candidate.size == 0:
+                    return None
+                return candidate.astype(float).tolist()
+            if isinstance(candidate, (list, tuple)):
+                if not candidate:
+                    return None
+                try:
+                    return [float(value) for value in candidate]
+                except (TypeError, ValueError):
+                    return None
+            if isinstance(candidate, dict):
+                for key in ("embedding", "vector", "values", "data"):
+                    if key in candidate:
+                        return self._normalize_embedding(candidate[key])
+            if isinstance(candidate, (int, float)):
+                return [float(candidate)]
+            return None
+
+        def _extract_embedding(self, data: Any) -> Optional[List[float]]:
+            """从嵌入服务响应中提取向量"""
+            if isinstance(data, dict):
+                direct = self._normalize_embedding(data.get("embedding"))
+                if direct is not None:
+                    return direct
+
+                if "embeddings" in data and isinstance(data["embeddings"], list):
+                    for item in data["embeddings"]:
+                        normalized = self._normalize_embedding(item)
+                        if normalized is not None:
+                            return normalized
+
+                if "data" in data and isinstance(data["data"], list):
+                    for item in data["data"]:
+                        normalized = self._normalize_embedding(item)
+                        if normalized is not None:
+                            return normalized
+
+                if "results" in data and isinstance(data["results"], list):
+                    for item in data["results"]:
+                        normalized = self._normalize_embedding(item)
+                        if normalized is not None:
+                            return normalized
+
+                # 某些服务直接返回列表形式
+                normalized = self._normalize_embedding(data)
+                if normalized is not None:
+                    return normalized
+
+            elif isinstance(data, list):
+                for item in data:
+                    normalized = self._normalize_embedding(item)
+                    if normalized is not None:
+                        return normalized
+
+            return None
+
+        def _post_embedding(self, payload: Dict[str, Any]) -> Dict[str, Any]:
+            """发送请求并返回解析后的JSON"""
             response = self.session.post(self.service_url, json=payload, timeout=60)
             response.raise_for_status()
-            data = response.json()
+            try:
+                return response.json()
+            except ValueError as exc:
+                raise ValueError(f"嵌入服务返回非JSON响应: {exc}") from exc
 
-            embedding: Optional[List[float]] = None
+        def _embed(self, text: str) -> List[float]:
+            base_payload = {"model": self.model_name}
+            payload_variants: List[Dict[str, Any]] = []
 
-            if isinstance(data, dict):
-                if "embedding" in data:
-                    embedding = data["embedding"]
-                elif "embeddings" in data:
-                    embeddings_field = data["embeddings"]
-                    if isinstance(embeddings_field, list) and embeddings_field:
-                        embedding = embeddings_field[0]
-                elif "data" in data and isinstance(data["data"], list) and data["data"]:
-                    first_item = data["data"][0]
-                    if isinstance(first_item, dict) and "embedding" in first_item:
-                        embedding = first_item["embedding"]
-                    elif isinstance(first_item, list):
-                        embedding = first_item
-            elif isinstance(data, list) and data:
-                embedding = data[0]
+            if self._prefer_prompt_payload:
+                payload_variants.append({**base_payload, "prompt": text})
+            payload_variants.append({**base_payload, "input": text})
+            payload_variants.append({**base_payload, "input": [text]})
+            if not self._prefer_prompt_payload:
+                payload_variants.append({**base_payload, "prompt": text})
 
-            if embedding is None:
-                raise ValueError(f"嵌入服务返回异常结构: {data}")
+            errors: List[str] = []
+            tried_signatures = set()
 
-            return [float(value) for value in embedding]
+            for payload in payload_variants:
+                signature = tuple(sorted(payload.keys()))
+                if signature in tried_signatures:
+                    continue
+                tried_signatures.add(signature)
+
+                try:
+                    data = self._post_embedding(payload)
+                except requests.RequestException as http_err:
+                    errors.append(f"{signature}: HTTP错误 {http_err}")
+                    continue
+                except ValueError as json_err:
+                    errors.append(f"{signature}: {json_err}")
+                    continue
+
+                embedding = self._extract_embedding(data)
+                if embedding is not None:
+                    return embedding
+
+                errors.append(f"{signature}: 未找到有效的嵌入向量，响应片段={str(data)[:200]}")
+
+            error_detail = "；".join(errors[-3:]) if errors else "未知原因"
+            raise ValueError(f"嵌入服务返回无效结构，已尝试多种payload形式: {error_detail}")
 
         def embed_documents(self, texts: List[str]) -> List[List[float]]:
             return [self._embed(text) for text in texts]
@@ -355,10 +437,11 @@ class RagasEvaluator(BaseEvaluator):
 
             # 准备数据
             sample = SingleTurnSample(
-                question=question,
-                answer=answer,
-                contexts=sanitized_contexts,
-                ground_truth=sanitized_reference,
+                user_input=question,
+                retrieved_contexts=sanitized_contexts,
+                reference_contexts=sanitized_contexts,
+                response=answer,
+                reference=sanitized_reference,
             )
             dataset = EvaluationDataset(samples=[sample])
 
