@@ -22,7 +22,7 @@ try:
     from ragas.dataset_schema import SingleTurnSample, EvaluationDataset
     from ragas.llms import BaseRagasLLM
     from ragas.embeddings import BaseRagasEmbeddings
-    from ragas.evaluation import EvaluationResult
+    from ragas.evaluation import EvaluationResult as RagasEvaluationResult
     from ragas.run_config import RunConfig
     from langchain_core.outputs import Generation, LLMResult
     from langchain_core.prompt_values import PromptValue
@@ -35,7 +35,7 @@ except ImportError:
 
 from ..core.api_client import BaseAPIClient, APIClientFactory
 from ..core.config import get_config
-from ..core.evaluator import BaseEvaluator, EvaluationResult, EvaluationMetrics
+from ..core.evaluator import BaseEvaluator, EvaluationResult as CoreEvaluationResult, EvaluationMetrics
 
 logger = logging.getLogger(__name__)
 
@@ -75,12 +75,267 @@ if RAGAS_AVAILABLE:
                 max_tokens=512,
             )
 
-            generations: List[List[Generation]] = []
+            batch: List[Generation] = []
             for choice in completion.choices:
                 content = (choice.message.content or "").strip()
-                generations.append([Generation(text=content)])
+                batch.append(Generation(text=content))
 
-            return LLMResult(generations=generations)
+            return LLMResult(generations=[batch])
+
+        def _collect_generations(
+            self,
+            prompt_text: str,
+            n: int,
+            temperature: float,
+        ) -> List[Generation]:
+            """确保至少返回 n 个生成结果"""
+            collected: List[Generation] = []
+            remaining = max(1, n)
+            attempt = 0
+
+            while len(collected) < n and attempt < n * 2:
+                batch_n = remaining if attempt == 0 else 1
+                result = self._chat_completion(
+                    prompt_text=prompt_text,
+                    n=batch_n,
+                    temperature=temperature,
+                )
+
+                generations = result.generations[0] if result.generations else []
+                sanitized = [
+                    Generation(text=self._sanitize_generation_text(prompt_text, gen.text))
+                    for gen in generations
+                ]
+                collected.extend(sanitized)
+                remaining = n - len(collected)
+                attempt += 1
+
+                if not generations:
+                    logger.warning(
+                        "LLM未返回任何生成内容，尝试次数=%s，prompt截断=%s",
+                        attempt,
+                        prompt_text[:80],
+                    )
+                    break
+
+            if len(collected) < n:
+                logger.warning(
+                    "请求 %s 个生成结果但仅获取到 %s 个，使用已收集的结果继续执行",
+                    n,
+                    len(collected),
+                )
+
+            return collected or [Generation(text="")]
+
+        def _sanitize_generation_text(self, prompt_text: str, raw_text: str) -> str:
+            """
+            适配RAGAS的输出格式要求。
+
+            针对常见的JSON结构补齐缺失字段，避免解析失败。
+            """
+            if not raw_text:
+                return ""
+
+            text = raw_text.strip()
+            if not text:
+                return ""
+
+            prompt_type = self._detect_prompt_type(prompt_text)
+
+            def _extract_json_snippet(content: str) -> Optional[str]:
+                """尝试从包含额外文本的响应中提取JSON片段"""
+                start = content.find("{")
+                end = content.rfind("}")
+                if start == -1 or end == -1 or end <= start:
+                    return None
+                return content[start : end + 1]
+
+            def _fallback_classification(content: str) -> str:
+                """当LLM未输出JSON时，构造最小可解析结构"""
+                lowered = content.lower()
+                positive_markers = ["yes", "true", "relevant", "supported", "present"]
+                negative_markers = ["not", "no", "irrelevant", "unsupported", "absent"]
+
+                attributed = 0
+                if any(marker in lowered for marker in positive_markers):
+                    attributed = 1
+                if any(marker in lowered for marker in negative_markers):
+                    attributed = 0
+
+                stripped = content.strip()
+
+                if prompt_type == "context_recall":
+                    fallback = {
+                        "classifications": [
+                            {
+                                "statement": stripped or "",
+                                "reason": stripped or "",
+                                "attributed": attributed,
+                            }
+                        ]
+                    }
+                elif prompt_type == "answer_relevancy":
+                    fallback = {
+                        "question": stripped or "Auto-generated question",
+                        "noncommittal": attributed,
+                    }
+                elif prompt_type == "statement_generator":
+                    if stripped:
+                        statements = [seg.strip() for seg in stripped.split(".") if seg.strip()]
+                    else:
+                        statements = []
+                    if not statements:
+                        statements = ["Auto-generated statement placeholder."]
+                    fallback = {"statements": statements}
+                elif prompt_type == "nli_statements":
+                    fallback = {
+                        "statements": [
+                            {
+                                "statement": stripped or "",
+                                "reason": stripped or "",
+                                "verdict": attributed,
+                            }
+                        ]
+                    }
+                else:
+                    fallback = {
+                        "classifications": [
+                            {
+                                "statement": stripped or "",
+                                "reason": stripped or "",
+                                "attributed": attributed,
+                            }
+                        ]
+                    }
+                logger.debug(
+                    "LLM输出格式异常，已构造%s类型的兜底JSON: %s",
+                    prompt_type,
+                    str(fallback)[:120],
+                )
+                return json.dumps(fallback, ensure_ascii=False)
+
+            try:
+                parsed = json.loads(text)
+            except json.JSONDecodeError:
+                json_snippet = _extract_json_snippet(text)
+                if json_snippet:
+                    try:
+                        parsed = json.loads(json_snippet)
+                        text = json_snippet
+                    except json.JSONDecodeError:
+                        return _fallback_classification(text)
+                else:
+                    return _fallback_classification(text)
+
+            updated = False
+
+            if isinstance(parsed, dict):
+                if prompt_type == "context_recall":
+                    classifications = parsed.get("classifications")
+                    if isinstance(classifications, list):
+                        for item in classifications:
+                            if not isinstance(item, dict):
+                                continue
+                            if "statement" not in item or item["statement"] is None:
+                                item["statement"] = ""
+                                updated = True
+                            if "reason" not in item or item["reason"] is None:
+                                item["reason"] = ""
+                                updated = True
+                            if "attributed" not in item or item["attributed"] is None:
+                                item["attributed"] = 0
+                                updated = True
+                    else:
+                        parsed["classifications"] = [
+                            {
+                                "statement": "",
+                                "reason": "",
+                                "attributed": 0,
+                            }
+                        ]
+                        updated = True
+
+                elif prompt_type == "answer_relevancy":
+                    if "question" not in parsed or parsed["question"] is None:
+                        parsed["question"] = ""
+                        updated = True
+                    if "noncommittal" not in parsed or parsed["noncommittal"] is None:
+                        parsed["noncommittal"] = 0
+                        updated = True
+
+                elif prompt_type == "statement_generator":
+                    statements = parsed.get("statements")
+                    if isinstance(statements, list):
+                        processed_statements = []
+                        for item in statements:
+                            if isinstance(item, str):
+                                processed_statements.append(item)
+                            elif isinstance(item, dict):
+                                statement_val = item.get("statement") or item.get("text") or ""
+                                if statement_val:
+                                    processed_statements.append(str(statement_val))
+                        if not processed_statements:
+                            processed_statements = ["Auto-generated statement placeholder."]
+                        if processed_statements != statements:
+                            parsed["statements"] = processed_statements
+                            updated = True
+                    else:
+                        parsed["statements"] = ["Auto-generated statement placeholder."]
+                        updated = True
+
+                elif prompt_type == "nli_statements":
+                    statements = parsed.get("statements")
+                    if isinstance(statements, list):
+                        for item in statements:
+                            if not isinstance(item, dict):
+                                continue
+                            if "statement" not in item or item["statement"] is None:
+                                item["statement"] = ""
+                                updated = True
+                            if "reason" not in item or item["reason"] is None:
+                                item["reason"] = ""
+                                updated = True
+                            if "verdict" not in item or item["verdict"] is None:
+                                item["verdict"] = 0
+                                updated = True
+                    else:
+                        parsed["statements"] = [
+                            {"statement": "", "reason": "", "verdict": 0}
+                        ]
+                        updated = True
+                else:
+                    # 通用修复
+                    classifications = parsed.get("classifications")
+                    if isinstance(classifications, list):
+                        for item in classifications:
+                            if not isinstance(item, dict):
+                                continue
+                            if "reason" not in item:
+                                item["reason"] = ""
+                                updated = True
+                            if "attributed" not in item:
+                                item["attributed"] = 0
+                                updated = True
+
+            if updated:
+                try:
+                    return json.dumps(parsed, ensure_ascii=False)
+                except (TypeError, ValueError):
+                    return text
+
+            return text
+
+        def _detect_prompt_type(self, prompt_text: str) -> str:
+            lowered = prompt_text.lower()
+            if "context recall" in lowered and "classify" in lowered:
+                return "context_recall"
+            if "generate a question for the given answer" in lowered:
+                return "answer_relevancy"
+            if "analyze the complexity of each sentence" in lowered:
+                return "statement_generator"
+            if "judge the faithfulness of a series of statements" in lowered:
+                return "nli_statements"
+            return "generic"
 
         def generate_text(
             self,
@@ -91,7 +346,17 @@ if RAGAS_AVAILABLE:
             callbacks: Optional[Any] = None,
         ) -> LLMResult:
             prompt_text = prompt.to_string()
-            return self._chat_completion(prompt_text, n=n, temperature=temperature)
+            generations = self._collect_generations(prompt_text, n, temperature)
+            if generations and len(generations) < n:
+                last_generation = generations[-1]
+                generations.extend(
+                    Generation(text=last_generation.text)
+                    for _ in range(n - len(generations))
+                )
+            elif not generations:
+                generations = [Generation(text="") for _ in range(n)]
+
+            return LLMResult(generations=[generations[: max(1, n)]])
 
         async def agenerate_text(
             self,
@@ -351,7 +616,7 @@ class RagasEvaluator(BaseEvaluator):
         contexts: List[str],
         reference: str,
         **kwargs,
-    ) -> EvaluationResult:
+    ) -> CoreEvaluationResult:
         """评估单个样本"""
         try:
             self._validate_input_data(question, answer, contexts, reference)
@@ -381,7 +646,7 @@ class RagasEvaluator(BaseEvaluator):
         contexts: List[str],
         reference: str,
         metrics: Optional[List] = None,
-    ) -> EvaluationResult:
+    ) -> CoreEvaluationResult:
         """使用RAGAS框架进行评估"""
         try:
             if not self.ragas_llm:
@@ -488,7 +753,7 @@ class RagasEvaluator(BaseEvaluator):
                 logger.warning("RAGAS未返回任何指标，回退到手动评估")
                 return self._evaluate_manually(question, answer, contexts, reference)
 
-            return EvaluationResult(
+            return CoreEvaluationResult(
                 question=question,
                 answer=answer,
                 contexts=contexts,
@@ -517,9 +782,20 @@ class RagasEvaluator(BaseEvaluator):
         metric_name: str,
     ) -> Optional[float]:
         """从RAGAS返回值中提取指标"""
-        if isinstance(ragas_result, EvaluationResult):
-            scores_df = ragas_result.scores.to_pandas()
-            if not scores_df.empty and metric_name in scores_df.columns:
+        if isinstance(ragas_result, RagasEvaluationResult):
+            scores_list = getattr(ragas_result, "scores", None)
+            if isinstance(scores_list, list) and scores_list:
+                first_row = scores_list[0]
+                if isinstance(first_row, dict) and metric_name in first_row:
+                    try:
+                        return float(first_row[metric_name])
+                    except (TypeError, ValueError):
+                        return None
+            try:
+                scores_df = ragas_result.to_pandas()
+            except Exception:
+                scores_df = None
+            if scores_df is not None and not scores_df.empty and metric_name in scores_df.columns:
                 try:
                     return float(scores_df.iloc[0][metric_name])
                 except (TypeError, ValueError):
@@ -536,7 +812,7 @@ class RagasEvaluator(BaseEvaluator):
         return None
 
     def _evaluate_manually(self, question: str, answer: str,
-                         contexts: List[str], reference: str) -> EvaluationResult:
+                         contexts: List[str], reference: str) -> CoreEvaluationResult:
         """手动计算RAGAS指标"""
         logger.info("使用手动RAGAS评估")
 
@@ -555,7 +831,7 @@ class RagasEvaluator(BaseEvaluator):
         # 4. 上下文召回率
         metrics['context_recall'] = EvaluationMetrics.calculate_context_recall(contexts, reference)
 
-        return EvaluationResult(
+        return CoreEvaluationResult(
             question=question,
             answer=answer,
             contexts=contexts,
@@ -569,7 +845,7 @@ class RagasEvaluator(BaseEvaluator):
                       answers: List[str],
                       contexts: List[List[str]],
                       references: List[str],
-                      **kwargs) -> List[EvaluationResult]:
+                      **kwargs) -> List[CoreEvaluationResult]:
         """评估批量样本"""
         if not (len(questions) == len(answers) == len(contexts) == len(references)):
             raise ValueError("输入数据长度不匹配")

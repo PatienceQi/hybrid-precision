@@ -1,0 +1,4034 @@
+{
+  "batch_info": {
+    "batch_id": 1,
+    "experiment_type": "baseline",
+    "batch_size": 200,
+    "start_time": "2025-10-22T11:52:19.262120",
+    "processed_samples": 200,
+    "error_count": 0,
+    "current_sample_idx": 199,
+    "estimated_completion_time": null,
+    "status": "completed",
+    "last_update": "2025-10-22T14:27:13.042905",
+    "elapsed_time": 9293.781249046326,
+    "completion_time": 9293.79680299759,
+    "completion_timestamp": "2025-10-22T14:27:13.058468"
+  },
+  "summary": {
+    "total_samples": 200,
+    "error_count": 0,
+    "success_rate": 1.0,
+    "experiment_type": "baseline"
+  },
+  "results": [
+    {
+      "context_precision": 0.16666666665,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.5
+    },
+    {
+      "context_precision": 0.16666666665,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.6156141450038812,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.22619047617916663,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.249999999975,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.9613606551611817,
+      "context_recall": 0.0
+    },
+    {
+      "context_precision": 0.19999999998,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.3047619047542857,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.7543041842060894,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.11111111109999999,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.6032288631815758,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.8951388888776997,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.5
+    },
+    {
+      "context_precision": 0.162499999991875,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.19642857141875,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.5
+    },
+    {
+      "context_precision": 0.26666666665333333,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.5833333333041666,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.66666666665,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.6666666666333333,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.26666666665333333,
+      "faithfulness": 0.3333333333333333,
+      "answer_relevancy": 0.6809185027281227,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.9999999999,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "context_precision": 0.7856701939947976,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9745311235317698,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.22499999998875,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.16666666665,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.7499999999625,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.9871026732472569,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.5583333333193751,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.6930166809437043,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.42063492062089947,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8034263669368995,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.7392857142709285,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.22499999998875,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.3333333333,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.8811521088034676,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.9999999999,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.4499999999775,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.2777777777638889,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.5
+    },
+    {
+      "context_precision": 0.11111111109999999,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.6722222222087778,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.39789576155092843,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.33333333331666665,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.2777777777685185,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.47762119186394364,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.6333333333122222,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9469662884848732,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.841225749549736,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.5
+    },
+    {
+      "context_precision": 0.1944444444347222,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "context_precision": 0.249999999975,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.5
+    },
+    {
+      "context_precision": 0.5777777777585186,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.7429377621485375,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.8329931972670116,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.8164075202001309,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.22619047617916663,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.25584292257923014,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.11111111109999999,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.9761011997570904,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.37499999998125,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.8987399071455685,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.8968253968104498,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.7810524908306106,
+      "context_recall": 0.25
+    },
+    {
+      "context_precision": 0.162499999991875,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.494040210371673,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.285185185175679,
+      "faithfulness": 0.3333333333333333,
+      "answer_relevancy": 0.5509926627250133,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.609523809503492,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.42409796469042665,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.30357142856130953,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.7624956085083987,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.5873015872820105,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.8095238094968253,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.6846746458664242,
+      "context_recall": 0.0
+    },
+    {
+      "context_precision": 0.49999999995,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.9999999999,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.9857327185939311,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.3499999999825,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.36944444443212965,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.499999999975,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.17142857142,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.16666666665,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.6583585484476245,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.6527777777614584,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.27579365078445767,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.27857142856214284,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.18253968253055555,
+      "faithfulness": 0.25,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.5
+    },
+    {
+      "context_precision": 0.32499999998375,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.8709175507868046,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.18333333332416668,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "context_precision": 0.3166666666561111,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.4629456462827853,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.24285714284499998,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.37301587300343914,
+      "faithfulness": 0.25,
+      "answer_relevancy": 0.6611729696258619,
+      "context_recall": 0.0
+    },
+    {
+      "context_precision": 0.0,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.4079365079283492,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.62499999996875,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.8540118360837264,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.24285714284499998,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.799751146886638,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.599999999985,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.6666666666444444,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.11111111109999999,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.449369946196207,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.14285714284285714,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.36507936506719574,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.8068655012108411,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.0,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8607843463268546,
+      "context_recall": 0.0
+    },
+    {
+      "context_precision": 0.09999999999,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.4999999999875,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.5277777777645833,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.62499999996875,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.5
+    },
+    {
+      "context_precision": 0.22499999998875,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.5787301587185841,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8448927035564276,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.11111111109999999,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.9355203383767511,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.6555555555337037,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.35158730157851187,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.9944659128190775,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.841225749549736,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.9778982218180549,
+      "context_recall": 0.0
+    },
+    {
+      "context_precision": 0.15555555554777778,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.36666666664833336,
+      "faithfulness": 0.3333333333333333,
+      "answer_relevancy": 0.9993262606132666,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.09999999999,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "context_precision": 0.49999999995,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.4434920634831937,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "context_precision": 0.22499999998875,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.9200257262810198,
+      "context_recall": 0.5
+    },
+    {
+      "context_precision": 0.7607709750458211,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.9216130403704458,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.5654761904620536,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.9098779042195883,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.99999999995,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.8956679117586335,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.4428571428423809,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.809490965915359,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.20833333332291665,
+      "faithfulness": 0.3333333333333333,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.36666666664833336,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "context_precision": 0.26666666665333333,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.30952380950833336,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.9999999999999997,
+      "context_recall": 0.0
+    },
+    {
+      "context_precision": 0.49999999995,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.7953928565595892,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.699999999965,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.970902295108904,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.36041666665765626,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.33580489364318206,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.20833333332291665,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.8644345237987183,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.7555555555303703,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.6981518936869481,
+      "context_recall": 0.0
+    },
+    {
+      "context_precision": 0.9571428571291837,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.18253968253055555,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9968306344517077,
+      "context_recall": 0.0
+    },
+    {
+      "context_precision": 0.26666666665333333,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.59999999997,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.7604363008735403,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.3333333333222222,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.9556321427423139,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.3404761904676786,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.8582900797332327,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.19999999998,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.642857142825,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.5873015872820105,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.17361111110243055,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.4444444444296296,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.32499999998375,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.9999999999,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.8989569480075584,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.249999999975,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.629523809511219,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.41319444443411457,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.16666666665,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.5545461190743545,
+      "context_recall": 0.0
+    },
+    {
+      "context_precision": 0.7568027210776239,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8419587197015184,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.3063492063389947,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.9653359762532784,
+      "context_recall": 0.25
+    },
+    {
+      "context_precision": 0.6111111110805556,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.26666666665333333,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.3955074681132132,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.3166666666561111,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.5666666666525,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.4761904761746032,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.8169805424424529,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.19999999998,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.9467813051041186,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9911477735065661,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.4166666666458333,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.34166666665527773,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.8388888888784028,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.526719576710798,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.699999999965,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.17361111110243055,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.882210893964245,
+      "context_recall": 0.75
+    },
+    {
+      "context_precision": 0.9085317460203893,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9913840351724886,
+      "context_recall": 0.5
+    },
+    {
+      "context_precision": 0.7777777777518519,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.9819440192892402,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.22619047617916663,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.22499999998875,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.515336967467057,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.5444444444262962,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.8419974630809018,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.599999999985,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.99999999995,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.09999999999,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.3499999999825,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.17142857142,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "context_precision": 0.42063492062089947,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.20833333332291665,
+      "faithfulness": 0.75,
+      "answer_relevancy": 0.6597516695445783,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.2888888888792593,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.6458333333171874,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.49999999995,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "context_precision": 0.19999999998,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.6650581210692468,
+      "context_recall": 0.0
+    },
+    {
+      "context_precision": 0.4166666666458333,
+      "faithfulness": 0.75,
+      "answer_relevancy": 0.783030687133429,
+      "context_recall": 0.0
+    },
+    {
+      "context_precision": 0.555555555537037,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.3081109400759145,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.499999999975,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.249999999975,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.9985468674844286,
+      "context_recall": 0.0
+    },
+    {
+      "context_precision": 0.16666666665,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.22499999998875,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.4499999999775,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.3333333333333333
+    },
+    {
+      "context_precision": 0.9526289682420604,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.6348106268983944,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.32499999998375,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.5988427024086321,
+      "context_recall": 0.0
+    },
+    {
+      "context_precision": 0.8333333332916666,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.8910775199999111,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.24285714284499998,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.9293650793534624,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.6316095785535865,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.6666666666333333,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.6508553791761192,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.11111111109999999,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.4166666666458333,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.8842981872157787,
+      "context_recall": 0.75
+    },
+    {
+      "context_precision": 0.499999999975,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.19999999998,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.3595238095118254,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.7500563892497784,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.22619047617916663,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.6840462028339668,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.18333333332416668,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.39999999998666663,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.20833333332291665,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.11111111109999999,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.826020408151465,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.5817812594692887,
+      "context_recall": 0.5
+    },
+    {
+      "context_precision": 0.1944444444347222,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.5160714285628274,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.4534579145397484,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.5238095237964286,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.32499999998375,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.666259651439617,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.99999999999,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.162499999991875,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "context_precision": 0.99999999995,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.5238095237964286,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.7542694905908386,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.19999999998,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.9999999999999997,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.5305555555449444,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.7777777777518519,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "context_precision": 0.7388888888741112,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.6555555555337037,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.9128265919420144,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.53333333332,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.4761904761746032,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.62499999996875,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.9412403368128692,
+      "context_recall": 0.75
+    },
+    {
+      "context_precision": 0.49999999995,
+      "faithfulness": 0.3333333333333333,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.18333333332416668,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.8193926182576052,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.19999999998,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.3313492063381614,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.6665911443159817,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.14285714284285714,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "context_precision": 0.3333333333,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.36666666664833336,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.6430019444843501,
+      "context_recall": 1.0
+    },
+    {
+      "context_precision": 0.0,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
+    }
+  ],
+  "detailed_logs": [
+    {
+      "sample_id": 1,
+      "question": "Which magazine was started first Arthur's Magazine or First for Women?",
+      "answer": "文档中没有提到Arthur's Magazine或First for Women杂志哪一个是先成立的。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.16666666665,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 0.5
+      },
+      "error": null,
+      "timestamp": "2025-10-22T11:55:06.219705"
+    },
+    {
+      "sample_id": 2,
+      "question": "Which tennis player won more Grand Slam titles, Henri Leconte or Jonathan Stark?",
+      "answer": "Ken Rosewall won more Grand Slam titles than both Henri Leconte and Jonathan Stark. Rosewall won a total of 23 tennis Majors, including 8 Grand Slam singles titles.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.16666666665,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.6156141450038812,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T11:55:50.243942"
+    },
+    {
+      "sample_id": 3,
+      "question": "Fast Cars, Danger, Fire and Knives includes guest appearances from which hip hop record executive?",
+      "answer": "根据提供的文档内容，无法找到关于“Fast Cars, Danger, Fire and Knives”专辑中出现哪位嘻哈唱片公司高管的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.22619047617916663,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T11:56:34.791843"
+    },
+    {
+      "sample_id": 4,
+      "question": "Where did the form of music played by Die Rhöner Säuwäntzt originate?",
+      "answer": "Die Rhöner Säuwäntzt的音乐形式起源于德国。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.249999999975,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.9613606551611817,
+        "context_recall": 0.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T11:57:30.434941"
+    },
+    {
+      "sample_id": 5,
+      "question": "Which band was founded first, Hole, the rock band that Courtney Love was a frontwoman of, or The Wolfhounds?",
+      "answer": "文档中没有提到Hole乐队或The Wolfhounds哪个成立得更早。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.19999999998,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T11:58:11.815071"
+    },
+    {
+      "sample_id": 6,
+      "question": "Chang Ucchin was born in korea during a time that ended with the conclusion of what? ",
+      "answer": "Chang Ucchin was born in Korea during a time that ended with the conclusion of Japanese rule in 1945 at the end of World War II.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.3047619047542857,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.7543041842060894,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T11:58:53.339782"
+    },
+    {
+      "sample_id": 7,
+      "question": "Which documentary is about Finnish rock groups, Adam Clayton Powell or The Saimaa Gesture?",
+      "answer": "The documentary about Finnish rock groups is \"The Saimaa Gesture.\"",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.11111111109999999,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.6032288631815758,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T11:59:35.894550"
+    },
+    {
+      "sample_id": 8,
+      "question": "Who was inducted into the Rock and Roll Hall of Fame, David Lee Roth or Cia Berg?",
+      "answer": "根据提供的文档内容，没有提到David Lee Roth或Cia Berg被引入摇滚名人堂。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.8951388888776997,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.0,
+        "context_recall": 0.5
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:00:23.553267"
+    },
+    {
+      "sample_id": 9,
+      "question": "Zimbabwe's Guwe Secondary School has a sister school in what New York cunty?",
+      "answer": "根据提供的文档内容，无法找到Zimbabwe's Guwe Secondary School在纽约哪个县有姐妹学校的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.162499999991875,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:01:11.942647"
+    },
+    {
+      "sample_id": 10,
+      "question": "Pauline Henry was known as the vocalist of a very popular cover song. Which album was this song from?",
+      "answer": "根据提供的文档内容，无法回答关于Pauline Henry的问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.19642857141875,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.0,
+        "context_recall": 0.5
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:01:58.837806"
+    },
+    {
+      "sample_id": 11,
+      "question": "What American country music singer-songwriter, born in May of 1942, sang a duet with her ex-husband the same year that he released the song \"The Battle?\"",
+      "answer": "根据提供的文档内容，无法找到符合问题描述的美国乡村音乐歌手。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.26666666665333333,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:02:41.641748"
+    },
+    {
+      "sample_id": 12,
+      "question": "A Head Full of Dreams Tour is the seventh tour by Coldplay, and which had it's first show at a stadium that is known as Estadio Unico and is owned by who?",
+      "answer": "根据提供的文档内容，无法回答关于Coldplay巡回演唱会首场在Estadio Unico举行并由谁拥有的问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.5833333333041666,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:03:26.696087"
+    },
+    {
+      "sample_id": 13,
+      "question": "Which Oscar-nominated film was written by the screenwriter who wrote a 1991 romantic drama based upon a screenplay by Sooni Taraporevala?",
+      "answer": "根据提供的文档内容，无法确定哪部奥斯卡提名的电影是由撰写了1991年浪漫剧本的编剧所写的，后者基于Sooni Taraporevala的剧本。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.66666666665,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:04:16.625911"
+    },
+    {
+      "sample_id": 14,
+      "question": "The Golden Globe Award winner for best actor from \"Roseanne\" starred along what actress in Gigantic?",
+      "answer": "文档中没有提到\"The Golden Globe Award winner for best actor from 'Roseanne' starred along what actress in Gigantic\"这个问题涉及的具体信息，因此无法提供准确的回答。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.6666666666333333,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:05:04.202189"
+    },
+    {
+      "sample_id": 15,
+      "question": "El Nuevo Cojo and Golf Magazine are both special interest publications but which one is owned by Time Inc?",
+      "answer": "El Nuevo Cojo and Golf Magazine are both special interest publications, but Golf Magazine is owned by Time Inc.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.26666666665333333,
+        "faithfulness": 0.3333333333333333,
+        "answer_relevancy": 0.6809185027281227,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:05:48.335663"
+    },
+    {
+      "sample_id": 16,
+      "question": "Who funds the bowling team that includes the school bus driver for Springfield Elementary School?",
+      "answer": "根据提供的文档内容，没有提到斯普林菲尔德小学的保龄球队是由谁资助的。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.9999999999,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.0,
+        "context_recall": 0.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:06:33.640144"
+    },
+    {
+      "sample_id": 17,
+      "question": "What city are George Washington University Hospital and MedStar Washington Hospital Center located in?",
+      "answer": "George Washington University Hospital and MedStar Washington Hospital Center are located in Washington, D.C.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.7856701939947976,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.9745311235317698,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:07:15.416352"
+    },
+    {
+      "sample_id": 18,
+      "question": "What author has contributed to such works as \"New Statesmen\", \"The Nation\", and \"The Atlantic\", among others, while also being being associated with Dysteleology?",
+      "answer": "根据提供的文档内容，没有关于与作品《New Statesmen》、《The Nation》和《The Atlantic》有关的作者信息，也没有提到与Dysteleology 相关的作者。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.22499999998875,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:07:58.941318"
+    },
+    {
+      "sample_id": 19,
+      "question": "Who developed the prototype pacemaker used by the 34th President of the USA?",
+      "answer": "根据提供的文档内容，无法找到关于美国第34任总统使用的原型起搏器的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.16666666665,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:08:41.044855"
+    },
+    {
+      "sample_id": 20,
+      "question": "Which publishing company has published Bizarre and a sister publication devoted to the anomalous phenomena popularised by Charles Fort?",
+      "answer": "The publishing company that has published Bizarre and a sister publication devoted to the anomalous phenomena popularized by Charles Fort is Fortean Times Ltd.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.7499999999625,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.9871026732472569,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:09:23.986701"
+    },
+    {
+      "sample_id": 21,
+      "question": "Who performed the lead single on the album Friends in Low Places, No Fences, that reached #1 on Billboard?",
+      "answer": "Garth Brooks performed the lead single \"Friends in Low Places\" on the album \"No Fences\" that reached #1 on Billboard.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.5583333333193751,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.6930166809437043,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:10:09.607913"
+    },
+    {
+      "sample_id": 22,
+      "question": "The lead singer and guitarist in the Portland, Oregon rock band consisting of John Gourley, Zach Carothers, Kyle O'Quin, Jason Sechrist and Eric Howk, goes by what alias?",
+      "answer": "问题的答案是：The lead singer and guitarist in the Portland, Oregon rock band consisting of John Gourley, Zach Carothers, Kyle O'Quin, Jason Sechrist and Eric Howk goes by the alias \"John Baldwin Gourley\".",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.42063492062089947,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.8034263669368995,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:10:59.066901"
+    },
+    {
+      "sample_id": 23,
+      "question": "What actor in the film D.C. Cab also had a role in the TV series Barney Miller?",
+      "answer": "文档中没有提到电影《D.C. Cab》的演员信息，因此无法回答这个问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.7392857142709285,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:11:43.355663"
+    },
+    {
+      "sample_id": 24,
+      "question": "In which stadium do the teams owned by Myra Kraft's husband play?",
+      "answer": "根据提供的文档内容，无法找到关于Myra Kraft丈夫所拥有的球队在哪个体育场比赛的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.22499999998875,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:12:26.005324"
+    },
+    {
+      "sample_id": 25,
+      "question": "What southern California based band covered Blue Öyster Cult's Godzilla?",
+      "answer": "The southern California based band that covered Blue Öyster Cult's Godzilla is Fu Manchu.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.3333333333,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.8811521088034676,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:13:09.800648"
+    },
+    {
+      "sample_id": 26,
+      "question": "What is the current name of the Atlanta Mansion built for the daughter of the 41st Mayor of Atlanta, Georgia?",
+      "answer": "文档中没有提到亚特兰大市第41任市长的女儿所建的豪宅的当前名称。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.9999999999,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:15:24.598095"
+    },
+    {
+      "sample_id": 27,
+      "question": "The Boren-McCurdy proposals were partially brought about by which Oklahoma politician in 1992?",
+      "answer": "文档中没有提到1992年俄克拉荷马州政治家与博伦-麦卡迪提案有关的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.4499999999775,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:16:11.347534"
+    },
+    {
+      "sample_id": 28,
+      "question": "The Thoen Stone is on display at a museum in what county?",
+      "answer": "根据提供的文档内容，无法确定Thoen Stone在哪个县的博物馆展出。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.2777777777638889,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.0,
+        "context_recall": 0.5
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:16:56.757775"
+    },
+    {
+      "sample_id": 29,
+      "question": "Is Children's National Medical Center or MedStar Washington Hospital Center the largest private hospital in Washington, D.C.?",
+      "answer": "根据提供的文档内容，没有关于Children's National Medical Center或MedStar Washington Hospital Center哪家是华盛顿特区最大私立医院的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.11111111109999999,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:17:42.343903"
+    },
+    {
+      "sample_id": 30,
+      "question": "What is the birth date of the coach of the 2014-15 Michigan Wolverines men's basketball team?",
+      "answer": "John Beilein, the coach of the 2014-15 Michigan Wolverines men's basketball team, was born on February 5, 1953.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.6722222222087778,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.39789576155092843,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:18:27.509828"
+    },
+    {
+      "sample_id": 31,
+      "question": "What retailer is the second-largest in the United States and has a commercial featuring the American artist who was 1st runner-up in the 2005 USA Weekend Magazine's songwriting competition?",
+      "answer": "根据提供的文档内容，无法回答关于美国第二大零售商以及美国艺术家的商业广告的问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.33333333331666665,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:19:13.376145"
+    },
+    {
+      "sample_id": 32,
+      "question": "Which English actor of stage, film and television from the 1978 BBC drama \"Pennies From Heaven\" appeared in the 2006 BBC Four television play \"Kenneth Williams: Fantabulosa!?\"",
+      "answer": "Branko Tomović is the English actor of stage, film, and television who appeared in the 1978 BBC drama \"Pennies From Heaven\" and also appeared in the 2006 BBC Four television play \"Kenneth Williams: Fantabulosa!\"",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.2777777777685185,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.47762119186394364,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:19:58.213423"
+    },
+    {
+      "sample_id": 33,
+      "question": "Who hosted both Miss USA 1968 and The Price Is Right?",
+      "answer": "The Price Is Right and Miss USA 1968 were both hosted by Bob Barker.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.6333333333122222,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.9469662884848732,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:20:40.852680"
+    },
+    {
+      "sample_id": 34,
+      "question": "What book contains a poem which, along with \"Beowulf\" and the \"Anglo-Saxon Chronicle\", preserves a legendary list of the kings of the Angles?",
+      "answer": "文档中没有提到包含关于Angles国王传奇名单的诗歌的书籍。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.841225749549736,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 0.5
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:21:25.311298"
+    },
+    {
+      "sample_id": 35,
+      "question": "Norbert Holm was arrested and later demoted because of his Chief of Operations association with a military theorist popularly known as what?",
+      "answer": "文档中没有提到Norbert Holm被逮捕和降职与某位军事理论家的关联。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.1944444444347222,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.0,
+        "context_recall": 0.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:22:10.724893"
+    },
+    {
+      "sample_id": 36,
+      "question": "What state does Sang-Wook Cheong work as a materials scientist?",
+      "answer": "根据提供的文档内容，无法确定Sang-Wook Cheong在哪个州担任材料科学家。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.249999999975,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 0.5
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:22:53.065520"
+    },
+    {
+      "sample_id": 37,
+      "question": "Californian rock band Lit recorded A Place in the Sun in 1995, but what's their best known song?",
+      "answer": "Lit乐队最著名的歌曲是《My Own Worst Enemy》。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.5777777777585186,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.7429377621485375,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:23:35.717155"
+    },
+    {
+      "sample_id": 38,
+      "question": "What event at the Asian Junior Athletics Championships has men and women competing at the same time?",
+      "answer": "在亚洲青少年田径锦标赛上，男性和女性同时参加的比赛是混合接力赛。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.8329931972670116,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.8164075202001309,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:24:39.000459"
+    },
+    {
+      "sample_id": 39,
+      "question": "Which 1999 French Open - Women's Doubles runner-up was born in Russia on 7 June 1981?",
+      "answer": "Fred McNair was the 1999 French Open - Women's Doubles runner-up who was born in Russia on 7 June 1981.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.22619047617916663,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.25584292257923014,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:25:32.661798"
+    },
+    {
+      "sample_id": 40,
+      "question": "Between two tennis players Kim Clijsters and Mary Pierce, who is older?",
+      "answer": "根据提供的文档，Kim Clijsters比Mary Pierce年长。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.11111111109999999,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.9761011997570904,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:26:14.953001"
+    },
+    {
+      "sample_id": 41,
+      "question": "Which American college that has sent students to Centre for Medieval and Renaissance Studies was founded in 1874?",
+      "answer": "Middlebury College was founded in 1800, and it is the American college that has sent students to Centre for Medieval and Renaissance Studies and was founded in 1874.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.37499999998125,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.8987399071455685,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:26:59.132666"
+    },
+    {
+      "sample_id": 42,
+      "question": "Which British company whose majority of its business interests are in Asia was related to the London Based Trading house Matheson & Company?",
+      "answer": "The British Central Africa Company Ltd was related to the London Based Trading house Matheson & Company.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.8968253968104498,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.7810524908306106,
+        "context_recall": 0.25
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:27:44.548853"
+    },
+    {
+      "sample_id": 43,
+      "question": "Which musician, Edwyn Collins or Jimmie Ross, played the bass guitar?",
+      "answer": "Storm played the bass guitar in the band Strid. Edwyn Collins and Jimmie Ross are not mentioned in the provided documents.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.162499999991875,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.494040210371673,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:28:28.558706"
+    },
+    {
+      "sample_id": 44,
+      "question": " Teri W. Odom is a member of a scientific journal first published in 2007 by who?",
+      "answer": "Teri W. Odom is a member of the scientific journal \"Laser & Photonics Reviews\" first published in 2007 by Theodor W. Hänsch.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.285185185175679,
+        "faithfulness": 0.3333333333333333,
+        "answer_relevancy": 0.5509926627250133,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:29:19.993923"
+    },
+    {
+      "sample_id": 45,
+      "question": "What forensic psychiatrist consulted on numbers cases including one for a contract killer associated with the DeCavalcante crime family?",
+      "answer": "Michael Welner是一位法医精神科医生，曾在多起案件中担任顾问，其中包括一起涉及DeCavalcante犯罪家族的合同杀手的案件。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.609523809503492,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.42409796469042665,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:30:05.256265"
+    },
+    {
+      "sample_id": 46,
+      "question": "Which American singer-songwriter known as \"the Caruso of Rock\", recorded on the Monument Records label and had hits such as \"Pretty One,\" and \"Uptown\"?",
+      "answer": "American singer-songwriter known as \"the Caruso of Rock\", recorded on the Monument Records label and had hits such as \"Pretty One,\" and \"Uptown\" is Roy Orbison.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.30357142856130953,
+        "faithfulness": 0.6666666666666666,
+        "answer_relevancy": 0.7624956085083987,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:31:01.015732"
+    },
+    {
+      "sample_id": 47,
+      "question": "The central character of \"The Adventures of Brer Rabbit\" was later adapted into which 1946 Walt Disney Company motion picture film?",
+      "answer": "根据提供的文档内容，无法回答问题\"The Adventures of Brer Rabbit\"的中心角色后来被改编成了哪部1946年的华特·迪士尼公司电影。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.5873015872820105,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:33:17.569901"
+    },
+    {
+      "sample_id": 48,
+      "question": "Abraham Weinberg was a suspect in the killing of which Irish-American hitman?",
+      "answer": "Abraham Weinberg was a suspect in the killing of the Irish-American hitman, Danny Greene.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.8095238094968253,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.6846746458664242,
+        "context_recall": 0.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:34:00.678327"
+    },
+    {
+      "sample_id": 49,
+      "question": "Der Mond was composed by the man who was best known for what cantata?",
+      "answer": "抱歉，根据提供的文档内容中没有提到 Der Mond 是由哪位作曲家创作的。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.49999999995,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:34:42.861972"
+    },
+    {
+      "sample_id": 50,
+      "question": "Mackenzie Davis appeared in the 2013 Canadian romantic comedy film directed by whom?",
+      "answer": "Mackenzie Davis appeared in the 2013 Canadian romantic comedy film directed by Michael McGruther.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.9999999999,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.9857327185939311,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:35:28.771421"
+    },
+    {
+      "sample_id": 51,
+      "question": "The Developing Communities Project's first executive director was which former President?",
+      "answer": "根据检索到的文档，Developing Communities Project的第一任执行主任是前总统谁？答案是：文档中没有提到Developing Communities Project的第一任执行主任是哪位前总统。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.3499999999825,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:36:10.217789"
+    },
+    {
+      "sample_id": 52,
+      "question": "What was the event that Afghanistan competed in for the first time in 2017 officially known as?",
+      "answer": "根据提供的文档内容，无法找到关于阿富汗在2017年首次正式参加的事件的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.36944444443212965,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:36:51.848260"
+    },
+    {
+      "sample_id": 53,
+      "question": "Who was the director of the 2001 American romantic comedy film written by Marc Klein in which Lucy Gordon had a small role?",
+      "answer": "根据提供的文档内容，无法找到关于2001年美国浪漫喜剧电影导演的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.499999999975,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:37:33.403599"
+    },
+    {
+      "sample_id": 54,
+      "question": "What hamlet and census designated place was the location of the only pay-per-view Bunkhouse Stampede?",
+      "answer": "根据提供的文档内容，无法找到关于唯一的付费观看Bunkhouse Stampede比赛所在地的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.17142857142,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:38:16.477559"
+    },
+    {
+      "sample_id": 55,
+      "question": "Who has more scope of profession, Richard Ford or Robert E. Howard?",
+      "answer": "根据提供的文档内容，Robert E. Howard拥有更广阔的职业发展空间。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.16666666665,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.6583585484476245,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:38:58.308778"
+    },
+    {
+      "sample_id": 56,
+      "question": "The American Aircraft Penetrator was modified from a helicopter produced by what nation's military?",
+      "answer": "根据提供的文档内容，无法找到关于\"The American Aircraft Penetrator\"是如何从哪个国家的军用直升机改装而来的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.6527777777614584,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:39:40.993507"
+    },
+    {
+      "sample_id": 57,
+      "question": "What South Korean sitcom starred a South Korean singer and actress who began her music career at the age of 15?",
+      "answer": "文档中没有提到任何关于韩国情景喜剧、韩国歌手和演员的信息，因此无法回答这个问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.27579365078445767,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:40:24.790355"
+    },
+    {
+      "sample_id": 58,
+      "question": "Ghostbusters is a song written and recorded by Ray Parker Jr. as the theme song for a movie starring a Canadian-American actor who was an original member of the Not Ready for Prime Time Players on what show?",
+      "answer": "文档中没有提到《Ghostbusters》这首歌的相关信息，因此无法回答这个问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.27857142856214284,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:41:10.052392"
+    },
+    {
+      "sample_id": 59,
+      "question": "Which movie was released first, The Hunchback of Notre Dame or Saludos Amigos?",
+      "answer": "文档中没有提到《钟楼怪人》（The Hunchback of Notre Dame）和《问候朋友》（Saludos Amigos）这两部电影的发行时间，因此无法确定哪部电影首先上映。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.18253968253055555,
+        "faithfulness": 0.25,
+        "answer_relevancy": 0.0,
+        "context_recall": 0.5
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:41:57.111603"
+    },
+    {
+      "sample_id": 60,
+      "question": "The mother of the vice chair of Hillary Clinton's 2016 campaign for President is the director of what institue?",
+      "answer": "The mother of the vice chair of Hillary Clinton's 2016 campaign for President is the director of **The Forensic Panel**.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.32499999998375,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.8709175507868046,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:42:41.555009"
+    },
+    {
+      "sample_id": 61,
+      "question": "Ted Sutton plays Sergeant Cunningham in a2002 film that stars Mel Gibson as what character?",
+      "answer": "文档2中提到，Joe Escalante在2002年的一部独立电影中担任主角。由于文档中没有提到Ted Sutton，也没有提到Mel Gibson扮演的角色，因此无法回答这个问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.18333333332416668,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 0.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:43:25.429305"
+    },
+    {
+      "sample_id": 62,
+      "question": "Who is the former professional tennis player from Italy, Chris Evert or Mara Santangelo?",
+      "answer": "根据提供的文档内容，前意大利职业网球运动员是Chris Evert，而不是Mara Santangelo。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.3166666666561111,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.4629456462827853,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:44:11.640444"
+    },
+    {
+      "sample_id": 63,
+      "question": "How many German scientists, engineers, and technicians, were recruited in post-Nazi Germany as a result of the clandestine operation where Arthur Rudolph became one of the main developers of the U.S. ?space program",
+      "answer": "根据提供的文档内容，无法回答关于德国科学家、工程师和技术人员在纳粹德国后被招募的问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.24285714284499998,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:45:01.587000"
+    },
+    {
+      "sample_id": 64,
+      "question": " Marion is approximately 50 mi north of a city that is the third-most populous what in the U.S.?",
+      "answer": "Marion is approximately 50 mi north of Chicago, which is the third-most populous city in the U.S.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.37301587300343914,
+        "faithfulness": 0.25,
+        "answer_relevancy": 0.6611729696258619,
+        "context_recall": 0.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:45:47.957813"
+    },
+    {
+      "sample_id": 65,
+      "question": "Which is currently more valuable, Temagami-Lorrain Mine or Meadowbank Gold Mine?",
+      "answer": "根据提供的文档内容，无法确定Temagami-Lorrain矿还是Meadowbank金矿目前更有价值。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.0,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:46:32.825258"
+    },
+    {
+      "sample_id": 66,
+      "question": "St James Street appears as a segment of Whitecross Street on the 1610 map of the Monmouth by an English historian best known as a mapmaker of what perior?",
+      "answer": "文档中没有提到关于1610年地图的英国历史学家和地图制作者的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.4079365079283492,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:47:15.991960"
+    },
+    {
+      "sample_id": 67,
+      "question": "The Rossendale Free Press serves the town how far north of Manchester?",
+      "answer": "The Rossendale Free Press serves the town of Rossendale, which is located about 20 miles north of Manchester.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.62499999996875,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.8540118360837264,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:48:00.686408"
+    },
+    {
+      "sample_id": 68,
+      "question": "The End of the Innocence was a single by which former member of the Eagles?",
+      "answer": "The End of the Innocence was a single by Don Henley, a former member of the Eagles.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.24285714284499998,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.799751146886638,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:48:46.812788"
+    },
+    {
+      "sample_id": 69,
+      "question": "What suburban county on Long Island and the easternmost county in the U.S. state of New York is the location of a village called Lindenhurst?",
+      "answer": "文档中没有提到关于长岛上的一个名为林登赫斯特（Lindenhurst）的村庄所在的郊区县。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.599999999985,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:49:33.205717"
+    },
+    {
+      "sample_id": 70,
+      "question": "Which Lightweight division mixed martial artist founded the American Combat Association?",
+      "answer": "根据提供的文档内容，无法回答关于轻量级混合武术选手创立美国格斗协会的问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.6666666666444444,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:50:17.086598"
+    },
+    {
+      "sample_id": 71,
+      "question": "Which video game producers worked with an English film director to produce a film about sports?",
+      "answer": "The English film director Zal Batmanglij worked with producers Ridley Scott and Tony Scott to produce the film \"The East\" about sports.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.11111111109999999,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.449369946196207,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:51:03.225667"
+    },
+    {
+      "sample_id": 72,
+      "question": "Who won a Nobel Prize in 1943 and is associated with Max Volmer?",
+      "answer": "根据提供的文档内容，无法确定1943年获得诺贝尔奖并与Max Volmer有关的人物。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.14285714284285714,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:51:46.324735"
+    },
+    {
+      "sample_id": 73,
+      "question": "Who was born first Neil LaBute or H. Bruce Humberstone?",
+      "answer": "Neil LaBute was born first.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.36507936506719574,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.8068655012108411,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:52:28.033099"
+    },
+    {
+      "sample_id": 74,
+      "question": "Jonas Hummels is the younger brother of a German professional footballer who plays for the German national team, and who else?",
+      "answer": "Jonas Hummels is the younger brother of German international Mats Hummels.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.0,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.8607843463268546,
+        "context_recall": 0.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:53:13.902612"
+    },
+    {
+      "sample_id": 75,
+      "question": "Anti-Semetism in the 21st Century: The Resurgence was hosted by a journalist and writer who is an anchor of what show?",
+      "answer": "根据提供的文档，无法找到关于“Anti-Semetism in the 21st Century: The Resurgence”活动主持人的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.09999999999,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:53:57.971405"
+    },
+    {
+      "sample_id": 76,
+      "question": "How long was the rule of the dynasty that was active when the Rosetta Stone was inscribed?",
+      "answer": "文档中没有提到与罗塞塔石铭刻同时活跃的王朝的统治时长。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.4999999999875,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:54:43.978252"
+    },
+    {
+      "sample_id": 77,
+      "question": "At which stadium does the team, for which Baltimore's Marching Ravens is the official marching band, play its home games?",
+      "answer": "根据提供的文档内容，无法确定巴尔的摩行进乐队为哪支球队服务。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.5277777777645833,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:55:28.014787"
+    },
+    {
+      "sample_id": 78,
+      "question": "What shopping mall is the largest in south Texas, Malle del Norte or La Plaza Mall?",
+      "answer": "文档中没有提到南得克萨斯州最大的购物中心是Malle del Norte还是La Plaza Mall。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.62499999996875,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 0.5
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:56:10.782067"
+    },
+    {
+      "sample_id": 79,
+      "question": "Who is the mother of the prince that had allegations made against him related to the lawsuit \"Two Jane Does v US\"?",
+      "answer": "根据提供的文档，没有关于与诉讼“Two Jane Does v US”相关的王子的母亲的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.22499999998875,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:56:51.095785"
+    },
+    {
+      "sample_id": 80,
+      "question": "In between Memphis International Airport and Southwest Georgia Regional Airport which one is in Tennessee?",
+      "answer": "Memphis International Airport is in Tennessee. Southwest Georgia Regional Airport is not in Tennessee.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.5787301587185841,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.8448927035564276,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:57:30.114692"
+    },
+    {
+      "sample_id": 81,
+      "question": "Which airport is closer to Cleaveland, Ohio, Luis Muñoz Marín International Airport or Rickenbacker International Airport?",
+      "answer": "Rickenbacker International Airport is closer to Cleveland, Ohio than Luis Muñoz Marín International Airport.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.11111111109999999,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.9355203383767511,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:58:12.128190"
+    },
+    {
+      "sample_id": 82,
+      "question": "What all female high school is located in a town in Sunyani West District  in the Brong-Ahafo Region of Ghana?",
+      "answer": "在Sunyani West District的Brong-Ahafo Region的一个城镇中，位于加纳的哪所女子高中？文档中没有提到任何位于Sunyani West District的女子高中。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.6555555555337037,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:58:56.469041"
+    },
+    {
+      "sample_id": 83,
+      "question": "What are the plants in the same genus as the Dendranthema boreale sometimes called?",
+      "answer": "The plants in the same genus as Dendranthema boreale are sometimes called grass-trees.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.35158730157851187,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.9944659128190775,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T12:59:40.087409"
+    },
+    {
+      "sample_id": 84,
+      "question": "Who is the composer Howard Ashman worked with on his musical released in 1982? ",
+      "answer": "Howard Ashman worked with composer Alan Menken on his musical released in 1982.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.841225749549736,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.9778982218180549,
+        "context_recall": 0.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:00:27.506574"
+    },
+    {
+      "sample_id": 85,
+      "question": "What actor portrayed a character in a television series about a fictional race of superhumans appearing in American comic books published by Marvel Comics?",
+      "answer": "文档中没有提到任何关于演员扮演美国漫画出版公司漫威漫画中虚构的超人种族的电视系列的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.15555555554777778,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:01:13.919966"
+    },
+    {
+      "sample_id": 86,
+      "question": "Who founded the college attended by Thomas Balston, member of the Whatman paper-making family?",
+      "answer": "Mar Adolph Medlycott founded the college attended by Thomas Balston, a member of the Whatman paper-making family.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.36666666664833336,
+        "faithfulness": 0.3333333333333333,
+        "answer_relevancy": 0.9993262606132666,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:02:00.039550"
+    },
+    {
+      "sample_id": 87,
+      "question": "Joh Bruce Yeh founded a chamber ensemble who won a Grammy in 1985 for their recording of this work based on what Rusian folk tale?",
+      "answer": "根据提供的文档内容，无法回答关于Joh Bruce Yeh创建的室内乐团获得1985年格莱美奖的问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.09999999999,
+        "faithfulness": 0.6666666666666666,
+        "answer_relevancy": 0.0,
+        "context_recall": 0.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:02:47.177267"
+    },
+    {
+      "sample_id": 88,
+      "question": "Titus is the soundtrack to the film that starred which actors?",
+      "answer": "根据提供的文档，无法回答问题\"Titus is the soundtrack to the film that starred which actors?\"。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.49999999995,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:03:29.235164"
+    },
+    {
+      "sample_id": 89,
+      "question": "The producer of The Wreckage of Stars also produced albums for Texas in July, Everclear, and what other American metalcore band from Lancaster, Pennsylvania?",
+      "answer": "根据提供的文档内容，无法找到关于\"The Wreckage of Stars\"制作人同时也制作了来自宾夕法尼亚兰开斯特的另一支美国金属核心乐队的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.4434920634831937,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 0.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:04:15.211543"
+    },
+    {
+      "sample_id": 90,
+      "question": "Which tennis player has received a higher World singles ranking, Xavier Malisse or Virginia Wade?",
+      "answer": "Martina Hingis has received a higher World singles ranking compared to Xavier Malisse and Virginia Wade.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.22499999998875,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.9200257262810198,
+        "context_recall": 0.5
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:05:03.196474"
+    },
+    {
+      "sample_id": 91,
+      "question": "Where does Lance Stephenson of the Indiana Pacers basketball team play his home games?",
+      "answer": "Lance Stephenson of the Indiana Pacers basketball team plays his home games at the Bankers Life Fieldhouse in Indianapolis, Indiana.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.7607709750458211,
+        "faithfulness": 0.6666666666666666,
+        "answer_relevancy": 0.9216130403704458,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:05:47.784896"
+    },
+    {
+      "sample_id": 92,
+      "question": "What is the name of the architect who designed the Lincoln Memorial dedicated in 1922?",
+      "answer": "林肯纪念堂于1922年落成，设计师是亨利·埃尔维斯·比肯斯。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.5654761904620536,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.9098779042195883,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:06:28.692399"
+    },
+    {
+      "sample_id": 93,
+      "question": "Toronto's Insight Sports is partially owned by what Canadian businessman?",
+      "answer": "Toronto's Insight Sports is partially owned by J. William Billes, a Canadian businessman and co-founder of Canadian Tire.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.99999999995,
+        "faithfulness": 0.6666666666666666,
+        "answer_relevancy": 0.8956679117586335,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:07:12.905790"
+    },
+    {
+      "sample_id": 94,
+      "question": "Who was born first George Marshall or Allan Dwan ?",
+      "answer": "Allan Dwan was born first.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.4428571428423809,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.809490965915359,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:08:00.187362"
+    },
+    {
+      "sample_id": 95,
+      "question": "The Nike Mercurial Vapor is a football shoe worn by which Colombian striker?",
+      "answer": "根据提供的文档内容，无法回答关于哪位哥伦比亚前锋穿着Nike Mercurial Vapor足球鞋的问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.20833333332291665,
+        "faithfulness": 0.3333333333333333,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:08:41.158735"
+    },
+    {
+      "sample_id": 96,
+      "question": "West Ridge and the ridge that has IndependenceAvenue/Liberation Avenue as its eastern boundary are separated by what road? ",
+      "answer": "West Ridge和以Independence Avenue/Liberation Avenue为东边界的山脊之间被什么道路分开？  \n回答：没有足够信息来回答这个问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.36666666664833336,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 0.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:09:29.100765"
+    },
+    {
+      "sample_id": 97,
+      "question": "What is the historical name of the acid that dissolves phenazine?",
+      "answer": "文档中没有提到任何溶解苯并啉的酸的历史名称。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.26666666665333333,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:10:10.545346"
+    },
+    {
+      "sample_id": 98,
+      "question": "Who completed more books in their lifetime, Anne Frank or John Kennedy Toole?",
+      "answer": "Anne Frank completed more books in her lifetime compared to John Kennedy Toole.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.30952380950833336,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.9999999999999997,
+        "context_recall": 0.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:10:59.242569"
+    },
+    {
+      "sample_id": 99,
+      "question": "What side of town is the Chicago Mayer-endorsed, 38th Ward of the City of Chicago alderman serving?",
+      "answer": "Chicago Mayer-endorsed, 38th Ward of the City of Chicago alderman serves on the city's Northwest Side.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.49999999995,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.7953928565595892,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:11:44.995696"
+    },
+    {
+      "sample_id": 100,
+      "question": "Where is the company that built Woodvale Historic District located?",
+      "answer": "Woodvale Historic District的建造公司位于纽约州的水牛城（Buffalo, New York）。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.699999999965,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.970902295108904,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:12:28.463408"
+    },
+    {
+      "sample_id": 101,
+      "question": "Which mentor in the 3rd Sa Re Ga Ma Pa Challenge died in Kokilaben hospital?",
+      "answer": "Lars Fredrik Bergstrøm, a mentor in the 3rd Sa Re Ga Ma Pa Challenge, died in Kokilaben hospital.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.36041666665765626,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.33580489364318206,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:13:13.013342"
+    },
+    {
+      "sample_id": 102,
+      "question": "For which North American auto racing series launched by the Sports Car Club of America does Jack Baldwin drive a Porsche Cayman S?",
+      "answer": "根据提供的文档，无法找到关于Jack Baldwin驾驶Porsche Cayman S参加由Sports Car Club of America推出的北美赛车系列的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.20833333332291665,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:13:58.965741"
+    },
+    {
+      "sample_id": 103,
+      "question": "Who's the Hungarian-born US film director renowned for adapting Stephen King novellas to the screen, including The Mist and The Green Mile?",
+      "answer": "根据提供的文档内容，没有提到匈牙利出生的美国电影导演根据斯蒂芬·金的中篇小说改编成电影的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.8644345237987183,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:14:43.961033"
+    },
+    {
+      "sample_id": 104,
+      "question": "Who achieved fame starring alongside John Richard Schneider in a television series?",
+      "answer": "John Schneider achieved fame starring alongside Tom Wopat and James Best in the American television action/comedy series \"The Dukes of Hazzard\".",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.7555555555303703,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.6981518936869481,
+        "context_recall": 0.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:15:31.678214"
+    },
+    {
+      "sample_id": 105,
+      "question": "Rick Seibold has worked with what artist known for her role in \"Big Time Rush\"?",
+      "answer": "根据提供的文档内容，无法找到关于Rick Seibold与出演\"Big Time Rush\"中角色而闻名的艺术家合作的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.9571428571291837,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:16:16.995303"
+    },
+    {
+      "sample_id": 106,
+      "question": "Where is the band that wrote \"The Drug in Me Is You\" based in?",
+      "answer": "The band that wrote \"The Drug in Me Is You\" is based in the United States.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.18253968253055555,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.9968306344517077,
+        "context_recall": 0.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:16:59.897597"
+    },
+    {
+      "sample_id": 107,
+      "question": "Who wrote and directed the film in which Adam Beach played Slipknot?",
+      "answer": "根据提供的文档内容，无法找到关于Adam Beach出演Slipknot角色的电影的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.26666666665333333,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:17:41.307276"
+    },
+    {
+      "sample_id": 108,
+      "question": "Alamgir joined Meesha Shafi, Strings, Ali Azmat and Shahzad Hasan as a judge on which popular show?",
+      "answer": "Alamgir joined Meesha Shafi, Strings, Ali Azmat and Shahzad Hasan as a judge on the popular show \"Pepsi Battle of the Bands.\"",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.59999999997,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.7604363008735403,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:18:28.722201"
+    },
+    {
+      "sample_id": 109,
+      "question": "What is the name of the Los Angeles resident who directed a 2016 American superhero film about a surgeon who learns the mystic arts after a career-ending car accident?",
+      "answer": "Los Angeles resident who directed a 2016 American superhero film about a surgeon who learns the mystic arts after a career-ending car accident is Scott Derrickson.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.3333333333222222,
+        "faithfulness": 0.6666666666666666,
+        "answer_relevancy": 0.9556321427423139,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:19:14.970859"
+    },
+    {
+      "sample_id": 110,
+      "question": "Emprise Bank has branches in a city situated along what river?",
+      "answer": "Emprise Bank has branches in a city situated along the Missouri River.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.3404761904676786,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.8582900797332327,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:20:02.633109"
+    },
+    {
+      "sample_id": 111,
+      "question": "Emma Rose Kenney's roll in a Blue Sky Studios produced film earned how much money?",
+      "answer": "根据提供的文档内容，没有提到Emma Rose Kenney在蓝天工作室制作的电影中赚取了多少钱。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.19999999998,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:20:49.631743"
+    },
+    {
+      "sample_id": 112,
+      "question": "Who is the Russian figure skater who danced with a Russian pair skater and in 1988 and 1994.",
+      "answer": "根据提供的文档，没有找到与俄罗斯花样滑冰运动员有关的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.642857142825,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:21:37.146988"
+    },
+    {
+      "sample_id": 113,
+      "question": "The 2016 Washington State Cougars were led by the coach who previously helmed which other team?",
+      "answer": "文档中没有提到2016年华盛顿州立大学美洲狮队的主教练之前曾执教过哪支其他球队。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.5873015872820105,
+        "faithfulness": 0.6666666666666666,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:22:22.202201"
+    },
+    {
+      "sample_id": 114,
+      "question": "The Acolytes Protection Agency consisted of what wrestler born November 29, 1966",
+      "answer": "根据提供的文档内容，无法找到关于\"The Acolytes Protection Agency\"的信息，也没有提到出生于1966年11月29日的摔跤手。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.17361111110243055,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:23:05.268016"
+    },
+    {
+      "sample_id": 115,
+      "question": "What host of The Voice UK was in \"Doctor Who\"?",
+      "answer": "根据提供的文档内容，无法回答关于\"The Voice UK\"主持人在\"Doctor Who\"中的问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.4444444444296296,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:23:49.348746"
+    },
+    {
+      "sample_id": 116,
+      "question": "Who wrote the song that caused the Columbia Kingsmen to change their name to Sha Na Na?",
+      "answer": "根据提供的文档内容，无法找到引起哥伦比亚国王乐队更名为Sha Na Na的歌曲的作者。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.32499999998375,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:24:32.975390"
+    },
+    {
+      "sample_id": 117,
+      "question": "In what city was the rock band formed which was paid tribute by Listen Without Distraction? ",
+      "answer": "The rock band paid tribute by Listen Without Distraction was formed in Guildford, Surrey.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.9999999999,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.8989569480075584,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:25:21.369141"
+    },
+    {
+      "sample_id": 118,
+      "question": "The Chandrasekhar limit was named after an astrophysicist, what is the name of his uncle of which is also a novel laureate?",
+      "answer": "文档中没有提到Chandrasekhar limit是以一位天体物理学家的叔叔命名的，因此无法回答这个问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.249999999975,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:26:07.998642"
+    },
+    {
+      "sample_id": 119,
+      "question": "Who acted in \"Shanghai Knights\" and voiced Lightning McQueen in the \"Cars\" franchise?",
+      "answer": "文档中没有提到\"Shanghai Knights\"和\"Cars\"系列中闪电麦坤的演员是谁。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.629523809511219,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:26:50.855737"
+    },
+    {
+      "sample_id": 120,
+      "question": "Who did the professional tennis player currently ranked World No. 1 in men's singles defeat in the 2017 Barcelona Open Banco Sabadell - Singles?",
+      "answer": "根据提供的文档内容，无法确定职业网球运动员在2017年巴塞罗那公开赛男单比赛中击败的对手。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.41319444443411457,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:27:36.739166"
+    },
+    {
+      "sample_id": 121,
+      "question": "Which league does the 2010 head coach of the SMU Mustangs football team currently coach in?",
+      "answer": "June Jones currently coaches in the Canadian Football League (CFL) as the head coach of the Hamilton Tiger-Cats.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.16666666665,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.5545461190743545,
+        "context_recall": 0.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:28:21.047846"
+    },
+    {
+      "sample_id": 122,
+      "question": "Which was available first the No Card or the Octopus card?",
+      "answer": "No Card was available first before the Octopus card.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.7568027210776239,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.8419587197015184,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:29:03.163042"
+    },
+    {
+      "sample_id": 123,
+      "question": "What is the phrase that is commonly used on the day which is observed on 25 April each year?",
+      "answer": "在每年的4月25日观察的那一天上通常使用的短语是\"Have a nice day\"。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.3063492063389947,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.9653359762532784,
+        "context_recall": 0.25
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:29:49.392992"
+    },
+    {
+      "sample_id": 124,
+      "question": "What 1998 film with Arthur Nascarella was directed by Tony Scott?",
+      "answer": "根据提供的文档内容，无法回答关于1998年与Arthur Nascarella合作、由Tony Scott执导的电影的问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.6111111110805556,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:30:33.550145"
+    },
+    {
+      "sample_id": 125,
+      "question": "Which Byron Edmund Walker founded institution was originally controlled by the Church of England?",
+      "answer": "Byron Edmund Walker founded institution that was originally controlled by the Church of England is the University of Trinity College in Toronto.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.26666666665333333,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.3955074681132132,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:31:19.404625"
+    },
+    {
+      "sample_id": 126,
+      "question": "Which court case concerned the president of the Foundation of Moral Law and a stone monument of the Ten Commandments?",
+      "answer": "根据提供的文档内容，无法找到关于总统基金会的道德法律和十诫石碑的法庭案件的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.3166666666561111,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:32:04.855172"
+    },
+    {
+      "sample_id": 127,
+      "question": "in the 2003-04 Wolfsburg signed a starlet from River Plate who plays in what position ?",
+      "answer": "根据检索到的文档，无法找到2003-04赛季沃尔夫斯堡签下来自河床的新星球员所踢的位置。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.5666666666525,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:32:48.959947"
+    },
+    {
+      "sample_id": 128,
+      "question": "Who produced the movie that \"Puss in Boots: The Three Diablos\" is the sequel of?",
+      "answer": "Puss in Boots: The Three Diablos was produced by DreamWorks Animation.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.4761904761746032,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.8169805424424529,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:33:33.242858"
+    },
+    {
+      "sample_id": 129,
+      "question": "On which former estate was the venue of Aloha from Hawaii Via Satellite located?",
+      "answer": "根据提供的文档内容，无法回答关于Aloha from Hawaii Via Satellite活动场地所在的问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.19999999998,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:34:16.329412"
+    },
+    {
+      "sample_id": 130,
+      "question": "Where is the record company based that was co founded by the frontman of Minor Threat and Fugazi?",
+      "answer": "The record company that was co-founded by the frontman of Minor Threat and Fugazi is based in Washington, D.C.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.9467813051041186,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.9911477735065661,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:35:02.331616"
+    },
+    {
+      "sample_id": 131,
+      "question": "Kiawah Island, South Carolina was mentioned in \"Porgy and Bess,\" composed by the man best known for which other 1924 orchestral composition?",
+      "answer": "根据提供的文档内容，无法回答关于Kiawah Island, South Carolina在\"波吉与贝斯\"中提到的问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.4166666666458333,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:35:46.876336"
+    },
+    {
+      "sample_id": 132,
+      "question": "What television series did the actor that Penny Layden performed with in The Libertine star in and subsequently became a teen idol?",
+      "answer": "抱歉，根据提供的文档内容，无法回答关于演员Penny Layden在《The Libertine》中合作的电视系列剧和随后成为青少年偶像的问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.34166666665527773,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:36:30.807673"
+    },
+    {
+      "sample_id": 133,
+      "question": "Marpessa Hennink modeled fashions created by which two Dolce & Gabbana founders and designers?",
+      "answer": "根据提供的文档内容，无法回答关于Marpessa Hennink所穿时装的设计师信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.8388888888784028,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:37:11.766082"
+    },
+    {
+      "sample_id": 134,
+      "question": "\"Touch\" is a song from an album released under which labels ?",
+      "answer": "根据提供的文档内容，无法找到关于歌曲\"Touch\"所属专辑的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.526719576710798,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:37:52.558635"
+    },
+    {
+      "sample_id": 135,
+      "question": "From an Andrey Zvyagintsev drama, which American city did the actual events upon which the drama is based take place?",
+      "answer": "根据提供的文档内容，无法回答关于 Andrey Zvyagintsev 戏剧中实际事件发生地点的问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.699999999965,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:38:36.144925"
+    },
+    {
+      "sample_id": 136,
+      "question": "What New York county is Hartland Swamp Wildlife Management Area located in?",
+      "answer": "Hartland Swamp Wildlife Management Area is located in northeastern Niagara County, New York.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.17361111110243055,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.882210893964245,
+        "context_recall": 0.75
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:39:20.692736"
+    },
+    {
+      "sample_id": 137,
+      "question": "Which publication is published more often: Modern Drummer or Bookmarks?",
+      "answer": "Modern Drummer is published more often than Bookmarks.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.9085317460203893,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.9913840351724886,
+        "context_recall": 0.5
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:40:05.950026"
+    },
+    {
+      "sample_id": 138,
+      "question": "Which actress plays both Iris Carr in The Lady Vanishes, and Riley Blue in Sense8?",
+      "answer": "The actress who plays both Iris Carr in The Lady Vanishes and Riley Blue in Sense8 is Tuppence Middleton.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.7777777777518519,
+        "faithfulness": 0.6666666666666666,
+        "answer_relevancy": 0.9819440192892402,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:40:50.295893"
+    },
+    {
+      "sample_id": 139,
+      "question": "What quarterback for the Atlanta Falcons did Baker Mayfield win the starting job at Oklahoma over?",
+      "answer": "文档中没有提到贝克尔·梅菲尔德在俄克拉荷马大学赢得首发位置时击败了哪位亚特兰大猎鹰队的四分卫。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.22619047617916663,
+        "faithfulness": 0.6666666666666666,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:41:35.451949"
+    },
+    {
+      "sample_id": 140,
+      "question": "What actor in Holding the Fort is also known for being a television presenter for shows \"Game for a Laugh\", \"You Bet!\" and \"Stars in Their Eyes\"?",
+      "answer": "演员Branko Tomović在电视节目《Game for a Laugh》、《You Bet!》和《Stars in Their Eyes》中担任主持人。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.22499999998875,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.515336967467057,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:42:16.921991"
+    },
+    {
+      "sample_id": 141,
+      "question": "What other band was featured on the cover page of the Alternative Press magazine for the \"100 Bands You Need to Know in 2010\" alongside The Cab discography and Never Shout Never? ",
+      "answer": "Hey Monday was the other band featured on the cover page of the Alternative Press magazine for the \"100 Bands You Need to Know in 2010\" alongside The Cab discography and Never Shout Never.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.5444444444262962,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.8419974630809018,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:43:03.004165"
+    },
+    {
+      "sample_id": 142,
+      "question": "What is the birthdate of this Count of Luxembourg and King of Bohemia, who was father of Psalter of Bonne de Luxembourg?",
+      "answer": "根据提供的文档，无法找到这位卢森堡伯爵和波西米亚国王的出生日期，他是波讷·德·卢森堡的父亲。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.599999999985,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:43:47.691429"
+    },
+    {
+      "sample_id": 143,
+      "question": "Who wrote the song that was sung to the famous tune of the composer known as the Father of the Symphony?",
+      "answer": "根据提供的文档内容，无法确定哪首歌曲是以被称为交响乐之父的作曲家著名曲调演唱的。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.99999999995,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:44:32.915928"
+    },
+    {
+      "sample_id": 144,
+      "question": "what the real name of the welsh electronic music producer DJ who have been visited the night club called Flex in vienna hundreds of times?",
+      "answer": "根据提供的文档内容，没有关于威尔士电子音乐制作人DJ在维也纳的夜店Flex中出现过多次的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.09999999999,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:45:20.258559"
+    },
+    {
+      "sample_id": 145,
+      "question": "Nakayama Miho no Tokimeki High School included music by the composer best known for the games by what company?",
+      "answer": "文档中没有提到\"Nakayama Miho no Tokimeki High School\"或相关音乐作曲家的信息，无法回答这个问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.3499999999825,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:46:06.082523"
+    },
+    {
+      "sample_id": 146,
+      "question": "Who won the election that ran concurrently with the North Dakota gubernatorial election, 2016?",
+      "answer": "The document does not provide information about the winner of the election that ran concurrently with the North Dakota gubernatorial election, 2016.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.17142857142,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 0.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:46:51.395485"
+    },
+    {
+      "sample_id": 147,
+      "question": "Which air force base is the headquarters for the Eastern Air Defense Sector and located 12 mi east of Panama City, Florida?",
+      "answer": "根据提供的文档内容，无法回答关于位于佛罗里达州巴拿马城东部12英里处、东部防空部队总部的空军基地的问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.42063492062089947,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:47:36.755647"
+    },
+    {
+      "sample_id": 148,
+      "question": "Signet Jewelers owns what Delaware based retailer, along with Kay and Jared?",
+      "answer": "Signet Jewelers owns Zales, a Delaware based retailer, along with Kay and Jared.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.20833333332291665,
+        "faithfulness": 0.75,
+        "answer_relevancy": 0.6597516695445783,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:48:20.422622"
+    },
+    {
+      "sample_id": 149,
+      "question": "What other real life boxer did Mike Williams act with in Rocky V?",
+      "answer": "根据提供的文档内容，无法回答关于Mike Williams在《Rocky V》中与哪位真实拳击手合作的问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.2888888888792593,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:49:02.975125"
+    },
+    {
+      "sample_id": 150,
+      "question": "What Dutch DJ did Richard Bedford collaborate with on the album \"Intense\"?",
+      "answer": "文档中没有提到Richard Bedford与哪位荷兰DJ合作在专辑\"Intense\"上。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.6458333333171874,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:49:46.907458"
+    },
+    {
+      "sample_id": 151,
+      "question": "Wayne's World featured the actor who was a member of what Chicago comedy troupe?",
+      "answer": "文档中没有提到《韦恩的世界》中出演的演员是芝加哥哪个喜剧团的成员。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.49999999995,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.0,
+        "context_recall": 0.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:50:35.445689"
+    },
+    {
+      "sample_id": 152,
+      "question": "Who released their second album with a band from Louisville, Kentucky?",
+      "answer": "Kentucky Blue Collar Band released their second album \"Long Hard Road\" with a band from Louisville, Kentucky.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.19999999998,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.6650581210692468,
+        "context_recall": 0.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:51:19.234097"
+    },
+    {
+      "sample_id": 153,
+      "question": "The university who was led to six national championships by Paul \"Bear\" Bryant, had its first ever Heisman Trophy winner drafted by what NFL team?",
+      "answer": "University of Alabama had its first ever Heisman Trophy winner drafted by the Washington Redskins.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.4166666666458333,
+        "faithfulness": 0.75,
+        "answer_relevancy": 0.783030687133429,
+        "context_recall": 0.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:52:10.815675"
+    },
+    {
+      "sample_id": 154,
+      "question": "Which actor starring in \"Lisa Picard Is Famous\" was born in Douglas County?",
+      "answer": "Branko Tomović, the German-Serbian actor, was born in Douglas County.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.555555555537037,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.3081109400759145,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:52:53.993084"
+    },
+    {
+      "sample_id": 155,
+      "question": "What is the name for the regulatory body of over 25,000 football clubs in Germany?",
+      "answer": "根据提供的文档内容，无法找到关于德国25000多家足球俱乐部的监管机构的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.499999999975,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:53:38.791691"
+    },
+    {
+      "sample_id": 156,
+      "question": "Where is the company based that sold Vodafone it's New Zealand operations?",
+      "answer": "The company that sold Vodafone its New Zealand operations is based in New Zealand.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.249999999975,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.9985468674844286,
+        "context_recall": 0.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:54:23.513674"
+    },
+    {
+      "sample_id": 157,
+      "question": "Was Beyond the Gates of Splendor or Jesus Camp released first?",
+      "answer": "文档中没有提到《Beyond the Gates of Splendor》或《Jesus Camp》哪部电影先发布。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.16666666665,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:55:06.069155"
+    },
+    {
+      "sample_id": 158,
+      "question": "What band originally from Tucson, Arizona and currently from Albany, New York released their first album in 2000?",
+      "answer": "根据提供的文档内容，无法找到原本来自亚利桑那州图森市，目前位于纽约州奥尔巴尼市的乐队，并在2000年发布了他们的第一张专辑。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.22499999998875,
+        "faithfulness": 0.6666666666666666,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:55:51.365266"
+    },
+    {
+      "sample_id": 159,
+      "question": "The Sia song \"Never Give Up\" is from the soundtrack of a film that is based on what non-fiction book?",
+      "answer": "根据提供的文档内容，无法找到关于Sia歌曲《Never Give Up》所属电影改编自哪本非小说的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.4499999999775,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.0,
+        "context_recall": 0.3333333333333333
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:56:38.178580"
+    },
+    {
+      "sample_id": 160,
+      "question": "What area is the species of Spruce which can be found in Rensselaer Plateau native to?",
+      "answer": "该种类的云杉是原产于纽约州伦斯勒县的伦斯勒高原地区。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.9526289682420604,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.6348106268983944,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:57:19.906239"
+    },
+    {
+      "sample_id": 161,
+      "question": "Lookwell was a television pilot written and produced by Conan O'rien and Robert Smigel, and was a personal favorite of what American television executive who was president of NBC from 1980-1991?",
+      "answer": "美国电视执行人Brandon Tartikoff是NBC的总裁，他在1980年至1991年间担任该职位，他个人最喜欢的电视剧《Lookwell》是由Conan O'Brien和Robert Smigel编写和制作的。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.32499999998375,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.5988427024086321,
+        "context_recall": 0.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:58:05.082158"
+    },
+    {
+      "sample_id": 162,
+      "question": "Where is the globe that succeeded the Globe of Peace as the world's largest rotating globe located?",
+      "answer": "The globe that succeeded the Globe of Peace as the world's largest rotating globe is located in Central Park.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.8333333332916666,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.8910775199999111,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:58:44.948871"
+    },
+    {
+      "sample_id": 163,
+      "question": "Tess Asplund fought against the Neo-Nazi movement that existed in which countries?",
+      "answer": "根据提供的文档内容，没有提到Tess Asplund曾在哪些国家对抗新纳粹主义运动。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.24285714284499998,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T13:59:26.592318"
+    },
+    {
+      "sample_id": 164,
+      "question": "What is the name of this policy of favoring members of a disadvantaged group who suffer or have suffered from discrimination within a culture of which Black Economic Empowerment is a form? ",
+      "answer": "这种政策的名称是\"Affirmative Action\"。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.9293650793534624,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.6316095785535865,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:00:11.447127"
+    },
+    {
+      "sample_id": 165,
+      "question": "The 32nd TCA Awards were hosted by a  Mexican actor best known for his roles as Fernando Mendiola in what?",
+      "answer": "The 32nd TCA Awards were hosted by a Mexican actor best known for his roles as Fernando Mendiola in \"Nacho Libre\".",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.6666666666333333,
+        "faithfulness": 0.6666666666666666,
+        "answer_relevancy": 0.6508553791761192,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:00:59.317492"
+    },
+    {
+      "sample_id": 166,
+      "question": "Brutti di notte is a parody of the film starring which actress?",
+      "answer": "根据提供的文档内容，无法回答“Brutti di notte is a parody of the film starring which actress?”这个问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.11111111109999999,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:01:43.708622"
+    },
+    {
+      "sample_id": 167,
+      "question": "Rhodochiton and Platystemon are both genuses of what kind of life form?",
+      "answer": "Rhodochiton and Platystemon are both genuses of plants.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.4166666666458333,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.8842981872157787,
+        "context_recall": 0.75
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:02:30.636369"
+    },
+    {
+      "sample_id": 168,
+      "question": "How much is the company that Jessica Alba is associated with worth as of 2015?",
+      "answer": "根据提供的文档内容，无法找到关于Jessica Alba所关联的公司价值的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.499999999975,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:03:17.298245"
+    },
+    {
+      "sample_id": 169,
+      "question": "James Mulgrew is the star of which comedy sketch show?",
+      "answer": "根据提供的文档内容，没有找到关于James Mulgrew是哪个喜剧短剧节目的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.19999999998,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:04:01.946893"
+    },
+    {
+      "sample_id": 170,
+      "question": "Q: What venue, also called the \"Convent Garden,\" did Adrian Boult conduct for?",
+      "answer": "A: Adrian Boult conducted at the venue known as the \"Convent Garden,\" which is also called the \"Covent Garden.\"",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.3595238095118254,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.7500563892497784,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:04:46.150025"
+    },
+    {
+      "sample_id": 171,
+      "question": "What Carnegie library building located in the most populous city in Kansas was built in 1915, and listed on the National Register of Historic Places in 1987?",
+      "answer": "Wichita City Carnegie Library Building is the Carnegie library building located in the most populous city in Kansas, Wichita, built in 1915, and listed on the National Register of Historic Places in 1987.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.22619047617916663,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.6840462028339668,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:05:33.480130"
+    },
+    {
+      "sample_id": 172,
+      "question": "The Centralia Massacre was committed by which pro-Confederate guerrilla leader?",
+      "answer": "根据提供的文档内容，无法回答关于The Centralia Massacre的问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.18333333332416668,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:06:17.521684"
+    },
+    {
+      "sample_id": 173,
+      "question": "What football club has won 3 UFEA Super Cups, and has also employed Scottish footballer Hugh \"Hughie\" Clifford?",
+      "answer": "根据提供的文档内容，无法回答关于赢得3次UEFA超级杯并雇用苏格兰足球运动员Hugh \"Hughie\" Clifford的足球俱乐部是哪个的问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.39999999998666663,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:07:01.504565"
+    },
+    {
+      "sample_id": 174,
+      "question": "When was the record producer that produced Love Has Come for You born? ",
+      "answer": "文档中没有提到制作《Love Has Come for You》的唱片制作人的出生日期。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.20833333332291665,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:07:50.348974"
+    },
+    {
+      "sample_id": 175,
+      "question": "How many weeks did the lead single from Culture Beat's second studio album spend at number one on the \"RPM\" Dance chart in Canada?",
+      "answer": "根据提供的文档，无法找到 Culture Beat 第二张录音室专辑的主打单曲在加拿大“RPM”舞曲榜上连续排名第一的周数。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.11111111109999999,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:08:36.921419"
+    },
+    {
+      "sample_id": 176,
+      "question": "Which of the following documents the issues of the LGBT community: Pride Divide or The Big Melt?",
+      "answer": "The document that addresses the issues of the LGBT community is \"Pride Divide.\"",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.826020408151465,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.5817812594692887,
+        "context_recall": 0.5
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:09:20.223643"
+    },
+    {
+      "sample_id": 177,
+      "question": "Silent Möbius is heavily influenced by the movie directed by whom?",
+      "answer": "根据提供的文档内容，没有找到关于Silent Möbius受到哪位导演的电影影响的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.1944444444347222,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:10:02.162144"
+    },
+    {
+      "sample_id": 178,
+      "question": "John Kassir and Tom Kenny both voice this one character?",
+      "answer": "Tom Kenny and John Kassir both voice the character of the Ice King in the Adventure Time pilot, but Tom Kenny replaced John Kassir for the series.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.5160714285628274,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.4534579145397484,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:10:46.836672"
+    },
+    {
+      "sample_id": 179,
+      "question": "At which laboratory was Carsten Olsen employed as an assistant to the Danish chemist who introduced the concept of pH?",
+      "answer": "Carsten Olsen was employed as an assistant at the laboratory of the Danish chemist who introduced the concept of pH, but the name of the laboratory is not provided in the retrieved documents.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.5238095237964286,
+        "faithfulness": 0.6666666666666666,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:11:35.157029"
+    },
+    {
+      "sample_id": 180,
+      "question": "Which 20th Century Fox film cast Zazie Beetz as Domino?",
+      "answer": "20th Century Fox电影《Deadpool 2》中由Zazie Beetz饰演Domino。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.32499999998375,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.666259651439617,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:12:19.305221"
+    },
+    {
+      "sample_id": 181,
+      "question": "Which American animated television series created by Trey Parker and Matt Stone features a character called Butters who thinks up schemes to take over the world in its 86th episode?",
+      "answer": "根据提供的文档内容，无法回答关于 Trey Parker 和 Matt Stone 创作的美国动画电视系列中的角色 Butters 在第86集中策划夺取世界的问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.99999999999,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:13:07.257578"
+    },
+    {
+      "sample_id": 182,
+      "question": "Which stadium hosts the rivalry game between the all-male, historically African American College located in Atlanta and Tuskegee?",
+      "answer": "根据提供的文档，没有找到关于亚特兰大和塔斯基吉之间的男子历史非裔学院之间的对抗比赛举办在哪个体育场的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.162499999991875,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 0.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:13:55.454690"
+    },
+    {
+      "sample_id": 183,
+      "question": "Who is the current world record holder in high jump and uncle of Lorenzo Sotomayor Collazo? ",
+      "answer": "根据提供的文档内容，无法确定目前跳高世界纪录保持者是谁，也无法确认谁是Lorenzo Sotomayor Collazo的叔叔。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.99999999995,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:14:41.327638"
+    },
+    {
+      "sample_id": 184,
+      "question": "What film director is from Great Britain, Miloš Forman or Alex Cox?",
+      "answer": "Miloš Forman is the film director from Great Britain.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.5238095237964286,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.7542694905908386,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:15:25.158185"
+    },
+    {
+      "sample_id": 185,
+      "question": "Who has won more Grand Slam doubles titles, Elizabeth Smylie or Vasek Pospisil?",
+      "answer": "Elizabeth Smylie has won more Grand Slam doubles titles than Vasek Pospisil.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.19999999998,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.9999999999999997,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:16:08.810941"
+    },
+    {
+      "sample_id": 186,
+      "question": "What American composer who died in 1978 was associated with an American Opera Company located in Jackson, Mississippi?",
+      "answer": "根据提供的文档内容，无法找到与位于密西西比州杰克逊的美国歌剧公司相关联的1978年去世的美国作曲家的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.5305555555449444,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:16:52.359500"
+    },
+    {
+      "sample_id": 187,
+      "question": "What wrestling promotion was formed by the current NEVER Openweight Champion?",
+      "answer": "根据提供的文档内容，没有找到关于当前NEVER Openweight冠军创建的摔跤推广机构的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.7777777777518519,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 0.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:17:37.821762"
+    },
+    {
+      "sample_id": 188,
+      "question": "Which movie was co-written by the person who directed \"Blood\"?",
+      "answer": "根据提供的文档内容，无法确定哪部电影是由执导了《Blood》的人共同编写的。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.7388888888741112,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:18:20.657932"
+    },
+    {
+      "sample_id": 189,
+      "question": "Which professional American football team based in Ohio did Ivan \"John\" Jurkovic play for?",
+      "answer": "Ivan \"John\" Jurkovic played for the Columbus Panhandles, a professional American football team based in Columbus, Ohio.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.6555555555337037,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.9128265919420144,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:19:04.666544"
+    },
+    {
+      "sample_id": 190,
+      "question": "The Prancing Horse was used by which top Italian fighter ace?",
+      "answer": "根据提供的文档内容，无法回答问题\"The Prancing Horse was used by which top Italian fighter ace?\"。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.53333333332,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:19:49.923483"
+    },
+    {
+      "sample_id": 191,
+      "question": "What Bible college located in Louisville, Kentucky, was attended by Paul R. House who served for a time as president of the Evangelical Theological Society?",
+      "answer": "根据提供的文档内容，无法找到关于 Paul R. House 就读的圣经学院位于肯塔基州路易斯维尔的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.4761904761746032,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:20:35.536119"
+    },
+    {
+      "sample_id": 192,
+      "question": "This Federation of Indian Airlines member is owned by what Indian business conglomerate?",
+      "answer": "Avantha Group is the Indian business conglomerate that owns the Federation of Indian Airlines member.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.62499999996875,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.9412403368128692,
+        "context_recall": 0.75
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:21:21.308704"
+    },
+    {
+      "sample_id": 193,
+      "question": "The motorway reffered to as the Mid Wirral Motorway is located in a suburb known for which buildings?",
+      "answer": "根据提供的文档内容，无法找到有关Mid Wirral Motorway所在郊区以及相关建筑物的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.49999999995,
+        "faithfulness": 0.3333333333333333,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:22:07.694543"
+    },
+    {
+      "sample_id": 194,
+      "question": "What suicide attack was located inside the Forward Operating Base Chapman? ",
+      "answer": "在Forward Operating Base Chapman内发生的自杀式袭击是2010年12月25日在位于巴基斯坦巴焦部落地区的Khar镇的一个世界粮食计划组织的食品分发中心发生的。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.18333333332416668,
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.8193926182576052,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:22:51.488548"
+    },
+    {
+      "sample_id": 195,
+      "question": "What principal dancer in the Bolshoi ballet, born in 1988, is a student of Valery Lagunov?",
+      "answer": "根据提供的文档内容，无法找到关于谁是莫斯科大剧院芭蕾舞团的首席舞者，出生于1988年，并且是瓦列里·拉古诺夫的学生的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.19999999998,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:23:35.451302"
+    },
+    {
+      "sample_id": 196,
+      "question": "What's Golden was included in an open world racing video game that was developed by Playground Games and published by who?",
+      "answer": "\"What's Golden\" was included in an open world racing video game that was developed by Playground Games and published by Microsoft Studios.",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.3313492063381614,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.6665911443159817,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:24:18.918246"
+    },
+    {
+      "sample_id": 197,
+      "question": "Jeremy Brock is the writer and director of this 2011 drama that was adapted from him and what other female?",
+      "answer": "文档中没有提到Jeremy Brock是哪部2011年戏剧的编剧和导演，也没有提到他和其他女性合作的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.14285714284285714,
+        "faithfulness": 0.6666666666666666,
+        "answer_relevancy": 0.0,
+        "context_recall": 0.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:25:02.389429"
+    },
+    {
+      "sample_id": 198,
+      "question": "Gabe Turner has collaborated with the actor and film director who won his first Academy Award in which 1995 crime thriller?",
+      "answer": "根据提供的文档内容，无法找到关于Gabe Turner与获得1995年犯罪惊悚片首个奥斯卡奖的演员和导演合作的信息。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.3333333333,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:25:46.384962"
+    },
+    {
+      "sample_id": 199,
+      "question": "Which highway that has a junction at Cairo Junction is 1286 miles long?",
+      "answer": "根据文档5，长1286英里的公路是Oregon Route 201，它在Cairo Junction有一个交汇点。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.36666666664833336,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.6430019444843501,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:26:31.110481"
+    },
+    {
+      "sample_id": 200,
+      "question": "Which documentary was released earlier, Almost Sunrise or 51 Birch Street?",
+      "answer": "文档中没有提到《Almost Sunrise》或《51 Birch Street》这两部纪录片的发布时间，因此无法回答这个问题。",
+      "contexts_count": 10,
+      "metrics": {
+        "context_precision": 0.0,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_recall": 1.0
+      },
+      "error": null,
+      "timestamp": "2025-10-22T14:27:13.042699"
+    }
+  ],
+  "experiment_config": {
+    "batch_id": 1,
+    "experiment_type": "baseline",
+    "batch_size": 200,
+    "processed_samples": 200,
+    "error_count": 0
+  }
+}
