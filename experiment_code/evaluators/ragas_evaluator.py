@@ -4,10 +4,10 @@ RAGAS评估器实现
 """
 
 import asyncio
+import json
 import logging
 from typing import Dict, List, Any, Optional
 import numpy as np
-from datasets import Dataset
 
 # 尝试导入RAGAS
 try:
@@ -18,10 +18,12 @@ try:
         answer_relevancy,
         context_recall
     )
+    from ragas.dataset_schema import SingleTurnSample, EvaluationDataset
     from ragas.evaluation import EvaluationResult
     from ragas.llms import BaseRagasLLM
     from ragas.embeddings import BaseRagasEmbeddings
     from ragas.evaluation import EvaluationResult
+    from ragas.run_config import RunConfig
     from langchain_core.outputs import Generation, LLMResult
     from langchain_core.prompt_values import PromptValue
     from openai import OpenAI
@@ -309,23 +311,56 @@ class RagasEvaluator(BaseEvaluator):
                 logger.warning("RAGAS评估跳过：contexts 为空，回退到手动指标")
                 return self._evaluate_manually(question, answer, contexts, reference)
 
-            sanitized_contexts = [str(ctx) for ctx in contexts if isinstance(ctx, (str, bytes))]
+            sanitized_contexts: List[str] = []
+            for ctx in contexts:
+                text_candidate: Optional[str] = None
+                if isinstance(ctx, str):
+                    text_candidate = ctx
+                elif isinstance(ctx, bytes):
+                    text_candidate = ctx.decode("utf-8", errors="ignore")
+                elif isinstance(ctx, dict):
+                    text_candidate = ctx.get("text") or ctx.get("content") or ctx.get("body")
+                    if isinstance(text_candidate, list):
+                        text_candidate = " ".join(str(part) for part in text_candidate)
+                elif isinstance(ctx, (list, tuple)):
+                    text_candidate = " ".join(str(part) for part in ctx if isinstance(part, (str, bytes)))
+
+                if text_candidate:
+                    sanitized_contexts.append(text_candidate.strip())
+
+            sanitized_contexts = [text for text in sanitized_contexts if text]
             if not sanitized_contexts:
-                logger.warning("RAGAS评估跳过：contexts 无有效文本，回退到手动指标")
+                logger.warning(
+                    "RAGAS评估跳过：contexts 无有效文本，原始上下文=%s",
+                    contexts,
+                )
                 return self._evaluate_manually(question, answer, contexts, reference)
 
-            sanitized_reference = reference if isinstance(reference, str) else str(reference)
+            if isinstance(reference, str):
+                sanitized_reference = reference
+            elif isinstance(reference, bytes):
+                sanitized_reference = reference.decode("utf-8", errors="ignore")
+            elif isinstance(reference, (list, tuple)):
+                sanitized_reference = " ".join(str(part) for part in reference if part)
+            else:
+                sanitized_reference = str(reference)
+
+            sanitized_reference = sanitized_reference.strip()
             if not sanitized_reference:
-                logger.warning("RAGAS评估跳过：reference 为空，回退到手动指标")
+                logger.warning(
+                    "RAGAS评估跳过：reference 为空或无效，原始reference=%s",
+                    reference,
+                )
                 return self._evaluate_manually(question, answer, contexts, reference)
 
             # 准备数据
-            dataset = Dataset.from_dict({
-                "question": [question],
-                "answer": [answer],
-                "contexts": [sanitized_contexts],
-                "reference": [sanitized_reference]
-            })
+            sample = SingleTurnSample(
+                question=question,
+                answer=answer,
+                contexts=sanitized_contexts,
+                ground_truth=sanitized_reference,
+            )
+            dataset = EvaluationDataset(samples=[sample])
 
             # 使用RAGAS进行评估
             selected_metrics = metrics or [
@@ -335,44 +370,36 @@ class RagasEvaluator(BaseEvaluator):
                 context_recall,
             ]
 
-            eval_kwargs: Dict[str, Any] = {
-                "dataset": dataset,
-                "metrics": selected_metrics,
-                "llm": self.ragas_llm,
-                "column_map": {
-                    "question": "question",
-                    "answer": "answer",
-                    "contexts": "contexts",
-                    "ground_truth": "reference",
-                },
-            }
-            if self.ragas_embeddings is not None:
-                eval_kwargs["embeddings"] = self.ragas_embeddings
-
-            result = evaluate(**eval_kwargs)
-
             metrics_dict: Dict[str, float] = {}
+            ragas_run_config = RunConfig(max_workers=1)
 
-            if isinstance(result, EvaluationResult):
-                scores_df = result.scores.to_pandas()
-                if not scores_df.empty:
-                    row = scores_df.iloc[0]
-                    for metric_obj in selected_metrics:
-                        metric_name = getattr(metric_obj, "name", None)
-                        if metric_name and metric_name in row:
-                            try:
-                                metrics_dict[metric_name] = float(row[metric_name])
-                            except (TypeError, ValueError):
-                                metrics_dict[metric_name] = 0.0
-            elif isinstance(result, dict):
-                for metric_name, metric_values in result.items():
-                    if isinstance(metric_values, list) and metric_values:
-                        try:
-                            metrics_dict[metric_name] = float(metric_values[0])
-                        except (TypeError, ValueError):
-                            metrics_dict[metric_name] = 0.0
-            else:
-                logger.warning("未识别的RAGAS返回类型: %s", type(result))
+            for metric_obj in selected_metrics:
+                metric_name = getattr(metric_obj, "name", None)
+                if not metric_name:
+                    continue
+
+                single_kwargs: Dict[str, Any] = {
+                    "dataset": dataset,
+                    "metrics": [metric_obj],
+                    "llm": self.ragas_llm,
+                    "show_progress": False,
+                    "run_config": ragas_run_config,
+                    "raise_exceptions": True,
+                }
+                if self.ragas_embeddings is not None:
+                    single_kwargs["embeddings"] = self.ragas_embeddings
+
+                try:
+                    result = evaluate(**single_kwargs)
+                    metric_value = self._extract_metric_value(result, metric_name)
+                    if metric_value is not None:
+                        metrics_dict[metric_name] = metric_value
+                except Exception as metric_error:
+                    logger.warning(
+                        "RAGAS指标 %s 计算失败: %s，已跳过",
+                        metric_name,
+                        metric_error,
+                    )
 
             if not metrics_dict:
                 logger.warning("RAGAS未返回任何指标，回退到手动评估")
@@ -390,16 +417,40 @@ class RagasEvaluator(BaseEvaluator):
         except (IndexError, ValueError, TypeError) as e:
             message = f"RAGAS框架评估失败: {e}，已自动回退到手动指标"
             if not self._ragas_warning_emitted:
-                logger.warning(message)
+                logger.exception(message)
                 self._ragas_warning_emitted = True
             else:
-                logger.debug(message)
+                logger.exception(message)
             # 回退到手动评估
             return self._evaluate_manually(question, answer, contexts, reference)
         except Exception as e:
             message = f"RAGAS评估发生未处理异常: {e}"
             logger.error(message)
             return self._evaluate_manually(question, answer, contexts, reference)
+
+    def _extract_metric_value(
+        self,
+        ragas_result: Any,
+        metric_name: str,
+    ) -> Optional[float]:
+        """从RAGAS返回值中提取指标"""
+        if isinstance(ragas_result, EvaluationResult):
+            scores_df = ragas_result.scores.to_pandas()
+            if not scores_df.empty and metric_name in scores_df.columns:
+                try:
+                    return float(scores_df.iloc[0][metric_name])
+                except (TypeError, ValueError):
+                    return None
+        elif isinstance(ragas_result, dict):
+            metric_values = ragas_result.get(metric_name)
+            if isinstance(metric_values, list) and metric_values:
+                try:
+                    return float(metric_values[0])
+                except (TypeError, ValueError):
+                    return None
+        else:
+            logger.debug("未识别的RAGAS返回类型: %s", type(ragas_result))
+        return None
 
     def _evaluate_manually(self, question: str, answer: str,
                          contexts: List[str], reference: str) -> EvaluationResult:
