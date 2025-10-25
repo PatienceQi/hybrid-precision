@@ -46,12 +46,13 @@ class EvaluationConfig:
 @dataclass
 class RetrievalConfig:
     """检索配置"""
-    embedding_model: str = "bge-m3"
-    embedding_dim: int = 1024
+    embedding_model: str = "text-embedding-3-large"
+    embedding_dim: int = 3072
     top_k: int = 5
     similarity_threshold: float = 0.7
     cache_embeddings: bool = True
-    embedding_service_url: str = "http://localhost:11434/api/embeddings"
+    embedding_service_url: str = "https://wolfai.top/v1/embeddings"
+    embedding_api_key: Optional[str] = None
     force_embedding_service: bool = False
     fallback_to_local_embeddings: bool = True
 
@@ -141,15 +142,16 @@ class Config:
         if service_url_env:
             service_url = service_url_env.strip()
         else:
-            service_url = "http://localhost:11434/api/embeddings"
+            service_url = "https://wolfai.top/v1/embeddings"
 
         return RetrievalConfig(
-            embedding_model=os.getenv("EMBEDDING_MODEL", "bge-m3"),
-            embedding_dim=int(os.getenv("EMBEDDING_DIM", "1024")),
+            embedding_model=os.getenv("EMBEDDING_MODEL", "text-embedding-3-large"),
+            embedding_dim=int(os.getenv("EMBEDDING_DIM", "3072")),
             top_k=int(os.getenv("TOP_K", "5")),
             similarity_threshold=float(os.getenv("SIMILARITY_THRESHOLD", "0.7")),
             cache_embeddings=os.getenv("CACHE_EMBEDDINGS", "true").lower() == "true",
             embedding_service_url=service_url,
+            embedding_api_key=os.getenv("EMBEDDING_API_KEY"),
             force_embedding_service=os.getenv("FORCE_EMBEDDING_SERVICE", "false").lower() == "true",
             fallback_to_local_embeddings=os.getenv("EMBEDDING_FALLBACK_LOCAL", "true").lower() == "true"
         )

@@ -22,7 +22,7 @@ logger = logging.getLogger(__name__)
 class EmbeddingRetriever(BaseRetriever):
     """基于嵌入向量的检索器"""
 
-    def __init__(self, embedding_model: str = "bge-m3", cache_dir: str = "cache"):
+    def __init__(self, embedding_model: Optional[str] = None, cache_dir: str = "cache"):
         super().__init__("embedding")
         self.config = get_config()
         self.embedding_model = embedding_model or self.config.retrieval.embedding_model
@@ -33,7 +33,10 @@ class EmbeddingRetriever(BaseRetriever):
         self.document_embeddings_cache = {}
         self.embedding_service_url = (self.config.retrieval.embedding_service_url or "").strip()
         if not self.embedding_service_url:
-            self.embedding_service_url = "http://localhost:11434/api/embeddings"
+            self.embedding_service_url = "https://wolfai.top/v1/embeddings"
+        self.embedding_api_key = (
+            (self.config.retrieval.embedding_api_key or "") or os.getenv("EMBEDDING_API_KEY") or "sk-7tk8aNrEJw3nmix9FeciFbgvvcr77hSwlpTaWKMH4FRwu84j"
+        )
         self._force_service = self.config.retrieval.force_embedding_service
         self._allow_fallback = self.config.retrieval.fallback_to_local_embeddings
         self._embedding_service_available = True
@@ -132,13 +135,16 @@ class EmbeddingRetriever(BaseRetriever):
             return embedding
 
         try:
-            # 调用本地ollama服务
+            # 调用远程嵌入服务
             model_url = self.embedding_service_url
             headers = {'Content-Type': 'application/json'}
+            if self.embedding_api_key:
+                headers['Authorization'] = f"Bearer {self.embedding_api_key}"
 
             data = {
                 'model': self.embedding_model,
-                'input': [text]
+                'input': text,
+                'encoding_format': 'float'
             }
 
             max_retries = 3
@@ -192,7 +198,7 @@ class EmbeddingRetriever(BaseRetriever):
                     if attempt == max_retries - 1:
                         raise
                     wait_time = (attempt + 1) * 5  # 指数退避
-                    logger.warning(f"嵌入服务调用失败，尝试 {attempt + 1}: {e}。等待 {wait_time} 秒后重试...")
+                    logger.warning(f"远程嵌入服务调用失败，尝试 {attempt + 1}: {e}。等待 {wait_time} 秒后重试...")
                     time.sleep(wait_time)
 
         except Exception as e:
@@ -424,7 +430,7 @@ if __name__ == "__main__":
     # 创建检索器
     retriever = EmbeddingRetriever()
 
-    # 注意：由于需要ollama服务，这里只测试基本功能
+    # 注意：由于依赖远程嵌入服务，这里只测试基本功能
     print(f"✅ 检索器创建成功: {retriever.retriever_type}")
     print(f"✅ 支持的功能: {retriever.get_supported_features()}")
     print(f"✅ 配置信息: {retriever.get_config_info()}")

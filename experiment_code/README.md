@@ -105,7 +105,8 @@ export API_CLIENT_TYPE="auto"              # 可选: 强制使用 openai/openrou
 export SKIP_API_CONNECTION_TEST="false"    # 可选: 离线环境下跳过连接检测
 export FORCE_REAL_API="false"              # 可选: 禁止连接失败时回退到模拟API
 export ALLOW_MOCK_FALLBACK="true"          # 可选: 允许自动切换至模拟API
-export EMBEDDING_SERVICE_URL="http://localhost:11434/api/embeddings"
+export EMBEDDING_SERVICE_URL="https://wolfai.top/v1/embeddings"
+export EMBEDDING_API_KEY="sk-7tk8aNrEJw3nmix9FeciFbgvvcr77hSwlpTaWKMH4FRwu84j"
 export FORCE_EMBEDDING_SERVICE="false"     # 可选: 嵌入服务失败时立即报错
 export EMBEDDING_FALLBACK_LOCAL="true"     # 可选: 允许使用本地模拟嵌入
 
@@ -130,7 +131,7 @@ export LOG_LEVEL="INFO"
     "metrics": ["context_precision", "faithfulness", "answer_relevancy", "context_recall"]
   },
   "retrieval": {
-    "embedding_model": "bge-m3",
+    "embedding_model": "text-embedding-3-large",
     "top_k": 5,
     "similarity_threshold": 0.7
   }
@@ -304,7 +305,7 @@ test_hybrid_precision()
    - 尝试使用模拟模式
 
 2. **嵌入服务不可用**
-   - 确保ollama服务运行
+   - 确认远程嵌入服务可访问
    - 检查嵌入模型配置
    - 使用缓存的嵌入向量
 

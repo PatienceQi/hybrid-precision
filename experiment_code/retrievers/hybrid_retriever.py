@@ -26,7 +26,7 @@ class HybridRetriever(BaseRetriever):
     """混合检索器 - 结合向量检索和关键词检索"""
 
     def __init__(self,
-                 embedding_model: str = "bge-m3",
+                 embedding_model: Optional[str] = None,
                  fusion_method: str = "weighted_rrf",
                  cache_dir: str = "cache"):
         super().__init__("hybrid")
@@ -466,7 +466,7 @@ class HybridRetriever(BaseRetriever):
         return info
 
 # 向后兼容的函数
-def create_hybrid_retriever(embedding_model: str = "bge-m3", fusion_method: str = "weighted_rrf") -> HybridRetriever:
+def create_hybrid_retriever(embedding_model: Optional[str] = None, fusion_method: str = "weighted_rrf") -> HybridRetriever:
     """创建混合检索器（向后兼容）"""
     return HybridRetriever(embedding_model, fusion_method)
 

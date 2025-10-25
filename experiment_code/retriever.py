@@ -4,9 +4,13 @@ import requests
 import time
 from typing import List, Dict
 
+API_DEFAULT_URL = "https://wolfai.top/v1/embeddings"
+API_DEFAULT_MODEL = "text-embedding-3-large"
+API_DEFAULT_ENCODING = "float"
+
 def get_embeddings(texts: str) -> List[float]:
     """
-    调用本地ollama服务获取文本嵌入向量
+    调用远程嵌入服务获取文本嵌入向量
 
     Args:
         texts: 输入文本
@@ -14,12 +18,23 @@ def get_embeddings(texts: str) -> List[float]:
     Returns:
         文本嵌入向量
     """
-    model_url = 'http://localhost:11434/api/embeddings'
+    model_url = os.getenv("EMBEDDING_SERVICE_URL", API_DEFAULT_URL)
+    api_key = os.getenv("EMBEDDING_API_KEY", "sk-7tk8aNrEJw3nmix9FeciFbgvvcr77hSwlpTaWKMH4FRwu84j")
     headers = {'Content-Type': 'application/json'}
+    if api_key:
+        headers['Authorization'] = f"Bearer {api_key}"
+
+    if isinstance(texts, str):
+        request_input = texts
+    elif isinstance(texts, list):
+        request_input = [str(item) for item in texts]
+    else:
+        request_input = str(texts)
 
     data = {
-        'model': 'bge-m3',
-        'prompt': texts if isinstance(texts, str) else ' '.join(texts)
+        'model': os.getenv("EMBEDDING_MODEL", API_DEFAULT_MODEL),
+        'input': request_input,
+        'encoding_format': API_DEFAULT_ENCODING
     }
 
     max_retries = 3
@@ -27,12 +42,26 @@ def get_embeddings(texts: str) -> List[float]:
         try:
             response = requests.post(model_url, json=data, headers=headers, timeout=30)
             response.raise_for_status()
-            return response.json()['embedding']
+            payload = response.json()
+            if isinstance(payload, dict):
+                if 'data' in payload and isinstance(payload['data'], list) and payload['data']:
+                    first_item = payload['data'][0]
+                    if isinstance(first_item, dict) and 'embedding' in first_item:
+                        return first_item['embedding']
+                    return first_item
+                if 'embedding' in payload:
+                    return payload['embedding']
+                if 'embeddings' in payload and isinstance(payload['embeddings'], list) and payload['embeddings']:
+                    return payload['embeddings'][0]
+            if isinstance(payload, list) and payload:
+                return payload[0]
+            raise ValueError(f"无法解析嵌入响应: {payload}")
+
         except requests.exceptions.RequestException as e:
             if attempt == max_retries - 1:
                 raise
             wait_time = (attempt + 1) * 5  # 指数退避
-            print(f"本地ollama服务调用失败，尝试 {attempt + 1}: {str(e)}。等待 {wait_time} 秒后重试...")
+            print(f"远程嵌入服务调用失败，尝试 {attempt + 1}: {str(e)}。等待 {wait_time} 秒后重试...")
             time.sleep(wait_time)
 
 def load_or_generate_embeddings(knowledge_base_path: str) -> List[List[float]]:

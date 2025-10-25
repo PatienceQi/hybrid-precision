@@ -4,6 +4,7 @@ RAGAS评估器实现
 """
 
 import asyncio
+import os
 import json
 import logging
 from typing import Dict, List, Any, Optional
@@ -381,11 +382,15 @@ if RAGAS_AVAILABLE:
     class RagasEmbeddingsWrapper(BaseRagasEmbeddings):
         """使用嵌入服务适配 RAGAS embeddings 接口"""
 
-        def __init__(self, service_url: str, model_name: str):
+        def __init__(self, service_url: str, model_name: str, api_key: Optional[str] = None):
             super().__init__()
             self.service_url = service_url.rstrip("/")
             self.model_name = model_name
             self.session = requests.Session()
+            self.api_key = api_key or os.getenv("EMBEDDING_API_KEY") or "sk-7tk8aNrEJw3nmix9FeciFbgvvcr77hSwlpTaWKMH4FRwu84j"
+            self.default_headers = {"Content-Type": "application/json"}
+            if self.api_key:
+                self.default_headers["Authorization"] = f"Bearer {self.api_key}"
 
             lowered_url = self.service_url.lower()
             self._prefer_prompt_payload = "ollama" in lowered_url or "11434" in lowered_url
@@ -453,7 +458,12 @@ if RAGAS_AVAILABLE:
 
         def _post_embedding(self, payload: Dict[str, Any]) -> Dict[str, Any]:
             """发送请求并返回解析后的JSON"""
-            response = self.session.post(self.service_url, json=payload, timeout=60)
+            response = self.session.post(
+                self.service_url,
+                json=payload,
+                headers=self.default_headers,
+                timeout=60
+            )
             response.raise_for_status()
             try:
                 return response.json()
@@ -461,7 +471,7 @@ if RAGAS_AVAILABLE:
                 raise ValueError(f"嵌入服务返回非JSON响应: {exc}") from exc
 
         def _embed(self, text: str) -> List[float]:
-            base_payload = {"model": self.model_name}
+            base_payload = {"model": self.model_name, "encoding_format": "float"}
             payload_variants: List[Dict[str, Any]] = []
 
             if self._prefer_prompt_payload:
@@ -601,6 +611,7 @@ class RagasEvaluator(BaseEvaluator):
                     self.ragas_embeddings = RagasEmbeddingsWrapper(
                         service_url=self.config.retrieval.embedding_service_url,
                         model_name=self.config.retrieval.embedding_model,
+                        api_key=self.config.retrieval.embedding_api_key,
                     )
                 except Exception as embed_error:
                     logger.warning(f"初始化RAGAS嵌入适配器失败，将回退到默认行为: {embed_error}")
