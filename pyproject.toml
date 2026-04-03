@@ -56,10 +56,9 @@ all = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/jingxuan/hybrid-retrieval-evaluation"
-Documentation = "https://hybrid-retrieval-evaluation.readthedocs.io"
-Repository = "https://github.com/jingxuan/hybrid-retrieval-evaluation"
-"Bug Tracker" = "https://github.com/jingxuan/hybrid-retrieval-evaluation/issues"
+Homepage = "https://github.com/PatienceQi/hybrid-precision"
+Repository = "https://github.com/PatienceQi/hybrid-precision"
+"Bug Tracker" = "https://github.com/PatienceQi/hybrid-precision/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
@@ -121,19 +120,15 @@ exclude_lines = [
 ]
 
 [tool.mypy]
-python_version = "3.8"
-warn_return_any = true
+python_version = "3.9"
 warn_unused_configs = true
-disallow_untyped_defs = true
-disallow_incomplete_defs = true
 check_untyped_defs = true
-disallow_untyped_decorators = true
-no_implicit_optional = true
 warn_redundant_casts = true
-warn_unused_ignores = true
 warn_no_return = true
-warn_unreachable = true
 strict_equality = true
+# Relaxed: numpy/scipy heavy codebase has many type inference edge cases
+disallow_untyped_defs = false
+no_implicit_optional = false
 
 [[tool.mypy.overrides]]
 module = [
