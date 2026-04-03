@@ -104,8 +104,7 @@ class InformationTheoryMetrics:
                     and marginal_sparse[j] > 0
                 ):
                     mi += joint_dist[i, j] * np.log(
-                        joint_dist[i, j]
-                        / (marginal_dense[i] * marginal_sparse[j])
+                        joint_dist[i, j] / (marginal_dense[i] * marginal_sparse[j])
                     )
 
         # Normalize mutual information to [0, 1]
@@ -250,10 +249,9 @@ class InformationTheoryMetrics:
         m = 0.5 * (p + q)
 
         # Calculate JS divergence
-        js_div = (
-            0.5 * self.calculate_kl_divergence(p, m)
-            + 0.5 * self.calculate_kl_divergence(q, m)
-        )
+        js_div = 0.5 * self.calculate_kl_divergence(
+            p, m
+        ) + 0.5 * self.calculate_kl_divergence(q, m)
 
         # Normalize to [0, 1] using sqrt
         return float(np.sqrt(js_div)) if js_div >= 0 else 0.0
@@ -262,9 +260,7 @@ class InformationTheoryMetrics:
         self, dense_scores: np.ndarray, sparse_scores: np.ndarray
     ) -> str:
         """Generate a detailed information theory metrics report."""
-        entropy_conf = self.calculate_entropy_confidence(
-            dense_scores, sparse_scores
-        )
+        entropy_conf = self.calculate_entropy_confidence(dense_scores, sparse_scores)
         mutual_info_conf = self.calculate_mutual_information_confidence(
             dense_scores, sparse_scores
         )

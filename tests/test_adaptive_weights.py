@@ -84,12 +84,12 @@ class TestAdaptiveWeightOptimizer:
         dense_scores_list = [
             np.array([0.8, 0.7, 0.9]),
             np.array([0.6, 0.85, 0.7]),
-            np.array([0.9, 0.8, 0.75])
+            np.array([0.9, 0.8, 0.75]),
         ]
         sparse_scores_list = [
             np.array([0.75, 0.72, 0.88]),
             np.array([0.65, 0.82, 0.72]),
-            np.array([0.85, 0.78, 0.73])
+            np.array([0.85, 0.78, 0.73]),
         ]
         complexity_list = [0.5, 0.7, 0.3]
 
@@ -136,8 +136,10 @@ class TestAdaptiveWeightOptimizer:
     def test_weight_sensitivity_analysis(self):
         """Test weight sensitivity analysis."""
         results = self.optimizer.analyze_weight_sensitivity(
-            self.dense_scores, self.sparse_scores,
-            complexity_range=(0.0, 1.0), n_points=5
+            self.dense_scores,
+            self.sparse_scores,
+            complexity_range=(0.0, 1.0),
+            n_points=5,
         )
 
         assert len(results) == 5

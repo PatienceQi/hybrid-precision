@@ -24,5 +24,5 @@ __all__ = [
     "HybridPrecisionEvaluator",
     "InformationTheoryMetrics",
     "AdaptiveWeightOptimizer",
-    "RAGASHybridExtension"
+    "RAGASHybridExtension",
 ]

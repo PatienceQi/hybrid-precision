@@ -41,7 +41,7 @@ class RAGASHybridExtension:
         reference_answer: str,
         dense_scores: List[float],
         sparse_scores: List[float],
-        **kwargs
+        **kwargs,
     ) -> Dict[str, float]:
         """
         Evaluate hybrid retrieval performance with extended RAGAS metrics.
@@ -75,7 +75,7 @@ class RAGASHybridExtension:
                 "statistical_confidence": 0.0,
                 "dense_weight": 0.7,  # Default weight
                 "sparse_weight": 0.3,
-                "uncertainty_penalty": 0.0
+                "uncertainty_penalty": 0.0,
             }
 
         # Hybrid-specific metrics
@@ -91,7 +91,7 @@ class RAGASHybridExtension:
         query: str,
         contexts: List[str],
         generated_answer: str,
-        reference_answer: str
+        reference_answer: str,
     ) -> Dict[str, float]:
         """
         Calculate standard RAGAS metrics.
@@ -104,14 +104,11 @@ class RAGASHybridExtension:
             "context_precision": 0.0,  # Would be calculated by RAGAS
             "context_recall": 0.0,
             "faithfulness": 0.0,
-            "answer_relevancy": 0.0
+            "answer_relevancy": 0.0,
         }
 
     def _calculate_hybrid_metrics(
-        self,
-        dense_scores: List[float],
-        sparse_scores: List[float],
-        query: str
+        self, dense_scores: List[float], sparse_scores: List[float], query: str
     ) -> Dict[str, float]:
         """Calculate hybrid-specific metrics."""
         # Convert to numpy arrays
@@ -130,7 +127,8 @@ class RAGASHybridExtension:
                 hybrid_result["entropy_confidence"]
                 + hybrid_result["mutual_information_confidence"]
                 + hybrid_result["statistical_confidence"]
-            ) / 3,
+            )
+            / 3,
             "entropy_confidence": hybrid_result["entropy_confidence"],
             "mutual_information_confidence": (
                 hybrid_result["mutual_information_confidence"]
@@ -138,16 +136,13 @@ class RAGASHybridExtension:
             "statistical_confidence": hybrid_result["statistical_confidence"],
             "dense_weight": hybrid_result["adaptive_weights"]["dense"],
             "sparse_weight": hybrid_result["adaptive_weights"]["sparse"],
-            "uncertainty_penalty": hybrid_result["uncertainty_penalty"]
+            "uncertainty_penalty": hybrid_result["uncertainty_penalty"],
         }
 
         return hybrid_metrics
 
     def compare_hybrid_vs_standard(
-        self,
-        dense_results: Dict,
-        sparse_results: Dict,
-        hybrid_results: Dict
+        self, dense_results: Dict, sparse_results: Dict, hybrid_results: Dict
     ) -> Dict[str, float]:
         """
         Compare hybrid retrieval results with standard single-method results.
@@ -225,7 +220,7 @@ Uncertainty Penalty: {results.get('uncertainty_penalty', 0):.4f}
         recommendations = []
 
         # Check confidence levels - use more specific thresholds
-        confidence = results.get('hybrid_confidence', 0)
+        confidence = results.get("hybrid_confidence", 0)
         if confidence < 0.5:
             recommendations.append(
                 "Consider adjusting retrieval parameters to improve confidence"
@@ -236,7 +231,7 @@ Uncertainty Penalty: {results.get('uncertainty_penalty', 0):.4f}
             )
 
         # Check uncertainty penalty
-        uncertainty_penalty = results.get('uncertainty_penalty', 0)
+        uncertainty_penalty = results.get("uncertainty_penalty", 0)
         if uncertainty_penalty > 0.3:
             recommendations.append(
                 "High uncertainty detected - consider domain-specific tuning"
@@ -247,8 +242,8 @@ Uncertainty Penalty: {results.get('uncertainty_penalty', 0):.4f}
             )
 
         # Check weight balance
-        dense_weight = results.get('dense_weight', 0.7)  # Default values
-        sparse_weight = results.get('sparse_weight', 0.3)
+        dense_weight = results.get("dense_weight", 0.7)  # Default values
+        sparse_weight = results.get("sparse_weight", 0.3)
 
         weight_diff = abs(dense_weight - sparse_weight)
         if weight_diff > 0.5:
@@ -279,7 +274,7 @@ Uncertainty Penalty: {results.get('uncertainty_penalty', 0):.4f}
         """Export evaluation results to file."""
         import json
 
-        with open(filename, 'w', encoding='utf-8') as f:
+        with open(filename, "w", encoding="utf-8") as f:
             json.dump(results, f, indent=2, ensure_ascii=False)
 
     @staticmethod
@@ -287,5 +282,5 @@ Uncertainty Penalty: {results.get('uncertainty_penalty', 0):.4f}
         """Load evaluation results from file."""
         import json
 
-        with open(filename, 'r', encoding='utf-8') as f:
+        with open(filename, "r", encoding="utf-8") as f:
             return json.load(f)

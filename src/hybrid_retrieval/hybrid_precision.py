@@ -40,7 +40,7 @@ class HybridPrecisionEvaluator:
         self,
         dense_scores: List[float],
         sparse_scores: List[float],
-        queries: List[str] = None
+        queries: List[str] = None,
     ) -> Dict[str, float]:
         """
         Evaluate hybrid retrieval performance using the Hybrid Precision method.
@@ -87,15 +87,12 @@ class HybridPrecisionEvaluator:
 
         # Calculate base hybrid score
         base_scores = (
-            final_dense_weight * dense_array
-            + final_sparse_weight * sparse_array
+            final_dense_weight * dense_array + final_sparse_weight * sparse_array
         )
 
         # Apply confidence weighting
         confidence_weighted = (
-            base_scores
-            * (entropy_conf + mutual_info_conf + statistical_conf)
-            / 3
+            base_scores * (entropy_conf + mutual_info_conf + statistical_conf) / 3
         )
 
         # Apply uncertainty penalty
@@ -111,9 +108,9 @@ class HybridPrecisionEvaluator:
             "statistical_confidence": float(statistical_conf),
             "adaptive_weights": {
                 "dense": float(final_dense_weight),
-                "sparse": float(final_sparse_weight)
+                "sparse": float(final_sparse_weight),
             },
-            "uncertainty_penalty": float(uncertainty_penalty)
+            "uncertainty_penalty": float(uncertainty_penalty),
         }
 
     def _analyze_query_complexity(self, query: str) -> float:
@@ -123,10 +120,9 @@ class HybridPrecisionEvaluator:
 
         # Check for complex query indicators
         complex_indicators = ["and", "or", "but", "however", "moreover"]
-        structure_factor = (
-            sum(1 for indicator in complex_indicators if indicator in query.lower())
-            / len(complex_indicators)
-        )
+        structure_factor = sum(
+            1 for indicator in complex_indicators if indicator in query.lower()
+        ) / len(complex_indicators)
 
         return (length_factor + structure_factor) / 2
 
@@ -155,9 +151,7 @@ class HybridPrecisionEvaluator:
             List of evaluation results
         """
         return [
-            self.evaluate(
-                res["dense_scores"], res["sparse_scores"], res.get("queries")
-            )
+            self.evaluate(res["dense_scores"], res["sparse_scores"], res.get("queries"))
             for res in results_list
         ]
 

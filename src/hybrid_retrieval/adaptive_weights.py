@@ -34,7 +34,7 @@ class AdaptiveWeightOptimizer:
         self,
         dense_scores: np.ndarray,
         sparse_scores: np.ndarray,
-        complexity_confidence: float = 0.5
+        complexity_confidence: float = 0.5,
     ) -> Tuple[float, float]:
         """
         Optimize weights based on multiple factors.
@@ -113,7 +113,7 @@ class AdaptiveWeightOptimizer:
         self,
         dense_scores_list: List[np.ndarray],
         sparse_scores_list: List[np.ndarray],
-        complexity_list: List[float]
+        complexity_list: List[float],
     ) -> List[Tuple[float, float]]:
         """
         Optimize weights iteratively for multiple queries.
@@ -155,10 +155,7 @@ Adjustment Parameters:
         return report.strip()
 
     def reset_parameters(
-        self,
-        alpha: float = None,
-        beta: float = None,
-        gamma: float = None
+        self, alpha: float = None, beta: float = None, gamma: float = None
     ):
         """Reset optimization parameters."""
         if alpha is not None:
@@ -178,7 +175,7 @@ Adjustment Parameters:
         dense_scores: np.ndarray,
         sparse_scores: np.ndarray,
         complexity_range: Tuple[float, float] = (0.0, 1.0),
-        n_points: int = 11
+        n_points: int = 11,
     ) -> List[Tuple[float, float, float]]:
         """
         Analyze weight sensitivity across different complexity levels.
