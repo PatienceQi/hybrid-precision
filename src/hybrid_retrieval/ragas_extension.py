@@ -1,11 +1,11 @@
 """
 RAGAS Extension for Hybrid Retrieval
 
-This module extends the RAGAS evaluation framework to support hybrid retrieval evaluation
-with specialized metrics for hybrid retrieval scenarios.
+This module extends the RAGAS evaluation framework to support hybrid retrieval
+evaluation with specialized metrics for hybrid retrieval scenarios.
 """
 
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List
 import numpy as np
 from .hybrid_precision import HybridPrecisionEvaluator
 from .information_theory import InformationTheoryMetrics
@@ -16,8 +16,8 @@ class RAGASHybridExtension:
     """
     Extension to RAGAS framework for hybrid retrieval evaluation.
 
-    This class provides specialized evaluation capabilities for hybrid retrieval systems,
-    extending the standard RAGAS metrics with hybrid-specific assessments.
+    This class provides specialized evaluation capabilities for hybrid retrieval
+    systems, extending the standard RAGAS metrics with hybrid-specific assessments.
     """
 
     def __init__(self, alpha: float = 0.1, beta: float = 0.1, gamma: float = 0.1):
@@ -33,14 +33,16 @@ class RAGASHybridExtension:
         self.info_theory = InformationTheoryMetrics()
         self.weight_optimizer = AdaptiveWeightOptimizer(alpha, beta, gamma)
 
-    def evaluate_hybrid_retrieval(self,
-                                  query: str,
-                                  retrieved_contexts: List[str],
-                                  generated_answer: str,
-                                  reference_answer: str,
-                                  dense_scores: List[float],
-                                  sparse_scores: List[float],
-                                  **kwargs) -> Dict[str, float]:
+    def evaluate_hybrid_retrieval(
+        self,
+        query: str,
+        retrieved_contexts: List[str],
+        generated_answer: str,
+        reference_answer: str,
+        dense_scores: List[float],
+        sparse_scores: List[float],
+        **kwargs
+    ) -> Dict[str, float]:
         """
         Evaluate hybrid retrieval performance with extended RAGAS metrics.
 
@@ -77,13 +79,20 @@ class RAGASHybridExtension:
             }
 
         # Hybrid-specific metrics
-        hybrid_metrics = self._calculate_hybrid_metrics(dense_scores, sparse_scores, query)
+        hybrid_metrics = self._calculate_hybrid_metrics(
+            dense_scores, sparse_scores, query
+        )
 
         # Combined results
         return {**standard_metrics, **hybrid_metrics}
 
-    def _calculate_standard_ragas_metrics(self, query: str, contexts: List[str],
-                                        generated_answer: str, reference_answer: str) -> Dict[str, float]:
+    def _calculate_standard_ragas_metrics(
+        self,
+        query: str,
+        contexts: List[str],
+        generated_answer: str,
+        reference_answer: str
+    ) -> Dict[str, float]:
         """
         Calculate standard RAGAS metrics.
 
@@ -98,24 +107,34 @@ class RAGASHybridExtension:
             "answer_relevancy": 0.0
         }
 
-    def _calculate_hybrid_metrics(self, dense_scores: List[float], sparse_scores: List[float],
-                                 query: str) -> Dict[str, float]:
+    def _calculate_hybrid_metrics(
+        self,
+        dense_scores: List[float],
+        sparse_scores: List[float],
+        query: str
+    ) -> Dict[str, float]:
         """Calculate hybrid-specific metrics."""
         # Convert to numpy arrays
         dense_array = np.array(dense_scores)
         sparse_array = np.array(sparse_scores)
 
         # Use Hybrid Precision evaluator
-        hybrid_result = self.hybrid_evaluator.evaluate(dense_array, sparse_array, [query])
+        hybrid_result = self.hybrid_evaluator.evaluate(
+            dense_array, sparse_array, [query]
+        )
 
         # Add hybrid-specific metrics
         hybrid_metrics = {
             "hybrid_precision": hybrid_result["hybrid_precision"],
-            "hybrid_confidence": (hybrid_result["entropy_confidence"] +
-                                hybrid_result["mutual_information_confidence"] +
-                                hybrid_result["statistical_confidence"]) / 3,
+            "hybrid_confidence": (
+                hybrid_result["entropy_confidence"]
+                + hybrid_result["mutual_information_confidence"]
+                + hybrid_result["statistical_confidence"]
+            ) / 3,
             "entropy_confidence": hybrid_result["entropy_confidence"],
-            "mutual_information_confidence": hybrid_result["mutual_information_confidence"],
+            "mutual_information_confidence": (
+                hybrid_result["mutual_information_confidence"]
+            ),
             "statistical_confidence": hybrid_result["statistical_confidence"],
             "dense_weight": hybrid_result["adaptive_weights"]["dense"],
             "sparse_weight": hybrid_result["adaptive_weights"]["sparse"],
@@ -124,8 +143,12 @@ class RAGASHybridExtension:
 
         return hybrid_metrics
 
-    def compare_hybrid_vs_standard(self, dense_results: Dict, sparse_results: Dict,
-                                 hybrid_results: Dict) -> Dict[str, float]:
+    def compare_hybrid_vs_standard(
+        self,
+        dense_results: Dict,
+        sparse_results: Dict,
+        hybrid_results: Dict
+    ) -> Dict[str, float]:
         """
         Compare hybrid retrieval results with standard single-method results.
 
@@ -140,14 +163,30 @@ class RAGASHybridExtension:
         comparison = {}
 
         # Calculate improvements
-        if "context_precision" in dense_results and "hybrid_precision" in hybrid_results:
-            improvement_vs_dense = ((hybrid_results["hybrid_precision"] - dense_results["context_precision"]) /
-                                  dense_results["context_precision"]) * 100
+        if (
+            "context_precision" in dense_results
+            and "hybrid_precision" in hybrid_results
+        ):
+            improvement_vs_dense = (
+                (
+                    hybrid_results["hybrid_precision"]
+                    - dense_results["context_precision"]
+                )
+                / dense_results["context_precision"]
+            ) * 100
             comparison["improvement_vs_dense"] = improvement_vs_dense
 
-        if "context_precision" in sparse_results and "hybrid_precision" in hybrid_results:
-            improvement_vs_sparse = ((hybrid_results["hybrid_precision"] - sparse_results["context_precision"]) /
-                                   sparse_results["context_precision"]) * 100
+        if (
+            "context_precision" in sparse_results
+            and "hybrid_precision" in hybrid_results
+        ):
+            improvement_vs_sparse = (
+                (
+                    hybrid_results["hybrid_precision"]
+                    - sparse_results["context_precision"]
+                )
+                / sparse_results["context_precision"]
+            ) * 100
             comparison["improvement_vs_sparse"] = improvement_vs_sparse
 
         # Confidence comparison - always include hybrid confidence score
@@ -188,16 +227,24 @@ Uncertainty Penalty: {results.get('uncertainty_penalty', 0):.4f}
         # Check confidence levels - use more specific thresholds
         confidence = results.get('hybrid_confidence', 0)
         if confidence < 0.5:
-            recommendations.append("Consider adjusting retrieval parameters to improve confidence")
+            recommendations.append(
+                "Consider adjusting retrieval parameters to improve confidence"
+            )
         elif confidence < 0.7:
-            recommendations.append("Moderate confidence - consider fine-tuning retrieval settings")
+            recommendations.append(
+                "Moderate confidence - consider fine-tuning retrieval settings"
+            )
 
         # Check uncertainty penalty
         uncertainty_penalty = results.get('uncertainty_penalty', 0)
         if uncertainty_penalty > 0.3:
-            recommendations.append("High uncertainty detected - consider domain-specific tuning")
+            recommendations.append(
+                "High uncertainty detected - consider domain-specific tuning"
+            )
         elif uncertainty_penalty > 0.1:
-            recommendations.append("Some uncertainty present - monitor performance closely")
+            recommendations.append(
+                "Some uncertainty present - monitor performance closely"
+            )
 
         # Check weight balance
         dense_weight = results.get('dense_weight', 0.7)  # Default values
@@ -205,15 +252,28 @@ Uncertainty Penalty: {results.get('uncertainty_penalty', 0):.4f}
 
         weight_diff = abs(dense_weight - sparse_weight)
         if weight_diff > 0.5:
-            recommendations.append("Significant weight imbalance detected - consider rebalancing")
+            recommendations.append(
+                "Significant weight imbalance detected - consider rebalancing"
+            )
         elif weight_diff > 0.3:
-            recommendations.append("Moderate weight imbalance - consider adjusting weights")
+            recommendations.append(
+                "Moderate weight imbalance - consider adjusting weights"
+            )
 
         # Only return default message if truly no issues
-        if not recommendations and confidence >= 0.85 and uncertainty_penalty <= 0.1 and weight_diff <= 0.2:
+        if (
+            not recommendations
+            and confidence >= 0.85
+            and uncertainty_penalty <= 0.1
+            and weight_diff <= 0.2
+        ):
             return ["Hybrid retrieval configuration looks good"]
 
-        return recommendations if recommendations else ["Monitor performance and adjust as needed"]
+        return (
+            recommendations
+            if recommendations
+            else ["Monitor performance and adjust as needed"]
+        )
 
     def export_results(self, results: Dict[str, float], filename: str) -> None:
         """Export evaluation results to file."""

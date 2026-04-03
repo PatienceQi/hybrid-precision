@@ -15,7 +15,9 @@ class TestHybridPrecisionEvaluator:
         self.evaluator = HybridPrecisionEvaluator(alpha=0.1, beta=0.1, gamma=0.1)
         self.dense_scores = [0.8, 0.7, 0.9, 0.6, 0.85]
         self.sparse_scores = [0.75, 0.72, 0.88, 0.65, 0.82]
-        self.queries = ["test query 1", "test query 2", "complex query with multiple terms"]
+        self.queries = [
+            "test query 1", "test query 2", "complex query with multiple terms"
+        ]
 
     def test_initialization(self):
         """Test proper initialization of evaluator."""
@@ -39,7 +41,9 @@ class TestHybridPrecisionEvaluator:
 
     def test_evaluate_with_queries(self):
         """Test evaluation with query complexity analysis."""
-        results = self.evaluator.evaluate(self.dense_scores, self.sparse_scores, self.queries)
+        results = self.evaluator.evaluate(
+            self.dense_scores, self.sparse_scores, self.queries
+        )
 
         assert isinstance(results, dict)
         assert 'hybrid_precision' in results
@@ -51,7 +55,9 @@ class TestHybridPrecisionEvaluator:
 
     def test_mismatched_scores_length(self):
         """Test error handling for mismatched score lengths."""
-        with pytest.raises(ValueError, match="Dense and sparse scores must have the same length"):
+        with pytest.raises(
+            ValueError, match="Dense and sparse scores must have the same length"
+        ):
             self.evaluator.evaluate([0.8, 0.7], [0.75, 0.72, 0.88])
 
     def test_query_complexity_analysis(self):
@@ -71,7 +77,9 @@ class TestHybridPrecisionEvaluator:
         dense_array = np.array(self.dense_scores)
         sparse_array = np.array(self.sparse_scores)
 
-        penalty = self.evaluator._calculate_uncertainty_penalty(dense_array, sparse_array)
+        penalty = self.evaluator._calculate_uncertainty_penalty(
+            dense_array, sparse_array
+        )
 
         assert 0 <= penalty <= 1
         assert isinstance(penalty, float)
@@ -119,7 +127,9 @@ class TestHybridPrecisionEvaluator:
         sparse_weight = results['adaptive_weights']['sparse']
 
         weight_sum = dense_weight + sparse_weight
-        assert abs(weight_sum - 1.0) < 0.01, f"Weights sum to {weight_sum}, expected ~1.0"
+        assert abs(weight_sum - 1.0) < 0.01, (
+            f"Weights sum to {weight_sum}, expected ~1.0"
+        )
 
     def test_edge_case_identical_scores(self):
         """Test behavior with identical dense and sparse scores."""

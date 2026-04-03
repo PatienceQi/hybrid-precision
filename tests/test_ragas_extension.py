@@ -2,7 +2,6 @@
 Tests for RAGAS Extension
 """
 
-import pytest
 import tempfile
 import json
 from src.hybrid_retrieval.ragas_extension import RAGASHybridExtension
@@ -20,8 +19,13 @@ class TestRAGASHybridExtension:
             "The main components include data, algorithms, and models.",
             "Supervised and unsupervised learning are key paradigms."
         ]
-        self.generated_answer = "Machine learning has three main components: data, algorithms, and models."
-        self.reference_answer = "Machine learning consists of data, algorithms, models, and evaluation metrics."
+        self.generated_answer = (
+            "Machine learning has three main components: data, algorithms, and models."
+        )
+        self.reference_answer = (
+            "Machine learning consists of data, algorithms, models, "
+            "and evaluation metrics."
+        )
         self.dense_scores = [0.8, 0.7, 0.9]
         self.sparse_scores = [0.75, 0.72, 0.88]
 
@@ -112,8 +116,12 @@ class TestRAGASHybridExtension:
         # Check improvement calculations
         expected_dense_improvement = ((0.8 - 0.7) / 0.7) * 100
         expected_sparse_improvement = ((0.8 - 0.6) / 0.6) * 100
-        assert abs(comparison['improvement_vs_dense'] - expected_dense_improvement) < 0.1
-        assert abs(comparison['improvement_vs_sparse'] - expected_sparse_improvement) < 0.1
+        assert (
+            abs(comparison['improvement_vs_dense'] - expected_dense_improvement) < 0.1
+        )
+        assert (
+            abs(comparison['improvement_vs_sparse'] - expected_sparse_improvement) < 0.1
+        )
 
     def test_compare_hybrid_vs_standard_missing_metrics(self):
         """Test comparison with missing metrics."""
@@ -127,7 +135,8 @@ class TestRAGASHybridExtension:
         )
 
         assert isinstance(comparison, dict)
-        # Should only calculate improvement_vs_sparse since dense_results lacks context_precision
+        # Should only calculate improvement_vs_sparse since dense_results lacks
+        # context_precision
         assert 'improvement_vs_dense' not in comparison
         assert 'improvement_vs_sparse' in comparison
 

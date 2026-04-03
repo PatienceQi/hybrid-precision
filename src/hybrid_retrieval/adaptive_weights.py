@@ -2,11 +2,12 @@
 Adaptive Weight Optimization for Hybrid Retrieval
 
 This module implements adaptive weight optimization based on query complexity,
-score differences, and domain confidence for dynamic weight adjustment in hybrid retrieval.
+score differences, and domain confidence for dynamic weight adjustment in
+hybrid retrieval.
 """
 
 import numpy as np
-from typing import List, Tuple, Optional
+from typing import List, Tuple
 
 
 class AdaptiveWeightOptimizer:
@@ -29,8 +30,12 @@ class AdaptiveWeightOptimizer:
         self.base_dense_weight = 0.7
         self.base_sparse_weight = 0.3
 
-    def optimize_weights(self, dense_scores: np.ndarray, sparse_scores: np.ndarray,
-                        complexity_confidence: float = 0.5) -> Tuple[float, float]:
+    def optimize_weights(
+        self,
+        dense_scores: np.ndarray,
+        sparse_scores: np.ndarray,
+        complexity_confidence: float = 0.5
+    ) -> Tuple[float, float]:
         """
         Optimize weights based on multiple factors.
 
@@ -43,7 +48,9 @@ class AdaptiveWeightOptimizer:
             Tuple of (final_dense_weight, final_sparse_weight)
         """
         # Calculate score difference adjustment
-        score_diff_adj = self._calculate_score_difference_adjustment(dense_scores, sparse_scores)
+        score_diff_adj = self._calculate_score_difference_adjustment(
+            dense_scores, sparse_scores
+        )
 
         # Calculate complexity adjustment
         complexity_adj = self._calculate_complexity_adjustment(complexity_confidence)
@@ -52,8 +59,12 @@ class AdaptiveWeightOptimizer:
         domain_adj = self._calculate_domain_adjustment()
 
         # Calculate final weights
-        final_dense = self.base_dense_weight + complexity_adj + score_diff_adj + domain_adj
-        final_sparse = self.base_sparse_weight - complexity_adj - score_diff_adj - domain_adj
+        final_dense = (
+            self.base_dense_weight + complexity_adj + score_diff_adj + domain_adj
+        )
+        final_sparse = (
+            self.base_sparse_weight - complexity_adj - score_diff_adj - domain_adj
+        )
 
         # Ensure weights are within valid range [0.1, 0.9]
         final_dense = np.clip(final_dense, 0.1, 0.9)
@@ -66,7 +77,9 @@ class AdaptiveWeightOptimizer:
 
         return float(final_dense), float(final_sparse)
 
-    def _calculate_score_difference_adjustment(self, dense_scores: np.ndarray, sparse_scores: np.ndarray) -> float:
+    def _calculate_score_difference_adjustment(
+        self, dense_scores: np.ndarray, sparse_scores: np.ndarray
+    ) -> float:
         """Calculate adjustment based on score differences."""
         # Calculate normalized score differences
         score_diff = np.abs(dense_scores - sparse_scores)
@@ -96,9 +109,12 @@ class AdaptiveWeightOptimizer:
         # For now, return a small neutral adjustment
         return self.gamma * 0.0
 
-    def optimize_weights_iterative(self, dense_scores_list: List[np.ndarray],
-                                  sparse_scores_list: List[np.ndarray],
-                                  complexity_list: List[float]) -> List[Tuple[float, float]]:
+    def optimize_weights_iterative(
+        self,
+        dense_scores_list: List[np.ndarray],
+        sparse_scores_list: List[np.ndarray],
+        complexity_list: List[float]
+    ) -> List[Tuple[float, float]]:
         """
         Optimize weights iteratively for multiple queries.
 
@@ -112,7 +128,9 @@ class AdaptiveWeightOptimizer:
         """
         return [
             self.optimize_weights(dense, sparse, comp)
-            for dense, sparse, comp in zip(dense_scores_list, sparse_scores_list, complexity_list)
+            for dense, sparse, comp in zip(
+                dense_scores_list, sparse_scores_list, complexity_list
+            )
         ]
 
     def get_optimization_report(self, dense_weight: float, sparse_weight: float) -> str:
@@ -136,7 +154,12 @@ Adjustment Parameters:
 """
         return report.strip()
 
-    def reset_parameters(self, alpha: float = None, beta: float = None, gamma: float = None):
+    def reset_parameters(
+        self,
+        alpha: float = None,
+        beta: float = None,
+        gamma: float = None
+    ):
         """Reset optimization parameters."""
         if alpha is not None:
             self.alpha = alpha
@@ -150,9 +173,13 @@ Adjustment Parameters:
         self.base_dense_weight = dense_weight
         self.base_sparse_weight = sparse_weight
 
-    def analyze_weight_sensitivity(self, dense_scores: np.ndarray, sparse_scores: np.ndarray,
-                                  complexity_range: Tuple[float, float] = (0.0, 1.0),
-                                  n_points: int = 11) -> List[Tuple[float, float, float]]:
+    def analyze_weight_sensitivity(
+        self,
+        dense_scores: np.ndarray,
+        sparse_scores: np.ndarray,
+        complexity_range: Tuple[float, float] = (0.0, 1.0),
+        n_points: int = 11
+    ) -> List[Tuple[float, float, float]]:
         """
         Analyze weight sensitivity across different complexity levels.
 
@@ -169,7 +196,9 @@ Adjustment Parameters:
         results = []
 
         for complexity in complexities:
-            dense_weight, sparse_weight = self.optimize_weights(dense_scores, sparse_scores, complexity)
+            dense_weight, sparse_weight = self.optimize_weights(
+                dense_scores, sparse_scores, complexity
+            )
             results.append((float(complexity), dense_weight, sparse_weight))
 
         return results

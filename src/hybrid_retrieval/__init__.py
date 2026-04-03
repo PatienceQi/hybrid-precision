@@ -1,8 +1,9 @@
 """
 Hybrid Retrieval Evaluation Method
 
-This package implements the Hybrid Precision evaluation method for hybrid retrieval systems,
-using information theory-driven multi-dimensional confidence assessment framework.
+This package implements the Hybrid Precision evaluation method for hybrid
+retrieval systems, using information theory-driven multi-dimensional
+confidence assessment framework.
 
 Author: Jingxuan Qi
 Email: 1312750677@qq.com

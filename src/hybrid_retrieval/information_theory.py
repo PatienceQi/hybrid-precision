@@ -1,31 +1,35 @@
 """
 Information Theory Metrics for Hybrid Retrieval Evaluation
 
-This module implements information theory-based metrics including entropy, mutual information,
-and statistical significance for confidence assessment in hybrid retrieval systems.
+This module implements information theory-based metrics including entropy,
+mutual information, and statistical significance for confidence assessment
+in hybrid retrieval systems.
 """
 
 import numpy as np
-from typing import Tuple
 from scipy.stats import ttest_rel, entropy
 from scipy.special import rel_entr
 
 
 class InformationTheoryMetrics:
     """
-    Information theory metrics for hybrid retrieval evaluation confidence assessment.
+    Information theory metrics for hybrid retrieval evaluation confidence
+    assessment.
     """
 
     def __init__(self):
         """Initialize information theory metrics calculator."""
         pass
 
-    def calculate_entropy_confidence(self, dense_scores: np.ndarray, sparse_scores: np.ndarray) -> float:
+    def calculate_entropy_confidence(
+        self, dense_scores: np.ndarray, sparse_scores: np.ndarray
+    ) -> float:
         """
         Calculate entropy-based confidence for score distributions.
 
-        Entropy measures the uncertainty or randomness in the score distributions.
-        Lower entropy indicates more ordered/structured distributions, suggesting higher confidence.
+        Entropy measures the uncertainty or randomness in the score
+        distributions. Lower entropy indicates more ordered/structured
+        distributions, suggesting higher confidence.
 
         Args:
             dense_scores: Scores from dense retriever
@@ -49,7 +53,7 @@ class InformationTheoryMetrics:
         entropy_dense = entropy(dense_norm)
         entropy_sparse = entropy(sparse_norm)
 
-        # Normalize entropy (0 = minimum entropy, max_entropy = maximum possible entropy)
+        # Normalize entropy (0 = minimum entropy, max = maximum possible)
         max_entropy = np.log(len(dense_scores))
         if max_entropy == 0:
             return 1.0  # Single element case
@@ -58,19 +62,23 @@ class InformationTheoryMetrics:
         norm_entropy_dense = entropy_dense / max_entropy
         norm_entropy_sparse = entropy_sparse / max_entropy
 
-        # Confidence is inverse of normalized entropy (higher entropy = lower confidence)
-        confidence_dense = max(0.0, min(1.0, 1 - norm_entropy_dense))  # Clamp to [0, 1]
-        confidence_sparse = max(0.0, min(1.0, 1 - norm_entropy_sparse))  # Clamp to [0, 1]
+        # Confidence is inverse of normalized entropy
+        confidence_dense = max(0.0, min(1.0, 1 - norm_entropy_dense))
+        confidence_sparse = max(0.0, min(1.0, 1 - norm_entropy_sparse))
 
         # Return average confidence
         return float((confidence_dense + confidence_sparse) / 2)
 
-    def calculate_mutual_information_confidence(self, dense_scores: np.ndarray, sparse_scores: np.ndarray) -> float:
+    def calculate_mutual_information_confidence(
+        self, dense_scores: np.ndarray, sparse_scores: np.ndarray
+    ) -> float:
         """
-        Calculate mutual information-based confidence between dense and sparse retrievers.
+        Calculate mutual information-based confidence between dense and sparse
+        retrievers.
 
-        Mutual information measures the amount of information obtained about one random variable
-        through observing the other random variable. Higher mutual information suggests better alignment.
+        Mutual information measures the amount of information obtained about
+        one random variable through observing the other random variable.
+        Higher mutual information suggests better alignment.
 
         Args:
             dense_scores: Scores from dense retriever
@@ -90,8 +98,15 @@ class InformationTheoryMetrics:
         mi = 0.0
         for i in range(len(marginal_dense)):
             for j in range(len(marginal_sparse)):
-                if joint_dist[i, j] > 0 and marginal_dense[i] > 0 and marginal_sparse[j] > 0:
-                    mi += joint_dist[i, j] * np.log(joint_dist[i, j] / (marginal_dense[i] * marginal_sparse[j]))
+                if (
+                    joint_dist[i, j] > 0
+                    and marginal_dense[i] > 0
+                    and marginal_sparse[j] > 0
+                ):
+                    mi += joint_dist[i, j] * np.log(
+                        joint_dist[i, j]
+                        / (marginal_dense[i] * marginal_sparse[j])
+                    )
 
         # Normalize mutual information to [0, 1]
         # Use tanh for smooth normalization
@@ -102,7 +117,9 @@ class InformationTheoryMetrics:
         normalized_mi = np.tanh(mi / max_mi)
         return float(normalized_mi)
 
-    def calculate_statistical_significance(self, dense_scores: np.ndarray, sparse_scores: np.ndarray) -> float:
+    def calculate_statistical_significance(
+        self, dense_scores: np.ndarray, sparse_scores: np.ndarray
+    ) -> float:
         """
         Calculate statistical significance confidence using paired t-test.
 
@@ -129,12 +146,12 @@ class InformationTheoryMetrics:
                 return 1.0  # Identical distributions have high confidence
 
             # Convert p-value to confidence (1 - p_value)
-            # Use confidence = 1 - p_value, but cap at 0.999 to avoid division issues
+            # Use confidence = 1 - p_value, but cap at 0.999
             confidence = min(max(0.0, 1.0 - p_value), 0.999)
 
             return float(confidence)
 
-        except Exception as e:
+        except Exception:
             # If t-test fails (e.g., insufficient data), return moderate confidence
             return 0.5
 
@@ -144,7 +161,9 @@ class InformationTheoryMetrics:
         scores_norm = scores + 1e-10
         return scores_norm / np.sum(scores_norm)
 
-    def _create_joint_distribution(self, dense_scores: np.ndarray, sparse_scores: np.ndarray) -> np.ndarray:
+    def _create_joint_distribution(
+        self, dense_scores: np.ndarray, sparse_scores: np.ndarray
+    ) -> np.ndarray:
         """Create joint probability distribution from dense and sparse scores."""
         # Handle edge cases
         if len(dense_scores) == 0 or len(sparse_scores) == 0:
@@ -231,16 +250,27 @@ class InformationTheoryMetrics:
         m = 0.5 * (p + q)
 
         # Calculate JS divergence
-        js_div = 0.5 * self.calculate_kl_divergence(p, m) + 0.5 * self.calculate_kl_divergence(q, m)
+        js_div = (
+            0.5 * self.calculate_kl_divergence(p, m)
+            + 0.5 * self.calculate_kl_divergence(q, m)
+        )
 
         # Normalize to [0, 1] using sqrt
         return float(np.sqrt(js_div)) if js_div >= 0 else 0.0
 
-    def get_information_report(self, dense_scores: np.ndarray, sparse_scores: np.ndarray) -> str:
+    def get_information_report(
+        self, dense_scores: np.ndarray, sparse_scores: np.ndarray
+    ) -> str:
         """Generate a detailed information theory metrics report."""
-        entropy_conf = self.calculate_entropy_confidence(dense_scores, sparse_scores)
-        mutual_info_conf = self.calculate_mutual_information_confidence(dense_scores, sparse_scores)
-        statistical_conf = self.calculate_statistical_significance(dense_scores, sparse_scores)
+        entropy_conf = self.calculate_entropy_confidence(
+            dense_scores, sparse_scores
+        )
+        mutual_info_conf = self.calculate_mutual_information_confidence(
+            dense_scores, sparse_scores
+        )
+        statistical_conf = self.calculate_statistical_significance(
+            dense_scores, sparse_scores
+        )
 
         report = f"""
 Information Theory Metrics Report

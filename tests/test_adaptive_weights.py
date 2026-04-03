@@ -2,7 +2,6 @@
 Tests for Adaptive Weight Optimization
 """
 
-import pytest
 import numpy as np
 from src.hybrid_retrieval.adaptive_weights import AdaptiveWeightOptimizer
 
@@ -51,7 +50,9 @@ class TestAdaptiveWeightOptimizer:
         diff_dense = np.array([0.9, 0.8, 0.95])
         diff_sparse = np.array([0.5, 0.4, 0.45])
 
-        adjustment = self.optimizer._calculate_score_difference_adjustment(diff_dense, diff_sparse)
+        adjustment = self.optimizer._calculate_score_difference_adjustment(
+            diff_dense, diff_sparse
+        )
 
         assert isinstance(adjustment, float)
         # Adjustment should be relatively small due to beta weight
