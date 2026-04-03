@@ -6,7 +6,7 @@ retrieval systems.
 """
 
 import numpy as np
-from typing import List, Dict
+from typing import Any, List, Dict
 from .information_theory import InformationTheoryMetrics
 from .adaptive_weights import AdaptiveWeightOptimizer
 
@@ -41,7 +41,7 @@ class HybridPrecisionEvaluator:
         dense_scores: List[float],
         sparse_scores: List[float],
         queries: List[str] = None,
-    ) -> Dict[str, float]:
+    ) -> Dict[str, Any]:
         """
         Evaluate hybrid retrieval performance using the Hybrid Precision method.
 
@@ -74,7 +74,7 @@ class HybridPrecisionEvaluator:
         # Calculate adaptive weights
         if queries:
             complexity_scores = [self._analyze_query_complexity(q) for q in queries]
-            complexity_conf = np.mean(complexity_scores)
+            complexity_conf = float(np.mean(complexity_scores))
         else:
             complexity_conf = 0.5
 
@@ -139,8 +139,8 @@ class HybridPrecisionEvaluator:
         return float(np.mean(normalized_diff))
 
     def batch_evaluate(
-        self, results_list: List[Dict[str, List[float]]]
-    ) -> List[Dict[str, float]]:
+        self, results_list: List[Dict[str, Any]]
+    ) -> List[Dict[str, Any]]:
         """
         Batch evaluate multiple hybrid retrieval results.
 
@@ -155,7 +155,7 @@ class HybridPrecisionEvaluator:
             for res in results_list
         ]
 
-    def get_evaluation_report(self, results: Dict[str, float]) -> str:
+    def get_evaluation_report(self, results: Dict[str, Any]) -> str:
         """Generate a detailed evaluation report."""
         report = f"""
 Hybrid Precision Evaluation Report

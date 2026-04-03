@@ -178,8 +178,10 @@ class InformationTheoryMetrics:
             n_bins = 2
 
         # Create bins for each score type - handle uniform scores
-        dense_min, dense_max = np.min(dense_scores), np.max(dense_scores)
-        sparse_min, sparse_max = np.min(sparse_scores), np.max(sparse_scores)
+        dense_min: float = float(np.min(dense_scores))
+        dense_max: float = float(np.max(dense_scores))
+        sparse_min: float = float(np.min(sparse_scores))
+        sparse_max: float = float(np.max(sparse_scores))
 
         # If all scores are the same, create artificial range
         if dense_min == dense_max:
@@ -227,8 +229,8 @@ class InformationTheoryMetrics:
         q = self._normalize_to_distribution(q)
 
         # Calculate KL divergence
-        kl_div = np.sum(rel_entr(p, q))
-        return float(kl_div)
+        kl_div: float = float(np.sum(rel_entr(p, q)))
+        return kl_div
 
     def calculate_js_divergence(self, p: np.ndarray, q: np.ndarray) -> float:
         """
